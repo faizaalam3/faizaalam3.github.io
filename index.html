@@ -14,29 +14,29 @@
     <link rel="stylesheet" href="sections/projects/projects.css">
     <link rel="stylesheet" href="sections/contact/contact.css">
     <link rel="stylesheet" href="sections/footer/footer.css">
+    <script>
+        function loadSection(section) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById(section).innerHTML = this.responseText;
+                // Enable smooth scrolling after each section is loaded
+                enableSmoothScrolling();
+            }
+            xhttp.open("GET", "sections/" + section + "/" + section + ".html", true);
+            xhttp.send();
+        }
+        window.onload = function() {
+            loadSection("header");
+            loadSection("about");
+            loadSection("experience");
+            loadSection("projects");
+            loadSection("contact");
+            loadSection("footer");
+        }
+    </script>
 </head>
 <body>
-    <!-- The header -->
-    <header id="header">
-        <div class="slider">
-            <div class="slides">
-                <div class="slide" style="background-image: url('images/bg2.avif');">
-                    <div class="slide-content">Content for Slide 1</div>
-                </div>
-                <div class="slide" style="background-image: url('images/bg3.png');">
-                    <div class="slide-content">Content for Slide 2</div>
-                </div>
-                <div class="slide" style="background-image: url('images/bg4.png');">
-                    <div class="slide-content">Content for Slide 3</div>
-                </div>
-            </div>
-            <div class="navigation">
-                <div class="dot" onclick="currentSlide(0)"></div>
-                <div class="dot" onclick="currentSlide(1)"></div>
-                <div class="dot" onclick="currentSlide(2)"></div>
-            </div>
-        </div>
-    </header>    
+    <div id="header"></div>
     <nav id="navbar">
         <ul>
             <li><a href="#about">About</a></li>
@@ -45,178 +45,10 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <!-- The about -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>With over 3 years of experience in mobile app development, I specialize in creating high-performance, feature-rich applications using Flutter. My expertise extends to backend technologies such as Firebase, Supabase, and SQLite, ensuring your apps are robust, scalable, and reliable.</p>
-        <p>I am passionate about delivering top-notch solutions tailored to your specific needs. Here's what I can offer:</p>
-        <ul>
-            <li><strong>Custom Mobile App Development:</strong> Crafting bespoke applications that align with your business goals and user expectations.</li>
-            <li><strong>Backend Integration:</strong> Seamless integration with Firebase, Supabase, and SQLite to enhance your app's functionality and performance.</li>
-            <li><strong>UI/UX Design:</strong> Creating intuitive and engaging user interfaces that provide an exceptional user experience.</li>
-            <li><strong>App Maintenance & Support:</strong> Ongoing support and maintenance to keep your applications running smoothly and up-to-date.</li>
-            <li><strong>Performance Optimization:</strong> Ensuring your apps are fast, efficient, and optimized for the best performance across all devices.</li>
-        </ul>
-        <p>Let's work together to bring your app ideas to life and achieve your business objectives!</p>
-    </section>
-    <!-- The experience -->
-    <section id="experience"></section>
-    <h2>Experience</h2>
-        <div class="experience-content">
-            <p>I have extensive experience in state management solutions and coding architectures, which are crucial for developing scalable and maintainable mobile applications. My expertise includes:</p>
-            <ul>
-                <li><strong>State Management:</strong> Proficient in BLoC, Provider, and GetX, ensuring efficient state handling and improving app performance.</li>
-                <li><strong>Coding Architectures:</strong> Skilled in MVC, CLEAN, and MVVM, applying best practices for clean and organized codebases.</li>
-            </ul>
-          <p>These skills allow me to build robust, maintainable, and high-performance applications tailored to meet your business needs.</p>
-        </div>
-    </section>
-    <!-- The projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <button class="nav-btn left" onclick="scrollProjects('left')">&lt;</button>
-            <div class="projects-list">
-                <div class="project-item">
-                    <img src="images/mooch.png" alt="Project Image 1">
-                    <h3>Project Title 1</h3>
-                    <p><strong>Location:</strong> Location 1</p>
-                    <p>Description of Project 1. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/venvoi.png" alt="Project Image 2">
-                    <h3>Project Title 2</h3>
-                    <p><strong>Location:</strong> Location 2</p>
-                    <p>Description of Project 2. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/walking.png" alt="Project Image 3">
-                    <h3>Project Title 3</h3>
-                    <p><strong>Location:</strong> Location 3</p>
-                    <p>Description of Project 3. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/wlo.jpg" alt="Project Image 4">
-                    <h3>Project Title 4</h3>
-                    <p><strong>Location:</strong> Location 4</p>
-                    <p>Description of Project 4. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/progeny.jpg" alt="Project Image 5">
-                    <h3>Project Title 5</h3>
-                    <p><strong>Location:</strong> Location 5</p>
-                    <p>Description of Project 5. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/tailforge.jpg" alt="Project Image 6">
-                    <h3>Project Title 6</h3>
-                    <p><strong>Location:</strong> Location 6</p>
-                    <p>Description of Project 6. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/montreal.jpg" alt="Project Image 7">
-                    <h3>Project Title 7</h3>
-                    <p><strong>Location:</strong> Location 7</p>
-                    <p>Description of Project 7. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-                </div>
-            </div>
-            <button class="nav-btn right" onclick="scrollProjects('right')">&gt;</button>
-        </div>
-    </section>
-    <!-- The contact -->
-    <section id="contact">
-        <div class="contact-container">
-            <div class="contact-description">
-                <h2>Write To Me</h2>
-                <p>If you have any questions or inquiries, I would love to hear from you! Please fill out the form on the right with your details, and I'll get back to you as soon as possible. Your feedback and queries are really important to me, so don't hesitate to reach out!</p>
-            </div>
-            <form id="contact-form" action="submit_form.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Subject">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required placeholder="Your Message" rows="5"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <!-- The footer -->
-    <footer id="footer">
-        <div class="footer-content">
-            <div class="footer-columns">
-                <div class="footer-services">
-                    <h3>Services Offered</h3>
-                    <ul>
-                        <li>Mobile App Development</li>
-                        <li>UI/UX Design</li>
-                        <li>Consulting Services</li>
-                        <li>Backend Integration</li>
-                    </ul>
-                    <p>Feel free to reach out for collaboration!</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Me</h3>
-                    <p>
-                        <a href="mailto:fi.faizaalam@gmail.com" class="contact-link">fi.faizaalam@gmail.com</a><br />
-                        <a href="https://wa.me/923057778957" class="contact-link">+92 305 7778957</a>
-                    </p>
-                </div>
-                <div class="footer-social-1">
-                    <h3>Connect with Me</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/yourfacebookprofile" target="_blank" title="Facebook">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
-                            Facebook
-                        </a>
-                        <a href="https://wa.me/923057778957" target="_blank" title="WhatsApp">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png" alt="WhatsApp" />
-                            WhatsApp
-                        </a>
-                        <a href="https://www.fiverr.com/yourfiverrprofile" target="_blank" title="Fiverr">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/fiverr.png" alt="Fiverr" />
-                            Fiverr
-                        </a>
-                        <a href="https://www.upwork.com/freelancers/~yourupworkprofile" target="_blank" title="Upwork">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/upwork.png" alt="Upwork" />
-                            Upwork
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-social-2">
-                    <h3>More Connections</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/yourgithubprofile" target="_blank" title="GitHub">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" />
-                            GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank" title="LinkedIn">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" />
-                            LinkedIn
-                        </a>
-                        <a href="https://stackoverflow.com/users/yourstackoverflowprofile" target="_blank" title="Stack Overflow">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/stackoverflow.png" alt="Stack Overflow" />
-                            Stack Overflow
-                        </a>
-                        <a href="https://www.indeed.com/q-yourprofile" target="_blank" title="Indeed">
-                            <img src="https://img.icons8.com/ios-filled/30/ffffff/indeed.png" alt="Indeed" />
-                            Indeed
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2024 Flutter Developer Portfolio</p>
-        </div>
-    </footer>
+    <div id="about"></div>
+    <div id="experience"></div>
+    <div id="projects"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
 </body>
 </html>
