@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="sections/contact/contact.js" defer></script>
+    <script src="sections/projects/project.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="sections/header/header.css">
+    <link rel="stylesheet" href="sections/about/about.css">
+    <link rel="stylesheet" href="sections/experience/experience.css">
+    <link rel="stylesheet" href="sections/projects/projects.css">
+    <link rel="stylesheet" href="sections/contact/contact.css">
+    <link rel="stylesheet" href="sections/footer/footer.css">
+    <script>
+        function loadSection(section) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById(section).innerHTML = this.responseText;
+                // Enable smooth scrolling after each section is loaded
+                enableSmoothScrolling();
+            }
+            xhttp.open("GET", "sections/" + section + "/" + section + ".html", true);
+            xhttp.send();
+        }
+        window.onload = function() {
+            loadSection("header");
+            loadSection("about");
+            loadSection("experience");
+            loadSection("projects");
+            loadSection("contact");
+            loadSection("footer");
+        }
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="about"></div>
+    <div id="experience"></div>
+    <div id="projects"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+</body>
+</html>

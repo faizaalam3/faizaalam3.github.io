@@ -1,0 +1,102 @@
+/* Projects Section Styles */
+#projects {
+    padding: 60px 20px; /* Space around the projects section */
+    background-color: #f9f9f9; /* Light background for visibility */
+    margin-top: 10px; /* Space above the projects section */
+    border: 1px solid #ddd; /* Border for the section */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#projects h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark text for visibility */
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.projects-container {
+    display: flex; /* Flexbox for layout */
+    align-items: flex-start; /* Align items at the top */
+    position: relative; /* Position for navigation buttons */
+    overflow: hidden; /* Hide overflow */
+}
+
+.nav-btn {
+    background-color: #333; /* Dark button color */
+    color: white; /* White text for button */
+    border: none; /* No border */
+    padding: 10px; /* Space inside button */
+    cursor: pointer; /* Pointer on hover */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    z-index: 1; /* Bring button to the front */
+}
+
+.nav-btn.left {
+    left: 0; /* Position left button */
+}
+
+.nav-btn.right {
+    right: 0; /* Position right button */
+}
+
+.projects-list {
+    display: flex; /* Flexbox for the project items */
+    overflow-x: auto; /* Horizontal scroll for items */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+    padding: 0 40px; /* Space to prevent buttons from overlapping */
+    width: calc(100% - 80px); /* Full width minus button space */
+}
+
+.project-item {
+    min-width: 280px; /* Minimum width for project items */
+    max-width: 280px; /* Maximum width for project items */
+    margin: 0 10px; /* Space between items */
+    background-color: #fff; /* White background for items */
+    border: 1px solid #ddd; /* Border for items */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Space inside items */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.project-item img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-bottom: 15px; /* Space below images */
+}
+
+.project-item h3 {
+    font-size: 20px; /* Font size for project titles */
+    color: #333; /* Dark color for visibility */
+    margin-bottom: 10px; /* Space below titles */
+}
+
+.project-item p {
+    font-size: 16px; /* Font size for project descriptions */
+    color: #666; /* Gray color for text */
+    margin-bottom: 10px; /* Space below descriptions */
+}
+
+.project-item p strong {
+    color: #333; /* Strong text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #projects {
+        padding: 40px 10px; /* Reduce padding on mobile */
+    }
+
+    .projects-list {
+        padding: 0 20px; /* Adjust padding on mobile */
+    }
+
+    .project-item {
+        min-width: 100%; /* Full width for items on mobile */
+        max-width: 100%; /* Full width for items on mobile */
+    }
+}

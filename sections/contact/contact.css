@@ -1,0 +1,124 @@
+/* Contact Section Styles */
+#contact {
+    padding: 40px 20px; /* Reduced padding for mobile view */
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+#contact h2 {
+    text-align: center;
+    color: #333;
+    font-size: 26px; /* Increased font size for better visibility */
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for mobile responsiveness */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contact-description {
+    flex: 1;
+    padding-right: 20px; /* Space between description and form */
+    text-align: center; /* Center align the description text */
+}
+
+.contact-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5; /* Improved line spacing for readability */
+}
+
+
+/* Responsive Styles */
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    align-self: stretch;
+    text-align: start;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ensure full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #contact {
+        padding: 30px 15px; /* Adjusted padding for mobile */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack elements on smaller screens */
+        align-items: center;
+    }
+
+    .contact-description {
+        padding-right: 0; /* Remove right padding on mobile */
+        margin-bottom: 20px; /* Add spacing below description */
+    }
+
+    #contact h2 {
+        font-size: 24px; /* Slightly smaller font size for mobile */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .submit-btn {
+        font-size: 14px; /* Smaller button font size */
+        padding: 8px; /* Adjust button padding */
+    }
+}

@@ -1,0 +1,113 @@
+/* Footer Styles */
+#footer {
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* White text color for visibility */
+    padding: 30px 0; /* Increased padding for more space */
+    text-align: center; /* Center text alignment */
+    margin-top: -10px; /* Pull the footer up if there's extra space */
+    overflow: hidden; /* Ensure nothing overflows */
+}
+
+.footer-content {
+    max-width: 1200px; /* Restrict the width for better layout */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.footer-columns {
+    display: flex; /* Use flexbox for four columns */
+    justify-content: space-between; /* Space out the columns evenly */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-services,
+.footer-contact,
+.footer-social-1,
+.footer-social-2 {
+    flex: 1; /* Allow columns to grow equally */
+    margin: 20px; /* Add margin between columns */
+    text-align: left; /* Left-align the content */
+}
+
+.footer-services ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.footer-services li {
+    margin: 5px 0; /* Space between service items */
+}
+
+.footer-content h3 {
+    margin-bottom: 10px; /* Space between heading and content */
+    font-size: 20px; /* Increased heading font size */
+}
+
+.contact-link {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #ffa500; /* Change color on hover for email and phone */
+}
+
+.social-links {
+    margin-top: 10px; /* Add space above the social icons */
+}
+
+.social-links a {
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Center align items vertically */
+    margin: 10px 0; /* Space between links */
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-links a img {
+    width: 30px; /* Smaller size for icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.social-links a:hover {
+    color: #ffa500; /* Change color on hover for social links */
+}
+
+.copyright {
+    margin-top: 20px; /* Space above copyright text */
+    font-size: 14px; /* Smaller font size for copyright */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column; /* Stack columns on mobile */
+        align-items: center; /* Center align items */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+
+    .footer-services,
+    .footer-contact,
+    .footer-social-1,
+    .footer-social-2 {
+        margin: 10px 0; /* Space out stacked columns */
+        width: 100%; /* Make columns full width */
+    }
+
+    .footer-content h3 {
+        font-size: 18px; /* Slightly smaller font size for mobile */
+    }
+
+    .social-links a img {
+        width: 25px; /* Smaller icons for mobile */
+    }
+
+    .copyright {
+        font-size: 12px; /* Smaller font size for copyright on mobile */
+    }
+}

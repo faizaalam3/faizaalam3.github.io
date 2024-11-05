@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #333; /* Navbar background */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Stick to top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* On top of other content */
+}
+
+#navbar ul {
+    list-style-type: none; /* No bullets */
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center items */
+    padding: 0; /* No padding */
+}
+
+#navbar li {
+    padding: 14px 20px; /* Space around each item */
+}
+
+#navbar a {
+    color: white; /* White text */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display */
+}
+
+#navbar a:hover {
+    background-color: #ddd; /* Hover background */
+    color: black; /* Hover text color */
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px; /* Space around sections */
+    text-align: center; /* Center text */
+}
+
+#about,
+#experience,
+#projects,
+#contact,
+#footer {
+    background-color: #f4f4f4; /* Section background color */
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+    content: "";
+    clear: both; /* Clear floats */
+    display: table; /* Trigger a new block formatting context */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 10px; /* Adjust padding for mobile */
+    }
+
+    #navbar li {
+        padding: 10px 15px; /* Reduced padding for navbar items */
+    }
+}
