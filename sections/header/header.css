@@ -1,7 +1,7 @@
 /* Header Styles */
 header {
     position: relative;
-    height: 70vh; /* Set height for web */
+    height: 70vh; /* Set height for desktop */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -11,77 +11,17 @@ header {
     color: white;
 }
 
-.slider {
-    height: 100%; /* Full height for the slider */
+.image-container {
+    height: 100%; /* Full height */
     width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    height: 100%; /* Full height for slides */
-    width: 300%; /* Adjust based on the number of slides */
-    transition: transform 1s ease;
-}
-
-.slide {
-    flex: 1;
-    background-size: contain; /* Ensure background image fits within the slide */
+    background-size: contain; /* Ensure background image covers the container */
     background-position: center;
     background-repeat: no-repeat; /* Prevent the background image from repeating */
-    position: relative; /* Position relative for child elements */
-}
-
-.slide-content {
-    position: absolute; /* Position absolutely within slide */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center */
-    font-size: 2em; /* Size of the text */
-    font-weight: bold; /* Bold text */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional shadow for better visibility */
-}
-
-.navigation {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active, .dot:hover {
-    background-color: #717171;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
         height: 40vh; /* Reduced height for mobile */
-        padding: 20px; /* Add padding for small screens */
-    }
-
-    .slides {
-        width: 100%; /* Full width for mobile */
-    }
-
-    .dot {
-        height: 10px;
-        width: 10px;
-    }
-
-    .slide-content {
-        font-size: 1.5em; /* Smaller text for mobile */
     }
 }
