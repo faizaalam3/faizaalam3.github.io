@@ -39,7 +39,7 @@ const createProjectTile = (projectData) => {
     linkButtonsContainer.classList.add('link-buttons-container');
 
     // Add Private button if driveLink exists
-    if (!projectData.iosLink && !projectData.androidLink.trim()!="") {
+    if (!projectData.iosLink && !projectData.androidLink) {
         const driveButton = document.createElement('button');
         driveButton.classList.add('drive-button');
         driveButton.textContent = 'Private App';
