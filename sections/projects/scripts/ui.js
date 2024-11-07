@@ -1,85 +1,91 @@
-// ui.js
-
 // Function to create a project tile
 const createProjectTile = (projectData) => {
     const projectTile = document.createElement('div');
     projectTile.classList.add('project-tile');
 
-    const projectImage = document.createElement('img');
-    projectImage.src = projectData.image;
-    projectImage.alt = projectData.title;
+    const contentContainer = document.createElement('div');
+    contentContainer.classList.add('content-container');
 
-    const projectTitle = document.createElement('h3');
+    const projectTitle = document.createElement('h2');
     projectTitle.textContent = projectData.title;
 
-    const projectWorkPlace = document.createElement('p');
-    projectWorkPlace.textContent = `Working Place: ${projectData.workingPlace}`;
+    const projectLocation = document.createElement('p');
+    projectLocation.classList.add('project-location');
+    projectLocation.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${projectData.workingPlace}`;
 
-    const projectWorkType = document.createElement('p');
-    projectWorkType.textContent = `Working Type: ${projectData.workingType}`;
+    const tagsContainer = document.createElement('div');
+    tagsContainer.classList.add('tags-container');
+
+    projectData.technology.forEach(tech => {
+        const tag = document.createElement('span');
+        tag.classList.add('tag');
+        tag.textContent = tech;
+        tagsContainer.appendChild(tag);
+    });
 
     const projectDescription = document.createElement('p');
-    projectDescription.textContent = projectData.description;
     projectDescription.classList.add('project-description');
+    projectDescription.textContent = projectData.description;
 
-    const seeMoreLink = document.createElement('a');
-    seeMoreLink.href = '#';
-    seeMoreLink.textContent = 'See More';
-    seeMoreLink.classList.add('see-more-link');
-    seeMoreLink.addEventListener('click', (e) => {
-        e.preventDefault();
+    const readMoreLink = document.createElement('span');
+    readMoreLink.classList.add('read-more-link');
+    readMoreLink.textContent = 'Read More...';
+    readMoreLink.addEventListener('click', () => {
         showProjectDialog(projectData);
     });
 
-    const projectLinks = document.createElement('div');
-    projectLinks.classList.add('project-links');
+    // Container for links (Android, iOS, Drive)
+    const linkButtonsContainer = document.createElement('div');
+    linkButtonsContainer.classList.add('link-buttons-container');
 
-    // Add Android, iOS, and Google Drive links if they exist
-    if (projectData.androidLink) {
-        const androidLink = document.createElement('a');
-        androidLink.href = projectData.androidLink;
-        androidLink.innerHTML = '<i class="fab fa-android"></i> Android';
-        androidLink.target = '_blank';
-        androidLink.classList.add('project-button');
-        projectLinks.appendChild(androidLink);
+    // Add Private button if driveLink exists
+    if (!projectData.iosLink && !projectData.androidLink.trim()!="") {
+        const driveButton = document.createElement('button');
+        driveButton.classList.add('drive-button');
+        driveButton.textContent = 'Private App';
+        linkButtonsContainer.appendChild(driveButton);
     }
 
+    // Add iOS button if iosLink exists
     if (projectData.iosLink) {
-        const iosLink = document.createElement('a');
-        iosLink.href = projectData.iosLink;
-        iosLink.innerHTML = '<i class="fab fa-apple"></i> iOS';
-        iosLink.target = '_blank';
-        iosLink.classList.add('project-button');
-        projectLinks.appendChild(iosLink);
+        if(projectData.iosLink.trim()!=""){
+            const iosButton = document.createElement('button');
+            iosButton.classList.add('ios-button');
+            iosButton.textContent = 'iOS';
+            iosButton.onclick = () => {
+            window.open(projectData.iosLink, '_blank');
+            };
+            linkButtonsContainer.appendChild(iosButton);
+        }
     }
 
-    if (projectData.driveLink) {
-        const googleDriveLink = document.createElement('a');
-        googleDriveLink.href = projectData.driveLink;
-        googleDriveLink.innerHTML = '<i class="fab fa-google-drive"></i> Google Drive';
-        googleDriveLink.target = '_blank';
-        googleDriveLink.classList.add('project-button');
-        projectLinks.appendChild(googleDriveLink);
+    // Add Android button if androidLink exists
+    if (projectData.androidLink) {
+        if(projectData.androidLink!=""){
+            const androidButton = document.createElement('button');
+            androidButton.classList.add('android-button');
+            androidButton.textContent = 'Android';
+            androidButton.onclick = () => {
+            window.open(projectData.androidLink, '_blank');
+            };
+            linkButtonsContainer.appendChild(androidButton);
+        }
     }
 
-    const technologyContainer = document.createElement('div');
-    technologyContainer.classList.add('technology-container');
+    contentContainer.appendChild(projectTitle);
+    contentContainer.appendChild(projectLocation);
+    contentContainer.appendChild(tagsContainer);
+    contentContainer.appendChild(projectDescription);
+    contentContainer.appendChild(readMoreLink);
+    contentContainer.appendChild(linkButtonsContainer);
 
-    projectData.technology.forEach(tech => {
-        const techChip = document.createElement('span');
-        techChip.textContent = tech;
-        techChip.classList.add('tech-chip');
-        technologyContainer.appendChild(techChip);
-    });
+    const projectImage = document.createElement('img');
+    projectImage.src = projectData.image;
+    projectImage.alt = projectData.title;
+    projectImage.classList.add('project-image');
 
+    projectTile.appendChild(contentContainer);
     projectTile.appendChild(projectImage);
-    projectTile.appendChild(projectTitle);
-    projectTile.appendChild(projectWorkPlace);
-    projectTile.appendChild(projectWorkType);
-    projectTile.appendChild(projectDescription);
-    projectTile.appendChild(seeMoreLink);
-    projectTile.appendChild(technologyContainer);
-    projectTile.appendChild(projectLinks);
 
     return projectTile;
 };
@@ -99,73 +105,18 @@ const showProjectDialog = (projectData) => {
         dialog.remove();
     });
 
-    const projectImage = document.createElement('img');
-    projectImage.src = projectData.image;
-    projectImage.alt = projectData.title;
-
     const projectTitle = document.createElement('h3');
     projectTitle.textContent = projectData.title;
-
-    const projectWorkPlace = document.createElement('p');
-    projectWorkPlace.textContent = `Working Place: ${projectData.workingPlace}`;
-
-    const projectWorkType = document.createElement('p');
-    projectWorkType.textContent = `Working Type: ${projectData.workingType}`;
 
     const projectDescription = document.createElement('p');
     projectDescription.textContent = projectData.description;
 
-    const projectLinks = document.createElement('div');
-    projectLinks.classList.add('project-links');
-
-    if (projectData.androidLink) {
-        const androidLink = document.createElement('a');
-        androidLink.href = projectData.androidLink;
-        androidLink.innerHTML = '<i class="fab fa-android"></i> Android';
-        androidLink.target = '_blank';
-        androidLink.classList.add('project-button');
-        projectLinks.appendChild(androidLink);
-    }
-
-    if (projectData.iosLink) {
-        const iosLink = document.createElement('a');
-        iosLink.href = projectData.iosLink;
-        iosLink.innerHTML = '<i class="fab fa-apple"></i> iOS';
-        iosLink.target = '_blank';
-        iosLink.classList.add('project-button');
-        projectLinks.appendChild(iosLink);
-    }
-
-    if (projectData.driveLink) {
-        const googleDriveLink = document.createElement('a');
-        googleDriveLink.href = projectData.driveLink;
-        googleDriveLink.innerHTML = '<i class="fab fa-google-drive"></i> Google Drive';
-        googleDriveLink.target = '_blank';
-        googleDriveLink.classList.add('project-button');
-        projectLinks.appendChild(googleDriveLink);
-    }
-
-    const technologyContainer = document.createElement('div');
-    technologyContainer.classList.add('technology-container');
-
-    projectData.technology.forEach(tech => {
-        const techChip = document.createElement('span');
-        techChip.textContent = tech;
-        techChip.classList.add('tech-chip');
-        technologyContainer.appendChild(techChip);
-    });
-
     dialogContent.appendChild(closeButton);
-    dialogContent.appendChild(projectImage);
     dialogContent.appendChild(projectTitle);
-    dialogContent.appendChild(projectWorkPlace);
-    dialogContent.appendChild(projectWorkType);
     dialogContent.appendChild(projectDescription);
-    dialogContent.appendChild(technologyContainer);
-    dialogContent.appendChild(projectLinks);
     dialog.appendChild(dialogContent);
 
     document.body.appendChild(dialog);
 };
 
-export { createProjectTile, showProjectDialog };  // Export functions for use in other files
+export { createProjectTile, showProjectDialog };
