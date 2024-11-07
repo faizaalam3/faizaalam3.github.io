@@ -6,15 +6,23 @@
     <link rel="icon" type="image/jpg" href="images/favico.jpg">
     <title>Flutter Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Defer contact and project scripts -->
     <script src="sections/contact/contact.js" defer></script>
-    <script src="sections/projects/project.js" defer></script>
+    <script src="sections/projects/app.js" defer></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="sections/projects/project-styles.css">
+    <script type="module" src="sections/projects/app.js"></script>
+
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="sections/header/header.css">
     <link rel="stylesheet" href="sections/about/about.css">
     <link rel="stylesheet" href="sections/experience/experience.css">
     <link rel="stylesheet" href="sections/projects/projects.css">
     <link rel="stylesheet" href="sections/contact/contact.css">
     <link rel="stylesheet" href="sections/footer/footer.css">
+
     <script>
         function loadSection(section) {
             const xhttp = new XMLHttpRequest();
