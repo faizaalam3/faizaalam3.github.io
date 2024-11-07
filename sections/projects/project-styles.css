@@ -1,0 +1,82 @@
+/* Dark Mode Button Styling */
+#projects .scroll-btn {
+    background-color: #333; /* Dark background color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#projects .scroll-btn:hover {
+    background-color: #555; /* Slightly lighter shade for hover effect */
+}
+
+/* Rest of your styles remain unchanged */
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#projects .project-gallery {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+#projects .project-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+#projects .project-tile {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects .project-tile img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#projects .project-tile h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#projects .project-tile p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+#projects .project-tile .links {
+    margin-top: 10px;
+}
+
+#projects .project-tile .links a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 5px;
+}
+
+#projects .project-tile .links a:hover {
+    text-decoration: underline;
+}
