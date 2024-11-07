@@ -1,102 +1,150 @@
-/* Projects Section Styles */
+/* Dark Mode Button Styling */
+#projects .scroll-btn {
+    background-color: #333; /* Dark background color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#projects .scroll-btn:hover {
+    background-color: #555; /* Slightly lighter shade for hover effect */
+}
+
+/* Rest of your styles remain unchanged */
 #projects {
-    padding: 60px 20px; /* Space around the projects section */
-    background-color: #f9f9f9; /* Light background for visibility */
-    margin-top: 10px; /* Space above the projects section */
-    border: 1px solid #ddd; /* Border for the section */
-    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-#projects h2 {
-    text-align: center; /* Center the heading */
-    color: #333; /* Dark text for visibility */
-    font-size: 24px; /* Increased font size */
-    margin-bottom: 20px; /* Space below the heading */
+#projects .project-gallery {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
 }
 
-.projects-container {
-    display: flex; /* Flexbox for layout */
-    align-items: flex-start; /* Align items at the top */
-    position: relative; /* Position for navigation buttons */
-    overflow: hidden; /* Hide overflow */
+#projects .project-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
 }
 
-.nav-btn {
-    background-color: #333; /* Dark button color */
-    color: white; /* White text for button */
-    border: none; /* No border */
-    padding: 10px; /* Space inside button */
-    cursor: pointer; /* Pointer on hover */
-    position: absolute; /* Absolute positioning */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    z-index: 1; /* Bring button to the front */
+#projects .project-tile {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-btn.left {
-    left: 0; /* Position left button */
+#projects .project-tile img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.nav-btn.right {
-    right: 0; /* Position right button */
+#projects .project-tile h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
 }
 
-.projects-list {
-    display: flex; /* Flexbox for the project items */
-    overflow-x: auto; /* Horizontal scroll for items */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
-    padding: 0 40px; /* Space to prevent buttons from overlapping */
-    width: calc(100% - 80px); /* Full width minus button space */
+#projects .project-tile p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
 }
 
-.project-item {
-    min-width: 280px; /* Minimum width for project items */
-    max-width: 280px; /* Maximum width for project items */
-    margin: 0 10px; /* Space between items */
-    background-color: #fff; /* White background for items */
-    border: 1px solid #ddd; /* Border for items */
-    border-radius: 5px; /* Rounded corners */
-    padding: 20px; /* Space inside items */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    flex-shrink: 0; /* Prevent items from shrinking */
+#projects .project-tile .project-description {
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.project-item img {
-    width: 100%; /* Full width for images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for images */
-    margin-bottom: 15px; /* Space below images */
+#projects .project-tile .see-more-link {
+    color: #007bff;
+    cursor: pointer;
 }
 
-.project-item h3 {
-    font-size: 20px; /* Font size for project titles */
-    color: #333; /* Dark color for visibility */
-    margin-bottom: 10px; /* Space below titles */
+#projects .project-tile .project-links {
+    margin-top: 10px;
 }
 
-.project-item p {
-    font-size: 16px; /* Font size for project descriptions */
-    color: #666; /* Gray color for text */
-    margin-bottom: 10px; /* Space below descriptions */
+#projects .project-tile .project-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.project-item p strong {
-    color: #333; /* Strong text color */
+#projects .project-tile .project-button:hover {
+    background-color: #0056b3;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    #projects {
-        padding: 40px 10px; /* Reduce padding on mobile */
-    }
+#projects .technology-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
 
-    .projects-list {
-        padding: 0 20px; /* Adjust padding on mobile */
-    }
+#projects .tech-chip {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
 
-    .project-item {
-        min-width: 100%; /* Full width for items on mobile */
-        max-width: 100%; /* Full width for items on mobile */
-    }
+/* Dialog styles */
+.project-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.project-dialog-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.project-dialog-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.project-dialog-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }

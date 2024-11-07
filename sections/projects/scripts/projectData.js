@@ -1,7 +1,7 @@
 // projectData.js
 import { db } from './firebase.js';
-import { collection, query, getDocs, where } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 import { createProjectTile } from './ui.js';
+import { collection, query, getDocs, where } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
 const fetchProjects = async () => {
     try {
@@ -17,7 +17,7 @@ const fetchProjects = async () => {
             const projectData = doc.data();
             const projectTile = createProjectTile(projectData);
             projectContainer.appendChild(projectTile);
-        });
+        }); 
     } catch (error) {
         console.error("Error fetching projects:", error);
     }
