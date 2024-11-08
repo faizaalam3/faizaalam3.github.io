@@ -1,61 +1,11 @@
+<!-- projects.html -->
 <section id="projects">
     <h2>Projects</h2>
     <div class="project-gallery">
-        <button id="scroll-left" class="scroll-btn">&lt;</button>
+        <button id="prev-project" class="scroll-btn" onclick="showPreviousProject()"> &lt; </button>
         <div id="project-container" class="project-container"></div>
-        <button id="scroll-right" class="scroll-btn">&gt;</button>
+        <button id="next-project" class="scroll-btn" onclick="showNextProject()"> &gt; </button>
     </div>    
 </section>
 
-
-<!-- <section id="projects">
-    <h2>Projects</h2> -->
-    <!-- <div class="projects-container">
-        <button class="nav-btn left" onclick="scrollProjects('left')">&lt;</button>
-        <div class="projects-list">
-            <div class="project-item">
-                <img src="images/mooch.png" alt="Project Image 1">
-                <h3>Project Title 1</h3>
-                <p><strong>Location:</strong> Location 1</p>
-                <p>Description of Project 1. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/venvoi.png" alt="Project Image 2">
-                <h3>Project Title 2</h3>
-                <p><strong>Location:</strong> Location 2</p>
-                <p>Description of Project 2. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/walking.png" alt="Project Image 3">
-                <h3>Project Title 3</h3>
-                <p><strong>Location:</strong> Location 3</p>
-                <p>Description of Project 3. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/wlo.jpg" alt="Project Image 4">
-                <h3>Project Title 4</h3>
-                <p><strong>Location:</strong> Location 4</p>
-                <p>Description of Project 4. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/progeny.jpg" alt="Project Image 5">
-                <h3>Project Title 5</h3>
-                <p><strong>Location:</strong> Location 5</p>
-                <p>Description of Project 5. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/tailforge.jpg" alt="Project Image 6">
-                <h3>Project Title 6</h3>
-                <p><strong>Location:</strong> Location 6</p>
-                <p>Description of Project 6. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-            <div class="project-item">
-                <img src="images/montreal.jpg" alt="Project Image 7">
-                <h3>Project Title 7</h3>
-                <p><strong>Location:</strong> Location 7</p>
-                <p>Description of Project 7. This project involves the integration of Google Maps, third-party authentications, augmented reality, and various other Flutter packages to create innovative applications.</p>
-            </div>
-        </div>
-        <button class="nav-btn right" onclick="scrollProjects('right')">&gt;</button>
-    </div> -->
-<!-- </section> -->
+<script type="module" src="./scripts/project.js"></script>

@@ -1,19 +1,60 @@
-// app.js
-import { fetchProjects } from './projectData.js';
+import { db } from './firebase.js';
+import { createProjectTile } from './ui.js';
+import { collection, query, getDocs, where } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollLeftBtn = document.getElementById('scroll-left');
-    const scrollRightBtn = document.getElementById('scroll-right');
-    const projectContainer = document.getElementById('project-container');
-    if (scrollLeftBtn && scrollRightBtn && projectContainer) {
-        scrollLeftBtn.addEventListener('click', () => {
-            projectContainer.scrollBy({ left: -300, behavior: 'smooth' });
+let projects = [];
+let currentIndex = 0;
+
+const fetchProjects = async () => {
+    try {
+        const q = query(collection(db, "projects"), where("isActive", "==", true));
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+            console.log("No projects found.");
+            return;
+        }
+        querySnapshot.forEach((doc) => {
+            projects.push(doc.data());
         });
-        scrollRightBtn.addEventListener('click', () => {
-            projectContainer.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-    } else {
-        console.error('One or more elements not found!');
+        console.log('Projects fetched:', projects);
+        displayProject(currentIndex);
+
+    } catch (error) {
+        console.error("Error fetching projects:", error);
     }
+};
+
+const displayProject = (index) => {
+    const projectContainer = document.getElementById('project-container');
+    projectContainer.innerHTML = ''; // Clear the container
+    if (projects.length > 0) {
+        console.log("displayProject is called for index ");
+        console.log(index);
+        const projectData = projects[index];
+        const projectTile = createProjectTile(projectData);
+        projectContainer.appendChild(projectTile);
+    }
+};
+
+const showNextProject = () => {
+    console.log("Tapped on next button");
+    if (currentIndex < projects.length - 1) {
+        currentIndex++;
+        console.log('Next button clicked, currentIndex:', currentIndex);
+        displayProject(currentIndex);
+    }
+};
+
+const showPreviousProject = () => {
+    console.log("Tapped on previous button");
+    if (currentIndex > 0) {
+        currentIndex--;
+        console.log('Previous button clicked, currentIndex:', currentIndex);
+        displayProject(currentIndex);
+    }
+};
+document.addEventListener('DOMContentLoaded', () => {
     fetchProjects();
+    window.showNextProject = showNextProject;
+    window.showPreviousProject = showPreviousProject;
 });

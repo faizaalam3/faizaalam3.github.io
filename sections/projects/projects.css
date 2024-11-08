@@ -9,10 +9,9 @@
 
 #project-container {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    align-items: start;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .project-tile {
@@ -21,9 +20,8 @@
     color: #e5e5e5;
     padding: 20px;
     margin: 0 10px;
-    width: 1200px;
+    width: 80%; /* Adjust as needed */
     height: 500px; /* Fixed height for uniformity */
-    flex-shrink: 0;
     display: flex;
     justify-content: space-between; /* Create space for two columns */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -108,7 +106,7 @@ button:hover {
 }
 
 .android-button:hover {
-    background-color: #2a9a56;
+    background-color: #2dbd6e; /* Darker green on hover */
 }
 
 .ios-button {
@@ -116,143 +114,66 @@ button:hover {
 }
 
 .ios-button:hover {
-    background-color: #005bb5;
+    background-color: #005bb5; /* Darker blue on hover */
 }
 
 .drive-button {
-    background-color: #fbc02d; /* Yellow for Drive */
+    background-color: #444; /* Dark grey for private app */
 }
 
 .drive-button:hover {
-    background-color: #f4b400;
-}
-
-.private-button {
-    background-color: #333;
-    color: #ffffff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.private-button:hover {
-    background-color: #555555;
-}
-
-.project-image {
-    width: 38%; /* Image width */
-    height: 100%;
-    border-radius: 10px;
-    object-fit: contain;
-    align-self: flex-start; /* Align image to top-center */
-    transition: transform 0.3s ease;
-}
-
-.project-tile:hover .project-image {
-    transform: scale(1.05);
+    background-color: #555; /* Slightly lighter grey on hover */
 }
 
 .scroll-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
+    background-color: #f8f8f8;  /* Light grey background for a classic feel */
+    color: #333;  /* Darker text color for contrast */
+    border: 1px solid #ccc;  /* Light border to define the button */
+    padding: 12px 18px;  /* Slightly larger padding for a more traditional button feel */
     cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 50%;
-    margin: 0 5px;
+    border-radius: 4px;  /* Rounded corners for a soft, classic look */
+    font-size: 1.2em;  /* Slightly smaller font for subtle elegance */
+    text-align: center;
+    transition: all 0.3s ease;  /* Smooth transition for all effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow to lift the button */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Button hover effect */
+.scroll-btn:hover {
+    background-color: #e0e0e0;  /* Slightly darker grey background on hover */
+    border-color: #999;  /* Darker border on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
+}
+
+/* Button focus effect (when tabbing or focused by keyboard) */
+.scroll-btn:focus {
+    outline: none;  /* Remove default outline */
+    border-color: #666;  /* Border color when focused */
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);  /* Soft blue focus ring for accessibility */
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
     .project-tile {
-        width: 100%; /* Make tiles full width on small screens */
-        height: auto; /* Adjust height accordingly */
-        flex-direction: column; /* Stack content and image */
-        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
     }
 
     .content-container {
-        flex: 1;
-        padding-right: 0; /* Remove right padding */
+        padding-right: 0;
+        align-items: center;
     }
 
-    .project-image {
-        width: 100%; /* Image will take up full width */
-        height: auto;
-        align-self: center; /* Center the image */
+    .project-tile h2,
+    .project-tile .project-location,
+    .project-description {
+        text-align: center;
     }
 
     .link-buttons-container {
-        flex-direction: row; /* Align buttons in a row */
-        flex-wrap: wrap; /* Allow buttons to wrap */
-        gap: 10px;
-        margin-bottom: 20px; /* Ensure margin at bottom */
-    }
-
-    .project-tile h2 {
-        font-size: 1.2em; /* Smaller title size */
-    }
-
-    .project-tile .project-location {
-        font-size: 0.8em; /* Smaller location text */
-    }
-
-    .tags-container {
-        display: grid; /* Use grid layout for tags */
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 5px;
-    }
-
-    .tag {
-        font-size: 0.7em; /* Smaller tag size */
-    }
-
-    .project-description {
-        font-size: 0.9em; /* Smaller description */
-    }
-
-    button {
-        font-size: 0.9em; /* Adjust button font size */
-        padding: 8px 16px; /* Adjust button padding */
-    }
-}
-
-/* Extra small screen (mobile-first) adjustments */
-@media (max-width: 480px) {
-    .project-tile {
-        padding: 10px; /* Reduce padding on small screens */
-    }
-
-    .project-tile h2 {
-        font-size: 1.1em; /* Adjust title size further */
-    }
-
-    .project-tile .project-location {
-        font-size: 0.7em; /* Adjust location font size */
-    }
-
-    .project-description {
-        font-size: 0.85em; /* Reduce description font size */
-    }
-
-    .project-image {
-        width: 100%; /* Ensure image is responsive */
-        height: auto;
-    }
-
-    .link-buttons-container {
-        flex-direction: row; /* Align buttons in a row */
-        flex-wrap: wrap; /* Allow buttons to wrap */
-        gap: 10px;
-        justify-content: center; /* Center buttons */
-    }
-
-    button {
-        font-size: 0.8em; /* Even smaller font for buttons */
-        padding: 6px 12px;
+        justify-content: center;
     }
 }

@@ -1,4 +1,4 @@
-// Function to create a project tile
+// ui.js
 const createProjectTile = (projectData) => {
     const projectTile = document.createElement('div');
     projectTile.classList.add('project-tile');
@@ -25,7 +25,19 @@ const createProjectTile = (projectData) => {
 
     const projectDescription = document.createElement('p');
     projectDescription.classList.add('project-description');
-    projectDescription.textContent = projectData.description;
+    const maxDescriptionLength = 500; // Adjust this value as needed
+    if (projectData.description.length > maxDescriptionLength) {
+        projectDescription.textContent = projectData.description.substring(0, maxDescriptionLength) + '... ';
+        const readMoreBtn = document.createElement('button');
+        readMoreBtn.classList.add('read-more-button');
+        readMoreBtn.textContent = 'Read More';
+        readMoreBtn.onclick = () => {
+            alert(projectData.description);
+        };
+        projectDescription.appendChild(readMoreBtn);
+    } else {
+        projectDescription.textContent = projectData.description;
+    }
 
     // Container for links (Android, iOS, Drive)
     const linkButtonsContainer = document.createElement('div');
@@ -36,21 +48,22 @@ const createProjectTile = (projectData) => {
         const driveButton = document.createElement('button');
         driveButton.classList.add('drive-button');
         driveButton.textContent = 'Private App';
-        if(projectData.driveLink){
-        driveButton.onclick=()=>{
-            window.open(projectData.driveLink,'_blank');
-        };}
+        if (projectData.driveLink) {
+            driveButton.onclick = () => {
+                window.open(projectData.driveLink, '_blank');
+            };
+        }
         linkButtonsContainer.appendChild(driveButton);
     }
 
     // Add iOS button if iosLink exists
     if (projectData.iosLink) {
-        if(projectData.iosLink.trim()!=""){
+        if (projectData.iosLink.trim() != "") {
             const iosButton = document.createElement('button');
             iosButton.classList.add('ios-button');
             iosButton.textContent = 'iOS';
             iosButton.onclick = () => {
-            window.open(projectData.iosLink, '_blank');
+                window.open(projectData.iosLink, '_blank');
             };
             linkButtonsContainer.appendChild(iosButton);
         }
@@ -58,12 +71,12 @@ const createProjectTile = (projectData) => {
 
     // Add Android button if androidLink exists
     if (projectData.androidLink) {
-        if(projectData.androidLink!=""){
+        if (projectData.androidLink != "") {
             const androidButton = document.createElement('button');
             androidButton.classList.add('android-button');
             androidButton.textContent = 'Android';
             androidButton.onclick = () => {
-            window.open(projectData.androidLink, '_blank');
+                window.open(projectData.androidLink, '_blank');
             };
             linkButtonsContainer.appendChild(androidButton);
         }
@@ -85,4 +98,5 @@ const createProjectTile = (projectData) => {
 
     return projectTile;
 };
-export {createProjectTile}
+
+export { createProjectTile };
