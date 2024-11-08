@@ -26,18 +26,21 @@ const createProjectTile = (projectData) => {
     const projectDescription = document.createElement('p');
     projectDescription.classList.add('project-description');
     const maxDescriptionLength = 500; // Adjust this value as needed
-    if (projectData.description.length > maxDescriptionLength) {
-        projectDescription.textContent = projectData.description.substring(0, maxDescriptionLength) + '... ';
-        const readMoreBtn = document.createElement('button');
-        readMoreBtn.classList.add('read-more-button');
-        readMoreBtn.textContent = 'Read More';
-        readMoreBtn.onclick = () => {
-            alert(projectData.description);
-        };
-        projectDescription.appendChild(readMoreBtn);
-    } else {
-        projectDescription.textContent = projectData.description;
-    }
+    // Inside your existing JavaScript
+if (projectData.description.length > maxDescriptionLength) {
+    projectDescription.textContent = projectData.description.substring(0, maxDescriptionLength) + '... ';
+    const readMoreLink = document.createElement('span');
+    readMoreLink.classList.add('read-more-button');
+    readMoreLink.textContent = 'Read More';
+    readMoreLink.onclick = () => {
+        alert(projectData.description);
+    };
+    
+    projectDescription.appendChild(readMoreLink); // Append Read More text
+} else {
+    projectDescription.textContent = projectData.description;
+}
+
 
     // Container for links (Android, iOS, Drive)
     const linkButtonsContainer = document.createElement('div');

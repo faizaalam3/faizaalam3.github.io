@@ -1,179 +1,209 @@
 /* Default (desktop-first) styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
 .project-gallery {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    padding: 20px;
+    padding: 50px 30px;
+    background-color: #f0f0f0;
+    gap: 50px;
 }
 
-#project-container {
+.project-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-.project-tile {
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    color: #e5e5e5;
+    max-width: 1200px;
     padding: 20px;
-    margin: 0 10px;
-    width: 80%; /* Adjust as needed */
-    height: 500px; /* Fixed height for uniformity */
-    display: flex;
-    justify-content: space-between; /* Create space for two columns */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-.project-tile:hover {
+.project-container:hover {
     transform: translateY(-5px);
+}
+
+.project-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-container:hover .project-image {
+    transform: scale(1.05);
 }
 
 .content-container {
     flex: 1;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
-    padding-right: 30px;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: center;
 }
 
-.project-tile h2 {
-    font-size: 1.5em;
-    color: #ffffff;
-    text-align: left; /* Align title to the left */
+.project-container h2 {
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    color: #222222;
+    margin-bottom: 10px;
 }
 
-.project-tile .project-location {
-    font-size: 0.9em;
-    color: #888888;
+.project-location {
+    font-size: 1em;
+    color: #777777;
     margin: 5px 0;
-    text-align: left; /* Align location to the left */
 }
 
 .tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin: 10px 0;
+    gap: 8px;
+    margin: 15px 0;
 }
 
 .tag {
-    background-color: #444444;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8em;
+    background-color: #e5e5e5;
+    color: #333333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-family: 'Georgia', serif;
 }
 
 .project-description {
     margin-top: 10px;
-    color: #cccccc;
-    font-size: 1em;
-    text-align: justify; /* Justify the text */
-}
-
-.spacer {
-    flex-grow: 1; /* Pushes the link buttons to the bottom */
+    color: #666666;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 .link-buttons-container {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-/* General button styles */
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
+/* Button styles */
+button, .text-button {
+    background-color: #444;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: 2px solid transparent;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline for button links */
 }
 
-button:hover {
+button:hover, .text-button:hover {
     background-color: #555;
+    border-color: #ddd;
 }
 
 .android-button {
-    background-color: #3ddc84; /* Green for Android */
+    background-color: #3ddc84;
+    border-color: #3ddc84;
 }
 
 .android-button:hover {
-    background-color: #2dbd6e; /* Darker green on hover */
+    background-color: #2dbd6e;
+    border-color: #2dbd6e;
 }
 
 .ios-button {
-    background-color: #007aff; /* Blue for iOS */
+    background-color: #007aff;
+    border-color: #007aff;
 }
 
 .ios-button:hover {
-    background-color: #005bb5; /* Darker blue on hover */
+    background-color: #005bb5;
+    border-color: #005bb5;
 }
 
 .drive-button {
-    background-color: #444; /* Dark grey for private app */
+    background-color: #444;
+    border-color: #444;
 }
 
 .drive-button:hover {
-    background-color: #555; /* Slightly lighter grey on hover */
+    background-color: #555;
+    border-color: #555;
 }
 
-.scroll-btn {
-    background-color: #f8f8f8;  /* Light grey background for a classic feel */
-    color: #333;  /* Darker text color for contrast */
-    border: 1px solid #ccc;  /* Light border to define the button */
-    padding: 12px 18px;  /* Slightly larger padding for a more traditional button feel */
+button i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.text-button {
+    background: none;
+    color: #007aff;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
     cursor: pointer;
-    border-radius: 4px;  /* Rounded corners for a soft, classic look */
-    font-size: 1.2em;  /* Slightly smaller font for subtle elegance */
-    text-align: center;
-    transition: all 0.3s ease;  /* Smooth transition for all effects */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow to lift the button */
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
 }
 
-/* Button hover effect */
-.scroll-btn:hover {
-    background-color: #e0e0e0;  /* Slightly darker grey background on hover */
-    border-color: #999;  /* Darker border on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
+.text-button:hover {
+    color: #005bb5;
 }
 
-/* Button focus effect (when tabbing or focused by keyboard) */
-.scroll-btn:focus {
-    outline: none;  /* Remove default outline */
-    border-color: #666;  /* Border color when focused */
-    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);  /* Soft blue focus ring for accessibility */
+.text-button i {
+    margin-left: 5px;
+    font-size: 1.2em;
 }
 
-
-/* Mobile Styles */
+/* Mobile styles */
 @media screen and (max-width: 768px) {
-    .project-tile {
+    .project-container {
         flex-direction: column;
         align-items: center;
+        padding: 15px;
+        min-height: 100vh; /* Ensure it takes full viewport height */
+    }
+
+    .project-image {
         width: 100%;
-        height: auto;
+        max-width: 80%;
+        margin-bottom: 20px;
+        border-radius: 15px;
     }
 
     .content-container {
-        padding-right: 0;
+        padding: 0;
         align-items: center;
-    }
-
-    .project-tile h2,
-    .project-tile .project-location,
-    .project-description {
         text-align: center;
     }
 
     .link-buttons-container {
         justify-content: center;
+        margin-top: 30px; /* Add spacing between image and buttons */
     }
 }
