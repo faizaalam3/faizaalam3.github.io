@@ -27,13 +27,6 @@ const createProjectTile = (projectData) => {
     projectDescription.classList.add('project-description');
     projectDescription.textContent = projectData.description;
 
-    const readMoreLink = document.createElement('span');
-    readMoreLink.classList.add('read-more-link');
-    readMoreLink.textContent = 'Read More...';
-    readMoreLink.addEventListener('click', () => {
-        showProjectDialog(projectData);
-    });
-
     // Container for links (Android, iOS, Drive)
     const linkButtonsContainer = document.createElement('div');
     linkButtonsContainer.classList.add('link-buttons-container');
@@ -43,6 +36,10 @@ const createProjectTile = (projectData) => {
         const driveButton = document.createElement('button');
         driveButton.classList.add('drive-button');
         driveButton.textContent = 'Private App';
+        if(projectData.driveLink){
+        driveButton.onclick=()=>{
+            window.open(projectData.driveLink,'_blank');
+        };}
         linkButtonsContainer.appendChild(driveButton);
     }
 
@@ -76,7 +73,6 @@ const createProjectTile = (projectData) => {
     contentContainer.appendChild(projectLocation);
     contentContainer.appendChild(tagsContainer);
     contentContainer.appendChild(projectDescription);
-    contentContainer.appendChild(readMoreLink);
     contentContainer.appendChild(linkButtonsContainer);
 
     const projectImage = document.createElement('img');
@@ -89,34 +85,4 @@ const createProjectTile = (projectData) => {
 
     return projectTile;
 };
-
-// Function to show project dialog with detailed information
-const showProjectDialog = (projectData) => {
-    const dialog = document.createElement('div');
-    dialog.classList.add('project-dialog');
-
-    const dialogContent = document.createElement('div');
-    dialogContent.classList.add('project-dialog-content');
-
-    const closeButton = document.createElement('span');
-    closeButton.classList.add('close-button');
-    closeButton.innerHTML = '&times;';
-    closeButton.addEventListener('click', () => {
-        dialog.remove();
-    });
-
-    const projectTitle = document.createElement('h3');
-    projectTitle.textContent = projectData.title;
-
-    const projectDescription = document.createElement('p');
-    projectDescription.textContent = projectData.description;
-
-    dialogContent.appendChild(closeButton);
-    dialogContent.appendChild(projectTitle);
-    dialogContent.appendChild(projectDescription);
-    dialog.appendChild(dialogContent);
-
-    document.body.appendChild(dialog);
-};
-
-export { createProjectTile, showProjectDialog };
+export {createProjectTile}

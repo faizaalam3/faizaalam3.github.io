@@ -22,7 +22,7 @@
     padding: 20px;
     margin: 0 10px;
     width: 1200px;
-    height: 500px;
+    height: 500px; /* Fixed height for uniformity */
     flex-shrink: 0;
     display: flex;
     justify-content: space-between; /* Create space for two columns */
@@ -36,9 +36,9 @@
 
 .content-container {
     flex: 1;
-    padding-right: 20px;
     display: flex;
     flex-direction: column;
+    padding-right: 30px;
     justify-content: flex-start; /* Align content to the top */
 }
 
@@ -77,14 +77,10 @@
     text-align: justify; /* Justify the text */
 }
 
-.read-more-link {
-    color: #ff5c5c;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
+.spacer {
+    flex-grow: 1; /* Pushes the link buttons to the bottom */
 }
 
-/* Container for the row of link buttons */
 .link-buttons-container {
     display: flex;
     gap: 10px;
@@ -103,12 +99,10 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for buttons */
 button:hover {
     background-color: #555;
 }
 
-/* Styles for Android button */
 .android-button {
     background-color: #3ddc84; /* Green for Android */
 }
@@ -117,7 +111,6 @@ button:hover {
     background-color: #2a9a56;
 }
 
-/* Styles for iOS button */
 .ios-button {
     background-color: #007aff; /* Blue for iOS */
 }
@@ -126,7 +119,6 @@ button:hover {
     background-color: #005bb5;
 }
 
-/* Styles for Drive button (if driveLink exists) */
 .drive-button {
     background-color: #fbc02d; /* Yellow for Drive */
 }
@@ -135,7 +127,6 @@ button:hover {
     background-color: #f4b400;
 }
 
-/* Private app button */
 .private-button {
     background-color: #333;
     color: #ffffff;
@@ -175,43 +166,6 @@ button:hover {
     margin: 0 5px;
 }
 
-/* Dialog styles */
-.project-dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 800px;
-    background-color: #1a1a1a;
-    color: #e5e5e5;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-}
-
-.project-dialog h3 {
-    margin-top: 0;
-    font-size: 2em;
-    color: #ffffff;
-}
-
-.project-dialog p {
-    font-size: 1.1em;
-    color: #cccccc;
-    margin-top: 10px;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5em;
-    color: #ff5c5c;
-    cursor: pointer;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .project-tile {
@@ -233,8 +187,10 @@ button:hover {
     }
 
     .link-buttons-container {
-        flex-direction: column; /* Stack the buttons vertically */
+        flex-direction: row; /* Align buttons in a row */
+        flex-wrap: wrap; /* Allow buttons to wrap */
         gap: 10px;
+        margin-bottom: 20px; /* Ensure margin at bottom */
     }
 
     .project-tile h2 {
@@ -246,7 +202,9 @@ button:hover {
     }
 
     .tags-container {
-        flex-direction: column; /* Stack tags vertically */
+        display: grid; /* Use grid layout for tags */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 5px;
     }
 
     .tag {
@@ -287,7 +245,9 @@ button:hover {
     }
 
     .link-buttons-container {
-        gap: 5px;
+        flex-direction: row; /* Align buttons in a row */
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 10px;
         justify-content: center; /* Center buttons */
     }
 
