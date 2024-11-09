@@ -5,11 +5,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Here you can handle the email sending or database saving
-    // For example, you might use mail() function to send an email
+    // Email to send to
+    $to = "fi.faizaalam@gmail.com";
 
-    // Respond back with a success message
-    echo json_encode(['message' => 'Thank you for your message! We will get back to you soon.']);
+    // Subject of the email
+    $email_subject = $subject;
+
+    // Message content
+    $email_message = "Name: $name\n";
+    $email_message .= "Email: $email\n";
+    $email_message .= "Message:\n$message\n";
+
+    // Headers
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    // Send the email
+    if (mail($to, $email_subject, $email_message, $headers)) {
+        // Respond back with a success message
+        echo json_encode(['message' => 'Thank you for your message! We will get back to you soon.']);
+    } else {
+        echo json_encode(['message' => 'Failed to send email. Please try again later.']);
+    }
     exit;
 } else {
     echo json_encode(['message' => 'Invalid request.']);
