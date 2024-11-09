@@ -183,18 +183,22 @@ button i {
     font-size: 1.2em;
 }
 
+/* Project div */
+.project-div{
+    display: flex;
+}
+
 /* Mobile styles */
 @media screen and (max-width: 768px) {
     .project-container {
         flex-direction: column;
         align-items: center;
         padding: 15px;
-        min-height: 100vh; /* Ensure it takes full viewport height */
+        max-height: 50vh; /* Ensure it takes full viewport height */
     }
 
     .project-image {
-        width: 100%;
-        max-width: 80%;
+        max-width: 100%;
         margin-bottom: 20px;
         border-radius: 15px;
     }
@@ -203,6 +207,7 @@ button i {
         padding: 0;
         align-items: center;
         text-align: center;
+        max-height: fit-content;
     }
 
     .link-buttons-container {
@@ -227,6 +232,7 @@ button i {
     padding: 10px 20px;
     margin: 0px 50px;
     border: none;
+    max-height: 100px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
