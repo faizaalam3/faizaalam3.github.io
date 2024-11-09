@@ -1,8 +1,8 @@
-# netlify.toml - Place this in the root of your project
+# netlify.toml for a static site with email functionality via Netlify Forms
 
 [build]
-  publish = "build"  # If you're using a build folder, adjust as needed (e.g., "dist", "public")
-  command = "npm run build"  # If you have a build command (e.g., for React, Vue, etc.)
+  # No build step needed for static HTML, CSS, and JS
+  publish = "."
 
 [[redirects]]
   from = "/contact"
@@ -15,3 +15,5 @@
   to = "/section/contacts/thank-you.html"
   status = 200
   force = true
+
+# Netlify form settings (no special config needed for email handling)
