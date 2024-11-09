@@ -1,53 +1,56 @@
 /* Contact Section Styles */
 #contact {
-    padding: 40px 20px; /* Reduced padding for mobile view */
-    background-color: #f9f9f9;
+    padding: 50px 30px; /* Increased padding for desktop */
+    background-color: transparent; /* No background color for the section */
     margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #contact h2 {
     text-align: center;
     color: #333;
-    font-size: 26px; /* Increased font size for better visibility */
-    margin-bottom: 20px;
+    font-size: 28px; /* Larger font size for visibility */
+    margin-bottom: 30px;
 }
 
 .contact-container {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for mobile responsiveness */
-    justify-content: space-between;
+    justify-content: space-between; /* Center the content */
     align-items: flex-start;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1200px; /* Consistent width with other sections */
     margin: 0 auto;
-    align-items: center;
+    gap: 50px; /* Space between description and form */
 }
 
 .contact-description {
     flex: 1;
+    max-width: 40%; /* Limiting the width for better readability */
     padding-right: 20px; /* Space between description and form */
-    text-align: center; /* Center align the description text */
+    text-align: justify; /* Align text left */
 }
 
 .contact-description p {
     font-size: 16px;
     color: #555;
-    line-height: 1.5; /* Improved line spacing for readability */
+    line-height: 1.6; /* Improved line spacing for readability */
+    margin-bottom: 20px; /* Space below paragraph */
 }
 
-
-/* Responsive Styles */
+/* Form styles */
 form {
     flex: 1;
     display: flex;
     flex-direction: column;
+    max-width: 40%; /* Limiting the width for better readability */
+    width: 100%;
 }
 
 .form-group {
-    margin-bottom: 15px;
-    align-self: stretch;
+    margin-bottom: 20px;
     text-align: start;
 }
 
@@ -61,7 +64,7 @@ input[type="text"],
 input[type="email"],
 textarea {
     width: 100%; /* Ensure full width */
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -77,7 +80,7 @@ textarea:focus {
 }
 
 .submit-btn {
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
     background-color: #333;
@@ -85,6 +88,7 @@ textarea:focus {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px; /* Space between button and form fields */
 }
 
 .submit-btn:hover {
@@ -97,18 +101,25 @@ textarea:focus {
         padding: 30px 15px; /* Adjusted padding for mobile */
     }
 
+    #contact h2 {
+        font-size: 24px; /* Slightly smaller font size for mobile */
+        margin-bottom: 20px;
+    }
+
     .contact-container {
         flex-direction: column; /* Stack elements on smaller screens */
         align-items: center;
+        gap: 30px; /* Reduce the gap between form and description */
     }
 
     .contact-description {
         padding-right: 0; /* Remove right padding on mobile */
         margin-bottom: 20px; /* Add spacing below description */
+        max-width: none; /* Allow description to be full-width on mobile */
     }
 
-    #contact h2 {
-        font-size: 24px; /* Slightly smaller font size for mobile */
+    form {
+        max-width: 100%; /* Ensure form takes full width on mobile */
     }
 
     input[type="text"],
@@ -119,6 +130,6 @@ textarea:focus {
 
     .submit-btn {
         font-size: 14px; /* Smaller button font size */
-        padding: 8px; /* Adjust button padding */
+        padding: 12px; /* Adjust button padding */
     }
 }
