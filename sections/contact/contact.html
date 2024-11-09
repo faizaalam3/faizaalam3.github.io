@@ -9,7 +9,8 @@
                 turning your vision into a fully functional, successful app. I look forward to hearing from you!</p>
         </div>
 
-        <form id="contact-form" action="./submit-form.php" method="POST">
+        <!-- Netlify Form -->
+        <form id="contact-form" name="contact" method="POST" data-netlify="true">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -26,7 +27,9 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required placeholder="Your Message" rows="5"></textarea>
             </div>
+            <!-- Hidden field for Netlify form submission -->
+            <input type="hidden" name="form-name" value="contact" />
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </div>
-</section>
+</section>  
