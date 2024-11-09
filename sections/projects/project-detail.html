@@ -6,6 +6,7 @@
     <link rel="icon" href="../../images/favico.ico" type="image/x-icon"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Detail</title>
+    <link rel="stylesheet" href="projects.css"> <!-- Use the common CSS for consistency -->
     <link rel="stylesheet" href="project-detail.css"> <!-- Custom CSS for detail page -->
 </head>
 <body>
@@ -15,6 +16,11 @@
             <div id="project-content" class="content-container"></div>
             <div id="project-image-container">
                 <img id="project-image" alt="Project Image">
+            </div>
+            <!-- New Buttons for Next and Previous Project -->
+            <div class="navigation-buttons">
+                <button id="prev-project" class="nav-button" onclick="showPreviousProject()"> &lt; Previous Project </button>
+                <button id="next-project" class="nav-button" onclick="showNextProject()"> Next Project &gt; </button>
             </div>
         </div>
     </section>
