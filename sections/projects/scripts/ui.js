@@ -27,19 +27,24 @@ const createProjectTile = (projectData) => {
     projectDescription.classList.add('project-description');
     const maxDescriptionLength = 500; // Adjust this value as needed
     // Inside your existing JavaScript
+// ui.js (inside createProjectTile function)
 if (projectData.description.length > maxDescriptionLength) {
     projectDescription.textContent = projectData.description.substring(0, maxDescriptionLength) + '... ';
     const readMoreLink = document.createElement('span');
     readMoreLink.classList.add('read-more-button');
     readMoreLink.textContent = 'Read More';
+    
+    // On clicking "Read More", redirect to project-detail.html with the project ID in the URL
     readMoreLink.onclick = () => {
-        alert(projectData.description);
+        const projectId = projectData.id; // Assuming projectData has a unique id field
+        window.open(`/sections/projects/project-detail.html?projectId=${projectData.id}`, '_blank');
     };
     
     projectDescription.appendChild(readMoreLink); // Append Read More text
 } else {
     projectDescription.textContent = projectData.description;
 }
+
 
 
     // Container for links (Android, iOS, Drive)

@@ -14,7 +14,9 @@ const fetchProjects = async () => {
             return;
         }
         querySnapshot.forEach((doc) => {
-            projects.push(doc.data());
+            const projectData = doc.data();
+            projectData.id = doc.id; // Add the id from Firebase
+            projects.push(projectData);
         });
         console.log('Projects fetched:', projects);
         displayProject(currentIndex);
