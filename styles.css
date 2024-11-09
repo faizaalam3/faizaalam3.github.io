@@ -1,72 +1,107 @@
+/* Reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Clean, simple font for readability */
+    background-color: #e8e8e8d5; /* Very light background for cleanliness */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6;
     scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Navigation Bar */
 #navbar {
-    background-color: #333; /* Navbar background */
-    position: sticky; /* Sticky navbar */
-    top: 0; /* Stick to top */
-    width: 100%; /* Full width */
-    z-index: 1000; /* On top of other content */
+    background-color: #2c2f34; /* Classic, deep gray for elegance */
+    position: sticky; /* Stick to top of the page */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; /* Ensure the navbar items are displayed horizontally */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center vertically */
 }
 
 #navbar ul {
-    list-style-type: none; /* No bullets */
-    display: flex; /* Flex layout */
-    justify-content: center; /* Center items */
-    padding: 0; /* No padding */
+    list-style: none; /* Remove bullets */
+    display: flex; /* Keep items in a row */
+    justify-content: center; /* Center navbar items */
+    padding: 0;
+    margin: 0;
 }
 
 #navbar li {
-    padding: 14px 20px; /* Space around each item */
+    padding: 14px 20px; /* Padding around each item */
 }
 
 #navbar a {
-    color: white; /* White text */
-    text-decoration: none; /* No underline */
-    display: block; /* Block display */
+    color: #fff; /* White text */
+    text-decoration: none; /* No underlines */
+    font-weight: 500; /* Medium font weight for balance */
+    font-size: 16px; /* Readable font size */
+    letter-spacing: 1px; /* Slight letter spacing for readability */
+    display: block;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
+/* Hover Effect */
 #navbar a:hover {
-    background-color: #ddd; /* Hover background */
-    color: black; /* Hover text color */
+    color: #f39c12; /* Subtle gold hover color */
+}
+
+/* Mobile Menu - Ensure horizontal navbar on mobile */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: row; /* Keep items horizontal */
+    }
+
+    #navbar ul {
+        display: flex; /* Keep items in a row */
+        justify-content: center; /* Center navbar items */
+    }
+
+    #navbar li {
+        padding: 12px 16px; /* Reduced padding for mobile */
+    }
+
+    #navbar a {
+        font-size: 18px; /* Slightly larger text on mobile */
+        padding: 10px; /* Extra space around mobile links */
+    }
 }
 
 /* Section Styles */
 section {
-    padding: 60px 20px; /* Space around sections */
-    text-align: center; /* Center text */
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 30px;
 }
 
-#about,
-#experience,
-#projects,
-#contact,
-#footer {
-    background-color: #f4f4f4; /* Section background color */
+/* Specific section backgrounds */
+#about, #experience, #projects, #contact, #footer {
+    background-color: #ffffff; /* Light background to keep it clean */
 }
 
 /* Clearfix for floated elements */
 .clearfix::after {
     content: "";
-    clear: both; /* Clear floats */
-    display: table; /* Trigger a new block formatting context */
+    clear: both;
+    display: table;
 }
 
-/* Responsive Styles */
+/* Mobile-first: Adjustments for mobile devices */
 @media (max-width: 768px) {
     section {
-        padding: 40px 10px; /* Adjust padding for mobile */
+        padding: 0px 20px;
     }
 
     #navbar li {
-        padding: 10px 15px; /* Reduced padding for navbar items */
+        padding: 12px 16px; /* Adjust for smaller mobile screens */
     }
 }
