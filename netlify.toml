@@ -1,0 +1,17 @@
+# netlify.toml - Place this in the root of your project
+
+[build]
+  publish = "build"  # If you're using a build folder, adjust as needed (e.g., "dist", "public")
+  command = "npm run build"  # If you have a build command (e.g., for React, Vue, etc.)
+
+[[redirects]]
+  from = "/contact"
+  to = "/section/contacts/contacts.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/section/contacts/thank-you.html"
+  status = 200
+  force = true
