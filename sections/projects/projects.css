@@ -1,18 +1,23 @@
-/* Default (desktop-first) styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+#projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    padding: 50px 30px;
+    gap: 50px;
+    width: 100%;  /* Full width */
+    padding: 0;  /* Remove padding */
 }
-
 .project-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px 30px;
-    background-color: #f0f0f0;
     gap: 50px;
+    margin: 0; /* Ensure no outer margin */
+    width: 100%; /* Ensure it spans the entire width */
+    max-width: 1200px;
+    background-color: transparent;
 }
 
 .project-container {
@@ -20,17 +25,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    width: 100%; /* Ensure it takes up full width */
+    padding: 0; /* Remove padding */
     background-color: transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 100vh; /* Ensure it takes full viewport height */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-
-.project-container:hover {
-    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .project-image {
@@ -40,11 +41,6 @@ body {
     border-radius: 15px;
     object-fit: cover;
     transition: transform 0.3s ease;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.project-container:hover .project-image {
-    transform: scale(1.05);
 }
 
 .content-container {
@@ -55,11 +51,19 @@ body {
     justify-content: center;
 }
 
-.project-container h2 {
+.project-gallery h1 {
+    text-align: center;
     font-size: 2.5em;
     font-family: 'Georgia', serif;
+    color: #222;
+    margin-top: 20px;
+}
+
+.project-container h2 {
+    font-size: 1.5em;
+    font-family: 'Georgia', serif;
     color: #222222;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .project-location {
@@ -104,7 +108,7 @@ button, .text-button {
     background-color: #444;
     color: #ffffff;
     padding: 12px 25px;
-    border: 2px solid transparent;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
@@ -118,40 +122,30 @@ button, .text-button {
 
 button:hover, .text-button:hover {
     background-color: #555;
-    border-color: #ddd;
 }
 
 .android-button {
     background-color: #3ddc84;
-    border-color: #3ddc84;
-    margin: 20px;
 }
 
 .android-button:hover {
     background-color: #2dbd6e;
-    border-color: #2dbd6e;
 }
 
 .ios-button {
     background-color: #007aff;
-    border-color: #007aff;
-    margin: 20px;
 }
 
 .ios-button:hover {
     background-color: #005bb5;
-    border-color: #005bb5;
 }
 
 .drive-button {
     background-color: #444;
-    border-color: #444;
-    margin: 20px;
 }
 
 .drive-button:hover {
     background-color: #555;
-    border-color: #555;
 }
 
 button i {
@@ -184,7 +178,7 @@ button i {
 }
 
 /* Project div */
-.project-div{
+.project-div {
     display: flex;
 }
 
@@ -193,8 +187,8 @@ button i {
     .project-container {
         flex-direction: column;
         align-items: center;
-        padding: 15px;
-        max-height: 50vh; /* Ensure it takes full viewport height */
+        padding: 0px;
+        max-height: 50vh;
     }
 
     .project-image {
@@ -212,7 +206,7 @@ button i {
 
     .link-buttons-container {
         justify-content: center;
-        margin-top: 30px; /* Add spacing between image and buttons */
+        margin-top: 30px;
     }
 }
 
@@ -223,7 +217,7 @@ button i {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 20px; /* Space between the project container and navigation buttons */
+    margin-top: 20px;
 }
 
 .nav-button {
@@ -231,8 +225,6 @@ button i {
     color: #333;
     padding: 10px 20px;
     margin: 0px 50px;
-    border: none;
-    max-height: 100px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
@@ -244,3 +236,4 @@ button i {
     background-color: #555;
     color: #fff;
 }
+

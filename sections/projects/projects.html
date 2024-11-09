@@ -1,14 +1,12 @@
 <!-- projects.html -->
 <section id="projects">
-    <h2>Projects</h2>
     <div class="project-gallery">
+        <h1>Projects</h1>
         <div id="project-container" class="project-container"></div>
+        <div class="navigation-buttons">
+            <button id="prev-project" class="nav-button" onclick="showPreviousProject()"> &lt; </button> 
+            <button id="next-project" class="nav-button" onclick="showNextProject()"> &gt; </button>
+        </div>
     </div>    
-    <div class="navigation-buttons">
-        <button id="prev-project" class="nav-button" onclick="showPreviousProject()"> &lt; </button> 
-        <button id="next-project" class="nav-button" onclick="showNextProject()"> &gt; </button>
-    </div>
-    
 </section>
-
 <script type="module" src="./scripts/project.js"></script>
