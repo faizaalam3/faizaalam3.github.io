@@ -1,4 +1,7 @@
 <?php
+// Logging to help debug
+file_put_contents('log.txt', 'Request Method: ' . $_SERVER["REQUEST_METHOD"] . PHP_EOL, FILE_APPEND);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
@@ -29,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     exit;
 } else {
+    file_put_contents('log.txt', 'Invalid Request Method' . PHP_EOL, FILE_APPEND);
     echo json_encode(['message' => 'Invalid request.']);
     exit;
 }
