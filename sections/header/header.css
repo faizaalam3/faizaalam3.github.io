@@ -1,14 +1,63 @@
 /* Default styles for desktop */
 #header .image-container {
-    background-size: cover;
-    background-position: center;
-    height: 80vh; /* 80% of the viewport height */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    height: 80vh; /* 80% of the viewport height for a spacious header */
     width: 100%;
+    position: relative; /* Needed for positioning the overlay */
+}
+
+#header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for more contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .header-content {
+    text-align: center; /* Center-align the text */
+    color: white; /* White text for contrast */
+    max-width: 700px; /* Limit text width for a more refined look */
+    padding: 20px; /* Add padding for spacing */
+    font-family: 'Times New Roman', serif; /* Classic serif font for timeless elegance */
+}
+
+#header h1 {
+    font-family: 'Georgia', serif; /* Use a classic serif font for the main heading */
+    font-size: 3.5em; /* Bold heading to stand out */
+    font-weight: bold; /* Normal weight for sophistication */
+    margin-bottom: 15px; /* Space below the heading */
+    letter-spacing: 1.5px; /* Slightly expanded letter-spacing for an elegant feel */
+    text-transform: uppercase; /* Uppercase for a classic, formal appearance */
+}
+
+#header p {
+    font-family: 'Georgia', serif; /* Another timeless serif font for the paragraph */
+    font-size: 1.2em;
+    font-weight: 300; /* Light weight for the paragraph text */
+    line-height: 1.8;
+    margin-top: 0;
+    max-width: 80%; /* Ensure the paragraph text doesn’t stretch too much */
+    margin: 0 auto; /* Center-align the paragraph */
 }
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     #header .image-container {
-        height: 40vh; /* 40% of the viewport height */
+        height: 50vh; /* Reduced height for mobile */
+    }
+
+    #header h1 {
+        font-size: 2.5em; /* Slightly smaller heading for mobile */
+    }
+
+    #header p {
+        font-size: 1em; /* Adjust paragraph size for smaller screens */
+        max-width: 90%; /* Ensure text stays within the viewport */
     }
 }
