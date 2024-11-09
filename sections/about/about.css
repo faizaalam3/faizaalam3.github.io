@@ -1,66 +1,61 @@
-/* About Section Styles */
-#about {
-    padding: 40px 20px; /* Reduced padding for mobile view */
-    background-color: #fff;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+/* Default (desktop-first) styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 30px;
+    background-color: transparent; /* Ensure there's no background */
+    gap: 30px; /* Adjusted gap for better spacing */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    /* Removed box-shadow to eliminate the "box" effect */
+    box-shadow: none;
+}
+
+/* Heading */
 #about h2 {
     text-align: center;
-    color: #333;
-    font-size: 26px; /* Increased font size */
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    color: #222;
     margin-bottom: 20px;
 }
 
+/* Paragraph text */
 #about p {
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 1.1em;
     color: #666;
+    text-align: justify;
     margin-bottom: 20px;
-    text-align: justify; /* Justify text for better readability */
+    width: 100%;
+    max-width: 1000px;
 }
 
-#about ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; /* Reset margin */
-}
-
-#about ul li {
-    padding: 15px; /* Increased padding */
-    background: #f9f9f9; /* Lighter background for list items */
-    border: #ddd 1px solid;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: background 0.3s; /* Smooth background transition */
-}
-
-#about ul li:hover {
-    background: #e4e4e4; /* Highlight on hover */
-}
-
-#about ul li strong {
+/* Strong text for emphasis */
+#about p strong {
     color: #333;
+    font-weight: bold;
 }
 
-/* Responsive Styles */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     #about {
-        padding: 30px 15px; /* Adjusted padding for mobile */
+        padding: 30px 20px;
     }
 
     #about h2 {
-        font-size: 24px; /* Slightly smaller font size for mobile */
+        font-size: 2em;
     }
 
     #about p {
-        font-size: 16px; /* Smaller font size for mobile */
-    }
-
-    #about ul li {
-        padding: 10px; /* Reduced padding for mobile */
+        font-size: 1em;
     }
 }
