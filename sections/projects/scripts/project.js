@@ -44,6 +44,10 @@ const showNextProject = () => {
         currentIndex++;
         console.log('Next button clicked, currentIndex:', currentIndex);
         displayProject(currentIndex);
+        // Smoothly scroll to the projects section
+        document.querySelector("#projects").scrollIntoView({
+            behavior: 'smooth'
+        });
     }
 };
 
@@ -53,8 +57,13 @@ const showPreviousProject = () => {
         currentIndex--;
         console.log('Previous button clicked, currentIndex:', currentIndex);
         displayProject(currentIndex);
+        // Smoothly scroll to the projects section
+        document.querySelector("#projects").scrollIntoView({
+            behavior: 'smooth'
+        });
     }
 };
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchProjects();
     window.showNextProject = showNextProject;
