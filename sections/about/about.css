@@ -3,11 +3,10 @@
     flex-direction: column;
     align-items: center;
     padding: 50px 30px;
-    background-color: transparent; /* Ensure there's no background */
-    gap: 30px; /* Adjusted gap for better spacing */
+    background-color: transparent;
+    gap: 50px;
     max-width: 1200px;
-    margin: 0 auto; /* Center the content */
-    /* Removed box-shadow to eliminate the "box" effect */
+    margin: 0 auto;
     box-shadow: none;
 }
 
@@ -28,7 +27,6 @@
     text-align: justify;
     margin-bottom: 20px;
     width: 100%;
-    max-width: 1000px;
 }
 
 /* Strong text for emphasis */
