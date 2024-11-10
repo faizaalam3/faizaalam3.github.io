@@ -43,21 +43,19 @@ const createProjectTile = (projectData) => {
         projectDescription.textContent = projectData.description;
     }
 
-    // Container for links (Android, iOS, Drive)
+    // Container for links (Android, iOS)
     const linkButtonsContainer = document.createElement('div');
     linkButtonsContainer.classList.add('link-buttons-container');
 
-    if (!projectData.iosLink && !projectData.androidLink) {
-        const driveButton = document.createElement('button');
-        driveButton.classList.add('drive-button');
-        driveButton.textContent = 'Private App';
-        if (projectData.driveLink) {
-            driveButton.onclick = () => {
-                window.open(projectData.driveLink, '_blank');
-            };
-        }
-        linkButtonsContainer.appendChild(driveButton);
-    }
+    const detailsButton = document.createElement('button');
+    detailsButton.classList.add('details-button');
+    detailsButton.textContent = 'View Details';
+    detailsButton.onclick = () => {
+        const projectId = projectData.id;
+        window.open(`/sections/projects/project-detail.html?projectId=${projectData.id}`, '_blank');
+    };
+    linkButtonsContainer.appendChild(detailsButton);
+
 
     if (projectData.iosLink) {
         if (projectData.iosLink.trim() != "") {

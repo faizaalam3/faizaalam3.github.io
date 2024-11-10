@@ -135,11 +135,11 @@ button:hover, .text-button:hover {
     background-color: #005bb5;
 }
 
-.drive-button {
+.details-button {
     background-color: #444;
 }
 
-.drive-button:hover {
+.details-button:hover {
     background-color: #555;
 }
 
