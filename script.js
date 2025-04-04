@@ -128,31 +128,11 @@ async function loadData() {
 // Handle form submission feedback
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    const formData = new FormData(contactForm);
-    try {
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            formStatus.textContent = 'Message sent successfully!';
-            formStatus.style.color = 'green';
-            contactForm.reset();
-        } else {
-            throw new Error('Failed to send message.');
-        }
-    } catch (error) {
-        formStatus.textContent = 'Error sending message. Please try again later.';
-        formStatus.style.color = 'red';
-        console.error('Form submission error:', error);
-    }
+contactForm.addEventListener('submit', (event) => {
+    // Netlify handles submission server-side by default
+    // Optionally, you can add client-side feedback here if using AJAX
+    formStatus.textContent = 'Sending...';
+    formStatus.style.color = 'blue';
 });
 
 // Intersection Observer for animations
