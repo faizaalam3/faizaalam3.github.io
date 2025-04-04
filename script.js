@@ -36,6 +36,16 @@ menuToggle.addEventListener('click', () => {
     menuToggle.setAttribute('aria-expanded', isExpanded);
 });
 
+// Close mobile drawer on nav link click
+const navLinkItems = document.querySelectorAll('.nav-links a');
+navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.textContent = '☰';
+        menuToggle.setAttribute('aria-expanded', 'false');
+    });
+});
+
 /**
  * Loads data from Firestore and populates the page
  */
@@ -114,6 +124,36 @@ async function loadData() {
         loading.innerHTML = `<p>Error: ${error.message}. Please refresh or try again later.</p>`;
     }
 }
+
+// Handle form submission feedback
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(contactForm);
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            formStatus.textContent = 'Message sent successfully!';
+            formStatus.style.color = 'green';
+            contactForm.reset();
+        } else {
+            throw new Error('Failed to send message.');
+        }
+    } catch (error) {
+        formStatus.textContent = 'Error sending message. Please try again later.';
+        formStatus.style.color = 'red';
+        console.error('Form submission error:', error);
+    }
+});
 
 // Intersection Observer for animations
 const sections = document.querySelectorAll('.section');

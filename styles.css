@@ -25,6 +25,10 @@
     --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
 
+html {
+    scroll-padding-top: 80px; /* Offset for sticky header when navigating to anchors */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -340,6 +344,12 @@ nav {
     outline: none;
 }
 
+.form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -405,6 +415,7 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 1rem 0;
+        background: var(--card-bg);
     }
 
     .nav-links.active {
@@ -435,11 +446,25 @@ footer {
         width: 120px;
         height: 120px;
     }
+
+    .section {
+        padding: 6rem 1rem 3rem; /* Increased top padding to account for header */
+    }
+
+    .section h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .experience-item,
+    .education-item,
+    .project-card {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
     .section {
-        padding: 3rem 1rem;
+        padding: 5rem 1rem 2rem; /* Adjusted for smaller screens */
     }
 
     .section h2 {
