@@ -75,9 +75,9 @@ async function loadData() {
         // Social Links with Icons
         const socialLinks = document.getElementById('social-links');
         const iconMap = {
-            'GitHub': 'fab fa-github',
+            'Whatsapp': 'fab fa-whatsapp',
             'LinkedIn': 'fab fa-linkedin',
-            'Twitter': 'fab fa-twitter'
+            'Gmail': 'fab fa-google',
         };
         (profile.links || []).filter(link => link.isVisible).forEach(link => {
             const a = document.createElement('a');

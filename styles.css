@@ -7,28 +7,28 @@
 
 /* Theme Variables */
 :root {
-    --bg-color: #fafafa;
-    --text-color: #333333;
-    --primary-color: #4b5e82;
-    --secondary-color: #f5f6f5;
-    --accent-color: #6b7280;
-    --card-bg: #ffffff;
+    --bg-color: #fdfdfd;               /* Lighter, clean background */
+    --text-color: #2c3e50;             /* Soft dark blue-gray for good contrast */
+    --primary-color: #5a7aa6;          /* Lighter, muted blue for prominence */
+    --secondary-color: #f8f9fa;        /* Very light gray for subtle backgrounds */
+    --accent-color: #7f8c8d;           /* Muted teal-gray for secondary text */
+    --card-bg: #ffffff;                /* Pure white for cards */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    --gradient-light: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-    --gradient-border: linear-gradient(90deg, #e5e7eb, #d1d5db);
+    --gradient-light: linear-gradient(135deg, #fdfdfd 0%, #f8f9fa 100%);
+    --gradient-border: linear-gradient(90deg, #ebedf0, #d8dce2);
     --transition: all 0.3s ease;
 }
 
 [data-theme="dark"] {
-    --bg-color: #212529;
-    --text-color: #d4d4d4;
-    --primary-color: #6b7280;
-    --secondary-color: #2f3438;
-    --accent-color: #9ca3af;
-    --card-bg: #282d31;
+    --bg-color: #1a1f24;               /* Darker, deep charcoal */
+    --text-color: #d7dde2;             /* Light gray with high visibility */
+    --primary-color: #829cbc;          /* Softer, muted blue for dark mode */
+    --secondary-color: #252b32;        /* Darker gray for subtle backgrounds */
+    --accent-color: #a3b1bf;           /* Light teal-gray for secondary text */
+    --card-bg: #21272d;                /* Darker card background */
     --shadow: 0 4px 12px rgba(255, 255, 255, 0.02);
-    --gradient-light: linear-gradient(135deg, #212529 0%, #2f3438 100%);
-    --gradient-border: linear-gradient(90deg, #374151, #4b5563);
+    --gradient-light: linear-gradient(135deg, #1a1f24 0%, #252b32 100%);
+    --gradient-border: linear-gradient(90deg, #2f363e, #4a5561);
 }
 
 html {
@@ -266,7 +266,7 @@ nav {
     font-weight: 600;
 }
 
-/* Projects (Redesigned Grid) */
+/* Projects */
 #projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -338,8 +338,15 @@ nav {
 
 .view-project-btn:hover,
 .view-project-btn:focus {
-    background: linear-gradient(90deg, #e5e7eb, #d1d5db);
+    background: linear-gradient(90deg, #ebedf0, #d8dce2); /* Light mode hover */
     color: var(--text-color);
+    transform: translateY(-1px);
+}
+
+[data-theme="dark"] .view-project-btn:hover,
+[data-theme="dark"] .view-project-btn:focus {
+    background: linear-gradient(90deg, #3a424b, #576372); /* Darker gradient for dark mode */
+    color: #ffffff; /* White text for high contrast */
     transform: translateY(-1px);
 }
 
@@ -386,14 +393,14 @@ form {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    background: #ffffff;
+    background: var(--card-bg);
     outline: none;
-    box-shadow: 0 0 4px rgba(75, 94, 130, 0.2);
+    box-shadow: 0 0 4px rgba(90, 122, 166, 0.2);
 }
 
 .submit-btn {
     background: var(--primary-color);
-    color: #ffffff;
+    color: var(--card-bg);
     padding: 0.9rem 1.8rem;
     border: none;
     border-radius: 4px;
@@ -404,7 +411,12 @@ form {
 }
 
 .submit-btn:hover {
-    background: linear-gradient(90deg, #4b5e82, #6b7280);
+    background: linear-gradient(90deg, #5a7aa6, #829cbc); /* Light mode hover */
+    transform: translateY(-1px);
+}
+
+[data-theme="dark"] .submit-btn:hover {
+    background: linear-gradient(90deg, #829cbc, #a3bffa); /* Dark mode hover, lighter but controlled */
     transform: translateY(-1px);
 }
 
