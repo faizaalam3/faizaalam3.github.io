@@ -30,21 +30,23 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-    const isExpanded = navLinks.classList.toggle('active');
-    menuToggle.textContent = isExpanded ? '✕' : '☰';
-    menuToggle.setAttribute('aria-expanded', isExpanded);
-});
-
-// Close mobile drawer on nav link click
-const navLinkItems = document.querySelectorAll('.nav-links a');
-navLinkItems.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.textContent = '☰';
-        menuToggle.setAttribute('aria-expanded', 'false');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        const isExpanded = navLinks.classList.toggle('active');
+        menuToggle.textContent = isExpanded ? '✕' : '☰';
+        menuToggle.setAttribute('aria-expanded', isExpanded);
     });
-});
+
+    // Close mobile drawer on nav link click
+    const navLinkItems = document.querySelectorAll('.nav-links a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.textContent = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 /**
  * Loads data from Firestore and populates the page
@@ -125,16 +127,6 @@ async function loadData() {
     }
 }
 
-// Handle form submission feedback
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-contactForm.addEventListener('submit', (event) => {
-    // Netlify handles submission server-side by default
-    // Optionally, you can add client-side feedback here if using AJAX
-    formStatus.textContent = 'Sending...';
-    formStatus.style.color = 'blue';
-});
-
 // Intersection Observer for animations
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver((entries) => {
@@ -148,5 +140,18 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-// Load data on page load
-document.addEventListener('DOMContentLoaded', loadData);
+// Load data and handle form submission on DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+
+    // Handle form submission feedback
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', (event) => {
+            // Netlify handles submission server-side by default
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = 'blue';
+        });
+    }
+});
