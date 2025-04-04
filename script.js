@@ -9,8 +9,12 @@ const root = document.documentElement;
  */
 function setTheme(theme) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    root.setAttribute('data-theme', theme === 'auto' ? (prefersDark ? 'dark' : 'light') : theme);
+    const effectiveTheme = theme === 'auto' ? (prefersDark ? 'dark' : 'light') : theme;
+    root.setAttribute('data-theme', effectiveTheme);
     localStorage.setItem('theme', theme);
+    document.querySelectorAll('.theme-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.id === `theme-${theme}`);
+    });
 }
 
 // Initialize theme
@@ -37,9 +41,7 @@ if (menuToggle && navLinks) {
         menuToggle.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Close mobile drawer on nav link click
-    const navLinkItems = document.querySelectorAll('.nav-links a');
-    navLinkItems.forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuToggle.textContent = '☰';
@@ -56,23 +58,68 @@ async function loadData() {
     try {
         const { profile, education, experience, projects } = await fetchData();
 
+        // Sort data (latest first)
+        experience.sort((a, b) => b.start.seconds - a.start.seconds);
+        education.sort((a, b) => b.start.seconds - a.start.seconds);
+        if (projects[0]?.date) {
+            projects.sort((a, b) => b.date.seconds - a.date.seconds);
+        }
+
         // Profile
-        const profileImage = document.getElementById('profile-image');
-        profileImage.src = profile.image || 'images/profile.jpg'; // Fallback image
+        document.getElementById('profile-image').src = profile.image || 'images/profile.jpg';
         document.getElementById('greeting').textContent = profile.greeting || 'Hello';
         document.getElementById('name').textContent = profile.name || 'Faiz Aalam';
         document.getElementById('description').textContent = profile.description || 'A passionate developer.';
         document.getElementById('about-description').textContent = profile.about || 'A passionate developer.';
 
-        // Social Links
+        // Social Links with Icons
         const socialLinks = document.getElementById('social-links');
+        const iconMap = {
+            'GitHub': 'fab fa-github',
+            'LinkedIn': 'fab fa-linkedin',
+            'Twitter': 'fab fa-twitter'
+        };
         (profile.links || []).filter(link => link.isVisible).forEach(link => {
             const a = document.createElement('a');
             a.href = link.link;
-            a.textContent = link.title;
             a.target = '_blank';
             a.rel = 'noopener noreferrer';
+            const iconClass = iconMap[link.title] || 'fas fa-link';
+            a.innerHTML = `<i class="${iconClass}"></i>`;
+            a.setAttribute('aria-label', link.title);
             socialLinks.appendChild(a);
+        });
+
+        // Projects
+        const projectsList = document.getElementById('projects-list');
+        projects.forEach(data => {
+            const imagePath = data.image?.replace('public/', '/') || '';
+            const item = document.createElement('div');
+            item.className = 'project-card';
+            item.innerHTML = `
+                ${imagePath ? `<img src="${imagePath}" alt="${data.name}" loading="lazy">` : ''}
+                <h3>${data.name}</h3>
+                <p>${data.description}</p>
+                <a href="${data.link}"class="view-project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                <div class="tags">${(data.tags || []).map(tag => `<span>${tag}</span>`).join('')}</div>
+            `;
+            projectsList.appendChild(item);
+        });
+
+        // Experience
+        const experienceList = document.getElementById('experience-list');
+        experience.forEach(data => {
+            const item = document.createElement('div');
+            item.className = 'timeline-item';
+            item.innerHTML = `
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-content">
+                    <h3>${data.job}</h3>
+                    <p>${data.company} - ${data.type}</p>
+                    <p>${formatDate(data.start)} - ${formatDate(data.end)}</p>
+                </div>
+            `;
+            experienceList.appendChild(item);
         });
 
         // Education
@@ -81,41 +128,12 @@ async function loadData() {
             const item = document.createElement('div');
             item.className = 'education-item';
             item.innerHTML = `
-                <h3>${data.degree} in ${data.field}</h3>
+                <h3><i class="fas fa-graduation-cap"></i> ${data.degree} in ${data.field}</h3>
                 <p>${data.institution}</p>
                 <p>${formatDate(data.start)} - ${formatDate(data.end)}</p>
                 <p>Grade: ${data.grade || 'N/A'}</p>
             `;
             educationList.appendChild(item);
-        });
-
-        // Experience
-        const experienceList = document.getElementById('experience-list');
-        experience.forEach(data => {
-            const item = document.createElement('div');
-            item.className = 'experience-item';
-            item.innerHTML = `
-                <h3>${data.job}</h3>
-                <p>${data.company} - ${data.type}</p>
-                <p>${formatDate(data.start)} - ${formatDate(data.end)}</p>
-            `;
-            experienceList.appendChild(item);
-        });
-
-        // Projects
-        const projectsList = document.getElementById('projects-list');
-        projects.forEach(data => {
-            const imagePath = data.image ? data.image.replace('public/', '/') : '';
-            const item = document.createElement('div');
-            item.className = 'project-card';
-            item.innerHTML = `
-                ${imagePath ? `<img src="${imagePath}" alt="${data.name}" loading="lazy">` : ''}
-                <h3>${data.name}</h3>
-                <p>${data.description}</p>
-                <a href="${data.link}" target="_blank" rel="noopener noreferrer">View Project</a>
-                <div class="tags">${(data.tags || []).map(tag => `<span>${tag}</span>`).join('')}</div>
-            `;
-            projectsList.appendChild(item);
         });
 
         // Fade out loading
@@ -140,18 +158,5 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-// Load data and handle form submission on DOM content loaded
-document.addEventListener('DOMContentLoaded', () => {
-    loadData();
-
-    // Handle form submission feedback
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    if (contactForm && formStatus) {
-        contactForm.addEventListener('submit', (event) => {
-            // Netlify handles submission server-side by default
-            formStatus.textContent = 'Sending...';
-            formStatus.style.color = 'blue';
-        });
-    }
-});
+// Load data on DOM content loaded
+document.addEventListener('DOMContentLoaded', loadData);

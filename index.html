@@ -6,6 +6,7 @@
     <meta name="description" content="Portfolio of Faiz Aalam - Developer and Designer">
     <title>Faiz Aalam - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='0' y='14'>F</text></svg>" type="image/svg+xml">
 </head>
 <body>
@@ -19,11 +20,11 @@
         <nav aria-label="Main navigation">
             <div class="logo">Faiz</div>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#hero">Profile</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="theme-switcher" role="group" aria-label="Theme switcher">
@@ -37,6 +38,7 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Profile (Hero) Section -->
         <section id="hero" class="section">
             <img id="profile-image" src="" alt="Profile picture of Faiz Aalam" class="profile-circle" loading="lazy">
             <h1 id="greeting"></h1>
@@ -44,50 +46,55 @@
             <p id="description"></p>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="section">
             <h2>About Me</h2>
             <p id="about-description"></p>
         </section>
 
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <div id="experience-list" class="timeline"></div>
-        </section>
-
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div id="education-list"></div>
-        </section>
-
+        <!-- Projects Section -->
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div id="projects-list"></div>
         </section>
 
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div id="experience-list" class="timeline"></div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div id="education-list"></div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form name="contact" method="POST" data-netlify="true" action="/success" aria-label="Contact form">
-        <input type="hidden" name="form-name" value="contact">
-        <div class="form-group">
-            <label for="form-name" class="sr-only">Your Name</label>
-            <input type="text" id="form-name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <label for="form-email" class="sr-only">Your Email</label>
-            <input type="email" id="form-email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-            <label for="form-subject" class="sr-only">Subject</label>
-            <input type="text" id="form-subject" name="subject" placeholder="Subject" required>
-        </div>
-        <div class="form-group">
-            <label for="form-message" class="sr-only">Your Message</label>
-            <textarea id="form-message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-    <p id="form-status" class="form-status" aria-live="polite"></p>
-</section>
+            <h2>Contact</h2>
+            <form name="contact" method="POST" data-netlify="true" action="/success" aria-label="Contact form">
+                <input type="hidden" name="form-name" value="contact">
+                <div class="form-group">
+                    <label for="form-name" class="sr-only">Your Name</label>
+                    <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-email" class="sr-only">Your Email</label>
+                    <input type="email" id="form-email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-subject" class="sr-only">Subject</label>
+                    <input type="text" id="form-subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-message" class="sr-only">Your Message</label>
+                    <textarea id="form-message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+        </section>
     </main>
 
     <!-- Footer -->
