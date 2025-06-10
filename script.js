@@ -2,24 +2,22 @@ import { fetchData, formatDate } from './app.js';
 
 // Theme Management
 const root = document.documentElement;
-const themes = ['light', 'dark', 'auto'];
-let currentThemeIndex = themes.indexOf(localStorage.getItem('theme') || 'auto');
+const themes = ['light', 'dark'];
+let currentThemeIndex = themes.indexOf(localStorage.getItem('theme') || 'light');
 
 /**
- * Sets the theme based on user preference or system settings
- * @param {string} theme - 'light', 'dark', or 'auto'
+ * Sets the theme based on user preference
+ * @param {string} theme - 'light' or 'dark'
  */
 function setTheme(theme) {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const effectiveTheme = theme === 'auto' ? (prefersDark ? 'dark' : 'light') : theme;
-    root.setAttribute('data-theme', effectiveTheme);
+    root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     updateThemeButton(theme);
 }
 
 /**
  * Updates the theme button icon based on the current theme
- * @param {string} theme - 'light', 'dark', or 'auto'
+ * @param {string} theme - 'light' or 'dark'
  */
 function updateThemeButton(theme) {
     const button = document.getElementById('theme-toggle');
@@ -27,11 +25,8 @@ function updateThemeButton(theme) {
     if (theme === 'light') {
         icon.className = 'fas fa-sun';
         button.setAttribute('aria-label', 'Switch to dark theme');
-    } else if (theme === 'dark') {
-        icon.className = 'fas fa-moon';
-        button.setAttribute('aria-label', 'Switch to auto theme');
     } else {
-        icon.className = 'fas fa-adjust';
+        icon.className = 'fas fa-moon';
         button.setAttribute('aria-label', 'Switch to light theme');
     }
 }
@@ -43,11 +38,6 @@ setTheme(themes[currentThemeIndex]);
 document.getElementById('theme-toggle').addEventListener('click', () => {
     currentThemeIndex = (currentThemeIndex + 1) % themes.length;
     setTheme(themes[currentThemeIndex]);
-});
-
-// Auto theme on system change
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if (localStorage.getItem('theme') === 'auto') setTheme('auto');
 });
 
 // Mobile Menu Toggle
@@ -127,9 +117,7 @@ async function loadData() {
 
         // Experience
         const experienceList = document.getElementById('experience-list');
-        experience.forEach(data =>
-
- {
+        experience.forEach(data => {
             const item = document.createElement('div');
             item.className = 'timeline-item';
             item.innerHTML = `
