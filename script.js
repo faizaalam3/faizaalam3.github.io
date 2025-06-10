@@ -2,6 +2,8 @@ import { fetchData, formatDate } from './app.js';
 
 // Theme Management
 const root = document.documentElement;
+const themes = ['light', 'dark', 'auto'];
+let currentThemeIndex = themes.indexOf(localStorage.getItem('theme') || 'auto');
 
 /**
  * Sets the theme based on user preference or system settings
@@ -12,19 +14,36 @@ function setTheme(theme) {
     const effectiveTheme = theme === 'auto' ? (prefersDark ? 'dark' : 'light') : theme;
     root.setAttribute('data-theme', effectiveTheme);
     localStorage.setItem('theme', theme);
-    document.querySelectorAll('.theme-switcher button').forEach(btn => {
-        btn.classList.toggle('active', btn.id === `theme-${theme}`);
-    });
+    updateThemeButton(theme);
+}
+
+/**
+ * Updates the theme button icon based on the current theme
+ * @param {string} theme - 'light', 'dark', or 'auto'
+ */
+function updateThemeButton(theme) {
+    const button = document.getElementById('theme-toggle');
+    const icon = button.querySelector('i');
+    if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+        button.setAttribute('aria-label', 'Switch to dark theme');
+    } else if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+        button.setAttribute('aria-label', 'Switch to auto theme');
+    } else {
+        icon.className = 'fas fa-adjust';
+        button.setAttribute('aria-label', 'Switch to light theme');
+    }
 }
 
 // Initialize theme
-const savedTheme = localStorage.getItem('theme') || 'auto';
-setTheme(savedTheme);
+setTheme(themes[currentThemeIndex]);
 
-// Theme switcher event listeners
-document.getElementById('theme-light').addEventListener('click', () => setTheme('light'));
-document.getElementById('theme-dark').addEventListener('click', () => setTheme('dark'));
-document.getElementById('theme-auto').addEventListener('click', () => setTheme('auto'));
+// Theme toggle event listener
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    setTheme(themes[currentThemeIndex]);
+});
 
 // Auto theme on system change
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
@@ -100,7 +119,7 @@ async function loadData() {
                 ${imagePath ? `<img src="${imagePath}" alt="${data.name}" loading="lazy">` : ''}
                 <h3>${data.name}</h3>
                 <p>${data.description}</p>
-                <a href="${data.link}"class="view-project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                <a href="${data.link}" class="view-project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 <div class="tags">${(data.tags || []).map(tag => `<span>${tag}</span>`).join('')}</div>
             `;
             projectsList.appendChild(item);
@@ -108,7 +127,9 @@ async function loadData() {
 
         // Experience
         const experienceList = document.getElementById('experience-list');
-        experience.forEach(data => {
+        experience.forEach(data =>
+
+ {
             const item = document.createElement('div');
             item.className = 'timeline-item';
             item.innerHTML = `
