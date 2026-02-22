@@ -224,6 +224,86 @@ a {
   gap: 18px;
 }
 
+.hero-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(99, 102, 241, 0.14));
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  min-height: 220px;
+}
+
+.visual-orbit {
+  position: absolute;
+  inset: -30% auto auto -20%;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 65%);
+}
+
+.visual-orbit.second {
+  inset: auto -25% -40% auto;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18), transparent 65%);
+}
+
+.device-mock {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+}
+
+.device-bar {
+  height: 6px;
+  width: 36%;
+  background: rgba(99, 102, 241, 0.7);
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.device-line {
+  height: 10px;
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.35);
+  margin-bottom: 10px;
+}
+
+.device-line.short {
+  width: 70%;
+}
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.device-grid span {
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.visual-tag {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  font-size: 0.85rem;
+  color: var(--muted);
+  z-index: 2;
+}
+
 .panel-header {
   padding: 20px 22px;
   border-radius: 16px;
