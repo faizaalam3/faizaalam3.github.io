@@ -1,12 +1,13 @@
 :root {
-  --bg: #0f172a;
-  --card: #1e293b;
-  --accent: #3b82f6;
-  --accent-2: #6366f1;
-  --text: #f8fafc;
-  --muted: #cbd5f5;
-  --border: rgba(148, 163, 184, 0.2);
-  --shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+  --bg: #f8fafc;
+  --bg-soft: #eef2ff;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-2: #4f46e5;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.12);
+  --shadow: 0 24px 40px rgba(15, 23, 42, 0.08);
   --max-width: 1100px;
 }
 
@@ -23,9 +24,9 @@ html {
 body {
   font-family: "Inter", system-ui, sans-serif;
   background:
-    radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.25), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.22), transparent 45%),
-    linear-gradient(180deg, #0b1120 0%, #0f172a 55%, #0b1120 100%);
+    radial-gradient(circle at 5% 5%, rgba(79, 70, 229, 0.16), transparent 38%),
+    radial-gradient(circle at 90% 15%, rgba(37, 99, 235, 0.14), transparent 40%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #f8fafc 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -38,10 +39,10 @@ body {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
   background-size: 60px 60px;
-  opacity: 0.25;
+  opacity: 0.22;
   pointer-events: none;
   z-index: -1;
 }
@@ -65,7 +66,7 @@ a {
   display: block;
   height: 1px;
   margin-top: 96px;
-  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.5), transparent);
 }
 
 .section:last-of-type::after {
@@ -90,7 +91,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(248, 250, 252, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -124,7 +125,7 @@ a {
   padding: 10px 18px;
   border-radius: 999px;
   font-size: 0.9rem;
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .hero {
@@ -152,9 +153,9 @@ a {
   gap: 8px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  color: var(--muted);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  color: #1e293b;
   font-size: 0.85rem;
   margin-bottom: 18px;
 }
@@ -189,7 +190,7 @@ a {
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .btn {
@@ -205,11 +206,13 @@ a {
 .btn.primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   box-shadow: var(--shadow);
+  color: #ffffff;
 }
 
 .btn.ghost {
   border: 1px solid var(--border);
   color: var(--text);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .btn:hover {
@@ -224,7 +227,7 @@ a {
 .panel-header {
   padding: 20px 22px;
   border-radius: 16px;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--border);
 }
 
@@ -268,7 +271,7 @@ a {
 }
 
 .trust-card {
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--border);
   padding: 18px;
   border-radius: 12px;
@@ -411,7 +414,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(99, 102, 241, 0.2));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(99, 102, 241, 0.14));
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 32px;
@@ -454,10 +457,20 @@ a {
 .pill-row span {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(30, 41, 59, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.case-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.case-card.is-hidden {
+  display: none;
 }
 
 .reveal {
