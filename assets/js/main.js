@@ -11,7 +11,7 @@ const observer = new IntersectionObserver(
 );
 
 const revealItems = document.querySelectorAll(
-  ".section, .case-card, .expertise-card, .tech-card, .trust-card, .hero-card, .hero-mini, .proof-item"
+  ".section, .case-card, .expertise-card, .tech-card, .trust-card, .hero-card, .hero-mini, .proof-item, .result-card, .process-card, .testimonial-card"
 );
 
 revealItems.forEach((item, index) => {
