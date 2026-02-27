@@ -13,7 +13,7 @@
     <style>
       @page {
         size: A4;
-        margin: 0.48in;
+        margin: 0.4in;
       }
 
       :root {
@@ -31,7 +31,7 @@
 
       body {
         margin: 0;
-        font-family: "Manrope", Arial, sans-serif;
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
         color: var(--ink);
         background: linear-gradient(180deg, #f5f8fd 0%, #eef3fb 100%);
         font-size: 10.1pt;
@@ -65,7 +65,7 @@
 
       h1 {
         margin: 0;
-        font-family: "DM Serif Display", serif;
+        font-family: "Georgia", "Times New Roman", serif;
         font-size: 1.85rem;
         letter-spacing: 0.2px;
         line-height: 1.08;
@@ -105,7 +105,7 @@
       }
 
       .section + .section {
-        margin-top: 11px;
+        margin-top: 10px;
       }
 
       .section-title {
@@ -139,7 +139,7 @@
       }
 
       .project + .project {
-        margin-top: 7px;
+        margin-top: 6px;
       }
 
       .project h3 {
@@ -185,7 +185,7 @@
       }
 
       .links {
-        margin-top: 7px;
+        margin-top: 5px;
       }
 
       .links p + p {
@@ -204,8 +204,13 @@
       }
 
       @media print {
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
         body {
-          background: #fff;
+          background: linear-gradient(180deg, #f5f8fd 0%, #eef3fb 100%);
         }
 
         .page-wrap {
@@ -214,33 +219,9 @@
 
         .resume {
           width: 100%;
-          border: 0;
+          border: 1px solid var(--line);
           border-radius: 0;
           box-shadow: none;
-        }
-
-        .top {
-          padding: 10mm 9mm 7mm;
-        }
-
-        .main {
-          padding: 7mm 9mm 8mm;
-        }
-
-        .side {
-          padding: 7mm 7mm 8mm;
-        }
-
-        .summary,
-        li {
-          font-size: 9.6pt;
-          line-height: 1.3;
-        }
-
-        .project p,
-        .side p,
-        .side li {
-          font-size: 8.8pt;
         }
       }
     </style>
@@ -252,10 +233,10 @@
           <h1>Faiz Aalam</h1>
           <p class="headline">Lead Flutter Architect</p>
           <p class="contact">
-            <span>fi.faizaalam@gmail.com</span>
-            <span>+92 305 7778957</span>
-            <span>linkedin.com/in/faiz3</span>
-            <span>faizaalam.netlify.app</span>
+            <a href="mailto:fi.faizaalam@gmail.com">fi.faizaalam@gmail.com</a>
+            <a href="tel:+923057778957">+92 305 7778957</a>
+            <a href="https://www.linkedin.com/in/faiz3/">linkedin.com/in/faiz3</a>
+            <a href="https://faizaalam.netlify.app">faizaalam.netlify.app</a>
           </p>
         </header>
 
@@ -333,12 +314,6 @@
               <p>University of Engineering and Technology, Taxila</p>
             </section>
 
-            <section class="section links">
-              <h2 class="section-title">Links</h2>
-              <p><a href="mailto:fi.faizaalam@gmail.com">Email</a></p>
-              <p><a href="https://www.linkedin.com/in/faiz3/">LinkedIn</a></p>
-              <p><a href="https://faizaalam.netlify.app">Portfolio</a></p>
-            </section>
           </aside>
         </div>
       </article>
