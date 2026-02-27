@@ -3,102 +3,345 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faiz Aalam | Resume</title>
+    <title>Faiz Aalam | Professional Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      @page {
+        size: A4;
+        margin: 0.48in;
+      }
+
+      :root {
+        --ink: #182033;
+        --muted: #5a6374;
+        --line: #dbe1ea;
+        --brand: #1f4fbf;
+        --brand-soft: #eef3ff;
+        --panel: #f7f9fc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", Arial, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #f5f8fd 0%, #eef3fb 100%);
+        font-size: 10.1pt;
+        line-height: 1.35;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page-wrap {
+        padding: 22px 14px 28px;
+      }
+
+      .resume {
+        width: min(100%, 8.27in);
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 18px 40px rgba(20, 35, 66, 0.12);
+        overflow: hidden;
+      }
+
+      .top {
+        padding: 16px 18px 12px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(145deg, #ffffff, #f8fbff);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "DM Serif Display", serif;
+        font-size: 1.85rem;
+        letter-spacing: 0.2px;
+        line-height: 1.08;
+      }
+
+      .headline {
+        margin-top: 4px;
+        font-size: 0.94rem;
+        font-weight: 700;
+        color: var(--brand);
+        letter-spacing: 0.02em;
+      }
+
+      .contact {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        color: var(--muted);
+        font-size: 0.81rem;
+      }
+
+      .body {
+        display: grid;
+        grid-template-columns: 2.1fr 1fr;
+        gap: 0;
+      }
+
+      .main {
+        padding: 12px 18px 14px;
+      }
+
+      .side {
+        padding: 12px 14px;
+        border-left: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .section + .section {
+        margin-top: 11px;
+      }
+
+      .section-title {
+        margin: 0 0 6px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+        font-weight: 800;
+        color: #304a7f;
+      }
+
+      .summary {
+        color: #29344a;
+      }
+
+      ul {
+        margin: 4px 0 0 16px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 3px;
+        color: #27344d;
+      }
+
+      .project {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px;
+        background: #fcfdff;
+      }
+
+      .project + .project {
+        margin-top: 7px;
+      }
+
+      .project h3 {
+        margin: 0;
+        font-size: 0.86rem;
+      }
+
+      .project p {
+        margin: 3px 0 0;
+        color: #3d4a63;
+        font-size: 0.78rem;
+        line-height: 1.32;
+      }
+
+      .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .chip {
+        border: 1px solid #cad5ea;
+        background: var(--brand-soft);
+        color: #24479c;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .side p,
+      .side li {
+        color: #35425e;
+        font-size: 0.8rem;
+      }
+
+      .skill-line + .skill-line {
+        margin-top: 5px;
+      }
+
+      .edu-title {
+        font-weight: 700;
+      }
+
+      .links {
+        margin-top: 7px;
+      }
+
+      .links p + p {
+        margin-top: 4px;
+      }
+
+      @media (max-width: 880px) {
+        .body {
+          grid-template-columns: 1fr;
+        }
+
+        .side {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .page-wrap {
+          padding: 0;
+        }
+
+        .resume {
+          width: 100%;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .top {
+          padding: 10mm 9mm 7mm;
+        }
+
+        .main {
+          padding: 7mm 9mm 8mm;
+        }
+
+        .side {
+          padding: 7mm 7mm 8mm;
+        }
+
+        .summary,
+        li {
+          font-size: 9.6pt;
+          line-height: 1.3;
+        }
+
+        .project p,
+        .side p,
+        .side li {
+          font-size: 8.8pt;
+        }
+      }
+    </style>
   </head>
-  <body class="resume-body">
-    <header class="site-header resume-header-bar">
-      <div class="container nav">
-        <a class="brand" href="index.html">Faiz Aalam</a>
-        <a class="btn btn-outline" href="Faiz_Aalam_Resume.pdf">Download PDF</a>
-      </div>
-    </header>
-
-    <main class="resume-page">
-      <article class="resume-sheet reveal">
-        <aside class="resume-left">
+  <body>
+    <div class="page-wrap">
+      <article class="resume">
+        <header class="top">
           <h1>Faiz Aalam</h1>
-          <p class="resume-role">Lead Flutter Architect</p>
+          <p class="headline">Lead Flutter Architect</p>
+          <p class="contact">
+            <span>fi.faizaalam@gmail.com</span>
+            <span>+92 305 7778957</span>
+            <span>linkedin.com/in/faiz3</span>
+            <span>faizaalam.netlify.app</span>
+          </p>
+        </header>
 
-          <section class="resume-side-block">
-            <h2>Contact</h2>
-            <p><a href="mailto:fi.faizaalam@gmail.com">fi.faizaalam@gmail.com</a></p>
-            <p><a href="tel:+923057778957">+92 305 7778957</a></p>
-            <p><a href="https://www.linkedin.com/in/faiz3/">linkedin.com/in/faiz3</a></p>
-            <p><a href="https://faizaalam.netlify.app">faizaalam.netlify.app</a></p>
-          </section>
+        <div class="body">
+          <main class="main">
+            <section class="section">
+              <h2 class="section-title">Professional Summary</h2>
+              <p class="summary">
+                Lead Flutter Architect with 4+ years of experience delivering production mobile applications.
+                I specialize in clean architecture, realtime systems, AI/API integrations, and monetization flows,
+                helping product teams launch scalable apps with strong reliability and long-term maintainability.
+              </p>
+            </section>
 
-          <section class="resume-side-block">
-            <h2>Education</h2>
-            <p><strong>Bachelor's Degree (Computer Science)</strong></p>
-            <p>University details available on request</p>
-          </section>
+            <section class="section">
+              <h2 class="section-title">Professional Experience</h2>
+              <ul>
+                <li>Architected and delivered cross-domain Flutter products in fintech, health, social, productivity, and gov-tech.</li>
+                <li>Designed modular app foundations with clear domain boundaries, reducing technical debt and accelerating feature delivery.</li>
+                <li>Implemented realtime synchronization, event pipelines, and role-based workflows for high-engagement user experiences.</li>
+                <li>Built subscription and in-app purchase systems with entitlement control and lifecycle handling.</li>
+                <li>Integrated AI and external APIs to add intelligent capabilities while maintaining production stability.</li>
+                <li>Collaborated with product, design, and backend teams to ship reliable releases and measurable business outcomes.</li>
+              </ul>
+            </section>
 
-          <section class="resume-side-block">
-            <h2>Skills</h2>
-            <ul>
-              <li>Flutter, Dart</li>
-              <li>Clean Architecture</li>
-              <li>Firebase, Supabase</li>
-              <li>Realtime Systems</li>
-              <li>REST & AI APIs</li>
-              <li>IAP & Subscriptions</li>
-            </ul>
-          </section>
-        </aside>
-
-        <section class="resume-right">
-          <section class="resume-block">
-            <h2>Professional Summary</h2>
-            <p>
-              Lead Flutter Architect with 4+ years of experience building scalable
-              mobile applications. Specialized in clean architecture, realtime workflows,
-              API integrations, and business-aligned mobile engineering.
-            </p>
-          </section>
-
-          <section class="resume-block">
-            <h2>Core Experience</h2>
-            <ul>
-              <li>Architected and delivered production Flutter apps across fintech, health, gov-tech, social, and productivity domains.</li>
-              <li>Built realtime systems and event pipelines supporting live updates, status tracking, and collaborative workflows.</li>
-              <li>Implemented robust monetization with subscription and in-app purchase lifecycle management.</li>
-              <li>Integrated AI and third-party APIs for intelligent product features and automation capabilities.</li>
-              <li>Led delivery collaboration with product and engineering teams to ensure stable, scalable releases.</li>
-            </ul>
-          </section>
-
-          <section class="resume-block">
-            <h2>Selected Projects</h2>
-            <div class="resume-project-grid">
-              <article>
+            <section class="section">
+              <h2 class="section-title">Selected Projects</h2>
+              <article class="project">
                 <h3>Mooch</h3>
-                <p>Secure fintech lending workflows with loan lifecycle orchestration and analytics.</p>
+                <p>Fintech lending platform with borrower workflows, secure loan lifecycle orchestration, and analytics-ready architecture.</p>
               </article>
-              <article>
+              <article class="project">
                 <h3>USCIS App</h3>
-                <p>Applicant status and document tracking with secure access and high-availability sync.</p>
+                <p>Applicant-facing product with secure document tracking, proactive status updates, and scalable data synchronization.</p>
               </article>
-              <article>
+              <article class="project">
                 <h3>Venvoi</h3>
-                <p>Realtime location-based voice social app with live sessions and moderation tooling.</p>
+                <p>Location-based voice social application with realtime room management, discovery systems, and moderation tooling.</p>
               </article>
-              <article>
+              <article class="project">
                 <h3>HealthSteps</h3>
-                <p>Health experience with progress tracking, real-time insights, and engagement systems.</p>
+                <p>Health engagement app with realtime progress tracking, analytics insights, and retention-focused experience loops.</p>
               </article>
-            </div>
-          </section>
-        </section>
-      </article>
-    </main>
+            </section>
+          </main>
 
-    <script src="assets/js/main.js"></script>
+          <aside class="side">
+            <section class="section">
+              <h2 class="section-title">Core Skills</h2>
+              <div class="chip-list">
+                <span class="chip">Flutter</span>
+                <span class="chip">Dart</span>
+                <span class="chip">Clean Architecture</span>
+                <span class="chip">Firebase</span>
+                <span class="chip">Supabase</span>
+                <span class="chip">Realtime Systems</span>
+                <span class="chip">REST APIs</span>
+                <span class="chip">AI APIs</span>
+                <span class="chip">IAP</span>
+                <span class="chip">Subscriptions</span>
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="section-title">Technical Stack</h2>
+              <p class="skill-line"><strong>Architecture:</strong> Modular design, BLoC, GetX, Provider</p>
+              <p class="skill-line"><strong>Backend:</strong> Firebase, Supabase</p>
+              <p class="skill-line"><strong>Delivery:</strong> Performance optimization, release hardening</p>
+            </section>
+
+            <section class="section">
+              <h2 class="section-title">Education</h2>
+              <p class="edu-title">Bachelor's Degree in Computer Engineering</p>
+              <p>University of Engineering and Technology, Taxila</p>
+            </section>
+
+            <section class="section links">
+              <h2 class="section-title">Links</h2>
+              <p><a href="mailto:fi.faizaalam@gmail.com">Email</a></p>
+              <p><a href="https://www.linkedin.com/in/faiz3/">LinkedIn</a></p>
+              <p><a href="https://faizaalam.netlify.app">Portfolio</a></p>
+            </section>
+          </aside>
+        </div>
+      </article>
+    </div>
   </body>
 </html>
