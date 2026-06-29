@@ -3,191 +3,640 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faiz Aalam | Mobile Architect Portfolio</title>
+    <meta
+      name="description"
+      content="Faiz Aalam — Senior Mobile Software Engineer. 12+ production apps, team leadership, and scalable mobile architecture for clients across Norway, UK, Germany, USA, and Australia."
+    />
+    <meta property="og:title" content="Faiz Aalam | Senior Mobile Software Engineer" />
+    <meta
+      property="og:description"
+      content="I help companies build scalable, production-ready mobile products from idea to App Store."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://faizaalam.netlify.app" />
+    <title>Faiz Aalam | Senior Mobile Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="bg-orb bg-orb-a"></div>
-    <div class="bg-orb bg-orb-b"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
+    <header class="site-header" id="top">
       <div class="container nav">
-        <a class="brand" href="#top">Faiz Aalam</a>
-        <nav class="nav-links">
+        <a class="brand" href="#top">
+          <span class="brand-name">Faiz Aalam</span>
+          <span class="brand-role">Mobile Engineer</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#highlights">Highlights</a>
           <a href="#projects">Projects</a>
-          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a href="#expertise">Expertise</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="btn btn-outline" href="resume.html">Resume</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="Faiz_Aalam_Resume.pdf" download>Resume</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero section">
-        <div class="container hero-grid reveal">
-          <div>
-            <p class="tag">Lead Flutter Architect</p>
-            <h1>Designing Scalable Mobile Products With Real Business Impact</h1>
-            <p class="hero-sub">
-              I architect and deliver reliable Flutter applications focused on
-              performance, realtime systems, clean code boundaries, and fast growth.
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner reveal">
+          <div class="hero-content">
+            <p class="eyebrow">Senior Mobile Software Engineer</p>
+            <h1>
+              I build scalable mobile products that ship to production — and
+              <em>stay</em> there.
+            </h1>
+            <p class="hero-lead">
+              Nearly 5 years delivering production mobile applications across healthcare,
+              logistics, fitness, fintech, and marketplace domains. I lead teams, own
+              architecture, and partner directly with founders and product owners across
+              Norway, Germany, the UK, Australia, Saudi Arabia, and the US.
             </p>
-            <div class="hero-metrics">
-              <div>
-                <strong>12+</strong>
-                <span>Production apps</span>
-              </div>
-              <div>
-                <strong>4+</strong>
-                <span>Years experience</span>
-              </div>
-              <div>
-                <strong>Global</strong>
-                <span>Client delivery</span>
-              </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View Published Work</a>
+              <a class="btn btn-ghost" href="mailto:fi.faizaalam@gmail.com">Get in Touch</a>
             </div>
-            <div class="actions">
-              <a class="btn btn-solid" href="#projects">View Projects</a>
-              <a class="btn btn-outline" href="Faiz_Aalam_Resume.pdf">Download Resume PDF</a>
+            <div class="hero-badges">
+              <span class="badge">Open to Relocation</span>
+              <span class="badge badge-muted">Visa Sponsorship Required</span>
             </div>
           </div>
-
-          <aside class="hero-panel">
-            <h3>Architecture Priorities</h3>
-            <ul>
-              <li>Clean modular architecture with long-term maintainability</li>
-              <li>Realtime synchronization and event-driven workflows</li>
-              <li>AI/API integrations with production-safe patterns</li>
-              <li>Monetization systems: subscriptions and in-app purchases</li>
-            </ul>
-          </aside>
+          <div class="hero-stats" aria-label="Career metrics">
+            <div class="stat-card">
+              <span class="stat-value" data-count="12">12+</span>
+              <span class="stat-label">Production apps delivered</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" data-count="7">7+</span>
+              <span class="stat-label">Published on App Store &amp; Play</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">4</span>
+              <span class="stat-label">Developers led (current team)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">6</span>
+              <span class="stat-label">Countries served</span>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- Career Highlights -->
+      <section class="section" id="highlights">
+        <div class="container reveal">
+          <header class="section-header">
+            <p class="eyebrow">Professional Highlights</p>
+            <h2>Impact at a glance</h2>
+          </header>
+          <ul class="highlight-list">
+            <li>
+              <span class="highlight-icon" aria-hidden="true">01</span>
+              <div>
+                <strong>Nearly 5 years</strong> of professional mobile engineering,
+                from architecture through App Store release and production support.
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon" aria-hidden="true">02</span>
+              <div>
+                <strong>Led teams of up to 4 developers</strong> — code reviews, sprint
+                planning, technical interviews, and mentoring junior engineers.
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon" aria-hidden="true">03</span>
+              <div>
+                <strong>Currently leading mobile engineering</strong> for SnapBudd, a
+                Norwegian delivery platform serving 360+ stores nationwide.
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon" aria-hidden="true">04</span>
+              <div>
+                <strong>End-to-end ownership</strong> — requirements, scalable
+                architecture, API integrations, CI/CD, and coordinated releases with
+                product, backend, and QA.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Flagship Project -->
+      <section class="section section-dark" id="flagship">
+        <div class="container reveal">
+          <header class="section-header section-header-light">
+            <p class="eyebrow eyebrow-light">Flagship Project</p>
+            <h2>SnapBudd — Norway</h2>
+            <p class="section-desc">
+              Norwegian-developed delivery platform solving Click &amp; Collect wait times.
+              Store-to-door fulfillment within minutes, serving 360+ stores across Norway.
+            </p>
+          </header>
+          <div class="flagship-grid">
+            <div class="flagship-card">
+              <h3>My Role</h3>
+              <p class="role-title">Flutter Team Lead</p>
+              <ul class="flagship-points">
+                <li>Own scalable mobile architecture for customer, driver, and store flows</li>
+                <li>Lead a team of 4 Flutter developers with architecture and code review ownership</li>
+                <li>Build ordering, checkout, live tracking, and secure verification flows</li>
+                <li>Coordinate releases with product owners and international stakeholders</li>
+              </ul>
+            </div>
+            <div class="flagship-card">
+              <h3>Tech Stack</h3>
+              <div class="tag-row">
+                <span>Flutter</span><span>GetX</span><span>Firebase</span><span>Cloud Functions</span>
+                <span>Google Maps</span><span>Stripe</span><span>FCM</span><span>Deep Linking</span>
+              </div>
+              <h3 class="mt-lg">Product</h3>
+              <p>
+                Customers order delivery from any store after Click &amp; Collect purchase.
+                Drivers accept jobs, pick up paid orders, and deliver with live tracking and
+                secure four-digit verification. Operating across Oslo, Bergen, Trondheim,
+                Stavanger, and Tromsø. Ecosystem includes customer, driver, merchant, and
+                company apps.
+              </p>
+              <div class="project-links project-links-light mt-md">
+                <a href="https://snapbudd.io/" target="_blank" rel="noopener">Website</a>
+                <a href="https://play.google.com/store/apps/details?id=com.snapbudd.app" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/us/app/snapbudd/id6753947334" target="_blank" rel="noopener">App Store</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Published Projects -->
       <section class="section" id="projects">
         <div class="container reveal">
-          <div class="section-head">
-            <p class="tag">Featured Work</p>
-            <h2>Latest Projects</h2>
-            <p>Selected products I recently designed and shipped.</p>
-          </div>
-
+          <header class="section-header">
+            <p class="eyebrow">Published Work</p>
+            <h2>Apps on App Store &amp; Google Play</h2>
+            <p class="section-desc">
+              Seven production applications shipped and available publicly — across
+              logistics, fitness, fintech, AI styling, nutrition, and healthcare communities.
+            </p>
+          </header>
           <div class="project-grid">
-            <article class="project-card">
-              <h3>Mooch</h3>
-              <p class="project-type">Fintech Lending Platform</p>
+            <article class="project-card project-card-featured">
+              <div class="project-meta">
+                <span class="project-domain">Logistics · Norway</span>
+                <span class="project-status">Live</span>
+              </div>
+              <h3>SnapBudd</h3>
               <p>
-                Built secure borrower workflows, loan lifecycle management,
-                admin oversight, and analytics instrumentation.
+                60-minute store-to-door delivery platform. Scalable ordering, live driver
+                tracking, and secure fulfillment for Norway's Click &amp; Collect market.
               </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Firebase</span><span>Stripe</span><span>Cloud Functions</span>
+              </div>
+              <div class="project-links">
+                <a href="https://snapbudd.io/" target="_blank" rel="noopener">Website</a>
+                <a href="https://play.google.com/store/apps/details?id=com.snapbudd.app" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/us/app/snapbudd/id6753947334" target="_blank" rel="noopener">App Store</a>
+              </div>
             </article>
 
             <article class="project-card">
-              <h3>USCIS App</h3>
-              <p class="project-type">Document & Status Tracking</p>
+              <div class="project-meta">
+                <span class="project-domain">Fitness · UK</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>Let's Get Fit</h3>
               <p>
-                Architected secure document handling, notification updates,
-                and scalable role-based access for applicants.
+                Fitness platform with 500+ real-time workouts, weekly schedules, and
+                subscription monetization via RevenueCat. One of my proudest products —
+                built and shipped end-to-end.
               </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Firebase</span><span>RevenueCat</span><span>FCM</span>
+              </div>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=com.proserv.ctf_app" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/us/app/lets-get-fit/id6444068128" target="_blank" rel="noopener">App Store</a>
+              </div>
             </article>
 
             <article class="project-card">
-              <h3>Venvoi</h3>
-              <p class="project-type">Location Voice Social App</p>
+              <div class="project-meta">
+                <span class="project-domain">AI Fashion · Global</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>STYRIA</h3>
               <p>
-                Delivered realtime audio room orchestration,
-                geo-aware discovery, and moderation workflows.
+                AI personal stylist that generates daily outfits from your real wardrobe —
+                weather-aware recommendations, closet organization, and outfit sharing.
               </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Firebase</span><span>AI</span><span>Geolocation</span>
+              </div>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=com.styria.app" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/us/app/styria/id6756938574" target="_blank" rel="noopener">App Store</a>
+              </div>
             </article>
 
             <article class="project-card">
-              <h3>HealthSteps</h3>
-              <p class="project-type">Health & Fitness Ecosystem</p>
+              <div class="project-meta">
+                <span class="project-domain">Nutrition · Health</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>ProtnEase</h3>
               <p>
-                Implemented realtime health tracking, progress analytics,
-                and engagement loops for habit retention.
+                AI-assisted protein tracking with daily goals, meal logging, camera-based
+                nutrition entry, push reminders, and subscription monetization.
               </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Firebase</span><span>RevenueCat</span><span>AI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://protnease.com/" target="_blank" rel="noopener">Website</a>
+                <a href="https://play.google.com/store/apps/details?id=com.polypep.app" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/us/app/protnease/id6759875908" target="_blank" rel="noopener">App Store</a>
+              </div>
             </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="project-domain">Social · Diabetes</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>DiaHive</h3>
+              <p>
+                Supportive diabetes community — share tips, recipes, and experiences with
+                rich post formatting, profiles by diabetes type, and real-time engagement.
+              </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Supabase</span><span>Social</span><span>Notifications</span>
+              </div>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=com.diahive.app" target="_blank" rel="noopener">Google Play</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="project-domain">Fintech · USA</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>MOOCH</h3>
+              <p>
+                Lend-to-a-friend platform for generating digital loan agreements between
+                users — borrow or lend $10–$4,000 with downloadable, shareable contracts.
+              </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Document Flows</span><span>REST APIs</span><span>Analytics</span>
+              </div>
+              <div class="project-links">
+                <a href="https://moochloans.com/" target="_blank" rel="noopener">Website</a>
+                <a href="https://apps.apple.com/us/app/mooch-lend-to-a-friend/id6502505242" target="_blank" rel="noopener">App Store</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="project-domain">Fitness · Saudi Arabia</span>
+                <span class="project-status">Published</span>
+              </div>
+              <h3>Walking Challenge</h3>
+              <p>
+                Community fitness app with step challenges, leaderboards, and engagement
+                systems for global lifestyle audiences.
+              </p>
+              <div class="tag-row">
+                <span>Flutter</span><span>Firebase</span><span>Leaderboards</span>
+              </div>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=com.walking.android" target="_blank" rel="noopener">Google Play</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="more-projects">
+            <p class="eyebrow">Additional Work</p>
+            <div class="more-grid">
+              <div class="more-item">
+                <strong>HealthSteps</strong>
+                <span>Health &amp; fitness ecosystem — step tracking, Stripe payments, in-app purchases, and engagement loops</span>
+              </div>
+              <div class="more-item">
+                <strong>USCIS Case Tracker</strong>
+                <span>Immigration case status tracking with secure document flows and USCIS API integrations</span>
+              </div>
+              <div class="more-item">
+                <strong>Graid</strong>
+                <span>AI-powered card marketplace — valuation, listing, secure transactions, and trading workflows</span>
+              </div>
+              <div class="more-item">
+                <strong>SnapBudd Ecosystem</strong>
+                <span>Merchant, company, and admin apps supporting Norway's delivery operations at scale</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="about">
+      <!-- Leadership -->
+      <section class="section section-soft" id="leadership">
         <div class="container reveal">
-          <div class="section-head">
-            <p class="tag">About</p>
-            <h2>How I Work</h2>
-          </div>
-
-          <div class="about-layout">
-            <div class="about-text">
+          <header class="section-header">
+            <p class="eyebrow">Leadership</p>
+            <h2>More than implementation</h2>
+            <p class="section-desc">
+              I operate at the intersection of engineering, product, and delivery — the
+              profile European companies look for in senior and lead hires.
+            </p>
+          </header>
+          <div class="leadership-grid">
+            <div class="lead-card">
+              <h3>Team Leadership</h3>
               <p>
-                I partner with startup founders and product teams to turn complex ideas into
-                stable mobile systems. My approach combines architecture-first planning,
-                iterative implementation, and performance validation from day one.
-              </p>
-              <p>
-                I prioritize system clarity, predictable delivery, and business outcomes.
-                That means building solutions teams can extend confidently, operate smoothly,
-                and scale without costly rewrites.
+                Currently leading 4 Flutter developers at SnapBudd. Previously led teams of
+                2 and mentored individual contributors across freelance and agency work.
               </p>
             </div>
-
-            <div class="about-points">
-              <div class="mini-card">
-                <h3>Architecture First</h3>
-                <p>Clear domain boundaries, reusable modules, and maintainable codebase structure.</p>
-              </div>
-              <div class="mini-card">
-                <h3>Reliable Delivery</h3>
-                <p>Milestone-based execution with focused tradeoffs and strong production stability.</p>
-              </div>
-              <div class="mini-card">
-                <h3>Business Alignment</h3>
-                <p>Engineering decisions driven by retention, conversion, and operational efficiency.</p>
-              </div>
+            <div class="lead-card">
+              <h3>Technical Ownership</h3>
+              <p>
+                Architecture decisions, pull request reviews, reusable component strategy,
+                and maintainable module boundaries across every engagement.
+              </p>
+            </div>
+            <div class="lead-card">
+              <h3>Delivery &amp; Planning</h3>
+              <p>
+                Sprint estimation, release coordination, and predictable delivery cycles
+                with product, backend, and QA stakeholders.
+              </p>
+            </div>
+            <div class="lead-card">
+              <h3>Hiring &amp; Mentoring</h3>
+              <p>
+                Conduct technical interviews, mentor junior developers, and raise team
+                quality through structured code review practices.
+              </p>
+            </div>
+            <div class="lead-card">
+              <h3>Client Communication</h3>
+              <p>
+                Direct collaboration with founders, product owners, and international
+                clients — translating roadmaps into stable mobile products.
+              </p>
+            </div>
+            <div class="lead-card">
+              <h3>Full SDLC</h3>
+              <p>
+                Requirements gathering through architecture, implementation, CI/CD,
+                App Store deployment, and production support.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="expertise">
+      <!-- Experience -->
+      <section class="section" id="experience">
         <div class="container reveal">
-          <div class="section-head">
-            <p class="tag">Expertise</p>
-            <h2>Core Capabilities</h2>
-          </div>
-          <div class="skills-grid">
-            <div class="skill-item">Flutter & Dart Development</div>
-            <div class="skill-item">Clean Architecture Design</div>
-            <div class="skill-item">Firebase & Supabase Realtime</div>
-            <div class="skill-item">REST & AI API Integrations</div>
-            <div class="skill-item">Subscriptions & In-App Purchases</div>
-            <div class="skill-item">Performance & Release Optimization</div>
+          <header class="section-header">
+            <p class="eyebrow">Experience</p>
+            <h2>Where I've delivered</h2>
+          </header>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Flutter Team Lead</h3>
+                    <p class="company">SnapBudd · Oslo, Norway</p>
+                  </div>
+                  <time>May 2025 — Present</time>
+                </div>
+                <ul>
+                  <li>
+                    Lead mobile engineering for a Norwegian delivery platform serving 360+
+                    stores with store-to-door fulfillment within 60 minutes.
+                  </li>
+                  <li>
+                    Own scalable architecture, ordering flows, live tracking, and production
+                    performance for customer and driver experiences.
+                  </li>
+                  <li>
+                    Lead a team of 4 developers; drive architecture, code reviews, and
+                    coordinated releases with product stakeholders.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Team Lead · Freelance</h3>
+                    <p class="company">Healthcare &amp; Public Service Products</p>
+                  </div>
+                  <time>May 2025 — Present</time>
+                </div>
+                <ul>
+                  <li>
+                    Lead architecture and delivery for USCIS, TenacityMed, HealthSteps, and
+                    MindOra — secure data flows and role-based access patterns.
+                  </li>
+                  <li>
+                    Define module boundaries, API integrations, and reliability improvements
+                    across cross-functional teams.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Flutter Team Lead</h3>
+                    <p class="company">Aeyron</p>
+                  </div>
+                  <time>Nov 2024 — May 2025</time>
+                </div>
+                <ul>
+                  <li>
+                    Led delivery of Graid, an AI-powered card marketplace with valuation,
+                    listing, secure transactions, and trading workflows.
+                  </li>
+                  <li>
+                    Architected marketplace modules, sprint execution, and maintainable code
+                    quality across the team.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Freelance Mobile Engineer</h3>
+                    <p class="company">Startup Clients · United States</p>
+                  </div>
+                  <time>Jun 2023 — Nov 2024</time>
+                </div>
+                <ul>
+                  <li>
+                    Delivered MOOCH and Venvoi — peer-to-peer lending agreements and
+                    location-based social products with real-time features.
+                  </li>
+                  <li>
+                    Worked directly with founders from roadmap planning through App Store
+                    release.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Flutter Developer</h3>
+                    <p class="company">SoftwareHub · Karachi, Pakistan</p>
+                  </div>
+                  <time>Aug 2021 — May 2023</time>
+                </div>
+                <ul>
+                  <li>
+                    Shipped Walking Challenge and Work Life Organizer — challenge systems,
+                    leaderboards, and reusable UI patterns for fitness and productivity.
+                  </li>
+                </ul>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="contact">
+      <!-- Expertise -->
+      <section class="section section-soft" id="expertise">
         <div class="container reveal">
-          <div class="section-head">
-            <p class="tag">Contact</p>
-            <h2>Let’s Build Something Great</h2>
+          <header class="section-header">
+            <p class="eyebrow">Technical Expertise</p>
+            <h2>Capabilities, not checklists</h2>
+          </header>
+          <div class="skills-matrix">
+            <div class="skill-group">
+              <h3>Mobile Engineering</h3>
+              <p>Flutter · Dart · Android · iOS · App Store &amp; Play Store releases</p>
+            </div>
+            <div class="skill-group">
+              <h3>Software Architecture</h3>
+              <p>Clean Architecture · MVVM · SOLID · Dependency Injection · Modular Design</p>
+            </div>
+            <div class="skill-group">
+              <h3>State Management</h3>
+              <p>BLoC · Provider · GetX · Riverpod-ready patterns</p>
+            </div>
+            <div class="skill-group">
+              <h3>Backend &amp; APIs</h3>
+              <p>Firebase · Supabase · Node.js · Cloud Functions · PostgreSQL · MySQL · MongoDB · REST</p>
+            </div>
+            <div class="skill-group">
+              <h3>Monetization &amp; Growth</h3>
+              <p>Stripe · RevenueCat · In-App Purchases · Google Mobile Ads · Push Notifications · Deep Linking</p>
+            </div>
+            <div class="skill-group">
+              <h3>Platform Features</h3>
+              <p>FCM · WebSockets · Background Services · Google Maps · Biometrics · SQLite · Camera · Geolocation</p>
+            </div>
+            <div class="skill-group">
+              <h3>DevOps &amp; Tools</h3>
+              <p>Git · GitHub Actions · Firebase App Distribution · CI/CD · Agile · Scrum</p>
+            </div>
           </div>
-          <div class="contact-card">
-            <p>Email: <a href="mailto:fi.faizaalam@gmail.com">fi.faizaalam@gmail.com</a></p>
-            <p>Phone: <a href="tel:+923057778957">+92 305 7778957</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/faiz3/">linkedin.com/in/faiz3</a></p>
-            <div class="actions">
-              <a class="btn btn-solid" href="mailto:fi.faizaalam@gmail.com">Email Me</a>
-              <a class="btn btn-outline" href="resume.html">Open Resume</a>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section section-compact" id="education">
+        <div class="container reveal">
+          <div class="education-row">
+            <div>
+              <p class="eyebrow">Education</p>
+              <h2>Bachelor of Computer Engineering</h2>
+              <p class="section-desc">University of Engineering and Technology, Taxila</p>
+            </div>
+            <div class="lang-row">
+              <p class="eyebrow">Languages</p>
+              <p><strong>English</strong> — Professional working proficiency</p>
+              <p><strong>Urdu</strong> — Native</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section contact-section" id="contact">
+        <div class="container reveal">
+          <div class="contact-panel">
+            <div class="contact-copy">
+              <p class="eyebrow eyebrow-light">Let's Connect</p>
+              <h2>Ready to build something that ships?</h2>
+              <p>
+                I'm open to senior mobile engineering and lead roles across Norway and
+                Europe. Available for relocation with visa sponsorship.
+              </p>
+            </div>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:fi.faizaalam@gmail.com">
+                <span class="contact-label">Email</span>
+                <span>fi.faizaalam@gmail.com</span>
+              </a>
+              <a class="contact-link" href="tel:+923057778957">
+                <span class="contact-label">Phone</span>
+                <span>+92 305 7778957</span>
+              </a>
+              <a
+                class="contact-link"
+                href="https://www.linkedin.com/in/faiz3/"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="contact-label">LinkedIn</span>
+                <span>linkedin.com/in/faiz3</span>
+              </a>
+              <a
+                class="contact-link"
+                href="https://github.com/faizaalam3"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="contact-label">GitHub</span>
+                <span>github.com/faizaalam3</span>
+              </a>
+            </div>
+            <div class="contact-actions">
+              <a class="btn btn-light" href="mailto:fi.faizaalam@gmail.com">Send an Email</a>
+              <a class="btn btn-ghost-light" href="Faiz_Aalam_Resume.pdf" download>Download Resume</a>
+              <a class="btn btn-ghost-light" href="resume.html">View Resume Online</a>
             </div>
           </div>
         </div>
@@ -195,9 +644,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer">
-        <p>© 2026 Faiz Aalam</p>
-        <a href="#top">Back to Top</a>
+      <div class="container footer-inner">
+        <p>© 2026 Faiz Aalam · Senior Mobile Software Engineer</p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
 
