@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faiz Aalam | Senior Mobile Software Engineer — Resume</title>
     <style>
+      /* ── Print (A4) ── */
       @page {
         size: A4;
-        margin: 0.38in;
+        margin: 0.45in 0.5in 0.5in;
       }
 
       :root {
-        --ink: #0c1222;
-        --muted: #4a5568;
-        --line: #d8dee8;
-        --brand: #1d4ed8;
-        --panel: #f4f6fa;
+        --ink: #111827;
+        --muted: #4b5563;
+        --line: #d1d5db;
+        --accent: #1e3a8a;
       }
 
       * {
@@ -25,22 +25,23 @@
       }
 
       body {
-        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
         color: var(--ink);
-        background: #eef1f6;
-        font-size: 9.6pt;
-        line-height: 1.38;
+        background: #e5e7eb;
       }
 
       a {
-        color: var(--brand);
+        color: var(--accent);
         text-decoration: none;
       }
 
+      /* Screen toolbar only */
       .toolbar {
         max-width: 8.27in;
-        margin: 14px auto 10px;
-        padding: 0 14px;
+        margin: 16px auto 12px;
+        padding: 0 12px;
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
@@ -49,220 +50,235 @@
       .toolbar a,
       .toolbar button {
         font: inherit;
-        font-size: 0.82rem;
+        font-size: 9pt;
         font-weight: 600;
-        padding: 8px 14px;
-        border-radius: 8px;
+        padding: 7px 14px;
+        border-radius: 6px;
         border: 1px solid var(--line);
         background: #fff;
-        color: var(--ink);
         cursor: pointer;
       }
 
-      .toolbar a.primary,
-      .toolbar button.primary {
-        background: var(--brand);
+      .toolbar .primary {
+        background: var(--accent);
         color: #fff;
-        border-color: var(--brand);
+        border-color: var(--accent);
       }
 
+      /* ── Resume shell ── */
       .resume {
         width: min(100%, 8.27in);
-        margin: 0 auto 28px;
+        margin: 0 auto 32px;
+        padding: 0.5in 0.55in;
         background: #fff;
-        border: 1px solid var(--line);
-        box-shadow: 0 12px 32px rgba(12, 18, 34, 0.08);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       }
 
-      .top {
-        padding: 14px 16px 11px;
-        border-bottom: 2px solid var(--ink);
+      /* ── Header ── */
+      .resume-header {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1.5pt solid var(--ink);
+        margin-bottom: 12px;
       }
 
-      h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.75rem;
-        font-weight: 400;
-        letter-spacing: -0.02em;
-        line-height: 1.1;
-      }
-
-      .headline {
-        margin-top: 3px;
-        font-size: 0.92rem;
+      .resume-header h1 {
+        font-size: 22pt;
         font-weight: 700;
-        color: var(--brand);
-      }
-
-      .contact {
-        margin-top: 7px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px 12px;
-        color: var(--muted);
-        font-size: 0.76rem;
-      }
-
-      .contact a {
-        color: var(--muted);
-      }
-
-      .body {
-        display: grid;
-        grid-template-columns: 1.65fr 1fr;
-      }
-
-      .main {
-        padding: 11px 14px 13px;
-      }
-
-      .side {
-        padding: 11px 12px 13px;
-        border-left: 1px solid var(--line);
-        background: var(--panel);
-      }
-
-      .section + .section {
-        margin-top: 9px;
-      }
-
-      .section-title {
-        font-size: 0.66rem;
+        letter-spacing: 0.5pt;
+        line-height: 1.15;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-weight: 800;
-        color: var(--brand);
-        margin-bottom: 5px;
-        padding-bottom: 3px;
-        border-bottom: 1px solid var(--line);
       }
 
-      .summary {
-        color: #1e293b;
-        font-size: 0.88rem;
+      .resume-header .title {
+        margin-top: 3px;
+        font-size: 11pt;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .contact-line {
+        margin-top: 6px;
+        font-size: 9pt;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .contact-line span.sep::before {
+        content: " | ";
+        color: #9ca3af;
+      }
+
+      /* ── Sections (ATS: standard h2 headings) ── */
+      section {
+        margin-bottom: 11px;
+      }
+
+      section:last-child {
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: 10pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8pt;
+        color: var(--accent);
+        border-bottom: 0.75pt solid var(--line);
+        padding-bottom: 2px;
+        margin-bottom: 6px;
+      }
+
+      p {
+        font-size: 10pt;
+        color: #1f2937;
       }
 
       ul {
-        margin: 0 0 0 14px;
+        margin-left: 16px;
         padding: 0;
       }
 
       li {
+        font-size: 10pt;
+        color: #1f2937;
         margin-bottom: 2px;
-        color: #1e293b;
-        font-size: 0.84rem;
+        line-height: 1.38;
       }
 
-      .highlights li {
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ── Skills (ATS keyword block) ── */
+      .skills-grid p {
+        font-size: 9.5pt;
         margin-bottom: 3px;
-      }
-
-      .job {
-        margin-bottom: 8px;
-      }
-
-      .job:last-child {
-        margin-bottom: 0;
-      }
-
-      .job-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-
-      .job-title {
-        font-weight: 700;
-        font-size: 0.88rem;
-      }
-
-      .job-company {
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
-
-      .job-date {
-        font-size: 0.74rem;
-        font-weight: 600;
-        color: #64748b;
-        white-space: nowrap;
-      }
-
-      .job ul {
-        margin-top: 3px;
-      }
-
-      .project {
-        margin-bottom: 6px;
-      }
-
-      .project:last-child {
-        margin-bottom: 0;
-      }
-
-      .project h3 {
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
-      .project-meta {
-        font-size: 0.7rem;
-        color: #64748b;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
-      .project p {
-        margin-top: 2px;
-        font-size: 0.78rem;
-        color: #334155;
-        line-height: 1.32;
-      }
-
-      .project-links {
-        margin-top: 2px;
-        font-size: 0.7rem;
-      }
-
-      .skill-block + .skill-block {
-        margin-top: 6px;
-      }
-
-      .skill-block strong {
-        display: block;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: #334155;
-        margin-bottom: 2px;
-      }
-
-      .skill-block p {
-        font-size: 0.78rem;
-        color: #475569;
         line-height: 1.35;
       }
 
-      .side p {
-        font-size: 0.8rem;
-        color: #334155;
+      .skills-grid strong {
+        color: var(--ink);
       }
 
-      .side p + p {
+      /* ── Experience entries ── */
+      .entry {
+        margin-bottom: 9px;
+        page-break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 2px;
+      }
+
+      .entry-title {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .entry-org {
+        font-size: 10pt;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      .entry-date {
+        font-size: 9.5pt;
+        font-weight: 600;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+        text-align: right;
+      }
+
+      .entry-location {
+        font-size: 9.5pt;
+        color: var(--muted);
+      }
+
+      .entry ul {
         margin-top: 3px;
       }
 
-      @media (max-width: 760px) {
-        .body {
+      /* ── Projects (compact 2-col on screen/print) ── */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 14px;
+      }
+
+      .project-item {
+        page-break-inside: avoid;
+      }
+
+      .project-item h3 {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .project-item .tag {
+        font-size: 8.5pt;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.3pt;
+      }
+
+      .project-item p {
+        font-size: 9pt;
+        line-height: 1.32;
+        margin-top: 1px;
+        color: #374151;
+      }
+
+      /* ── Education row ── */
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .edu-degree {
+        font-weight: 700;
+        font-size: 10pt;
+      }
+
+      .edu-school {
+        font-size: 10pt;
+        color: #374151;
+      }
+
+      .two-col-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      @media (max-width: 640px) {
+        .projects-grid,
+        .two-col-footer {
           grid-template-columns: 1fr;
         }
 
-        .side {
-          border-left: 0;
-          border-top: 1px solid var(--line);
+        .entry-header {
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .entry-date {
+          text-align: left;
         }
       }
 
@@ -274,258 +290,235 @@
 
         body {
           background: #fff;
-          font-size: 9.2pt;
+          font-size: 10pt;
         }
 
         .toolbar {
-          display: none;
+          display: none !important;
         }
 
         .resume {
           width: 100%;
           margin: 0;
-          border: none;
+          padding: 0;
           box-shadow: none;
         }
 
-        .top {
-          padding: 0 0 9px;
+        .resume-header {
+          padding-bottom: 8px;
+          margin-bottom: 10px;
         }
 
-        .main,
-        .side {
-          padding: 8px 0;
+        section {
+          margin-bottom: 9px;
         }
 
-        .side {
-          border-left: 1px solid var(--line);
-          padding-left: 10px;
+        h2 {
+          page-break-after: avoid;
+        }
+
+        .entry {
+          margin-bottom: 8px;
         }
 
         a {
-          color: inherit;
+          color: var(--ink);
+        }
+
+        /* Keep projects on one row when space allows */
+        .projects-grid {
+          gap: 4px 12px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="toolbar">
-      <a href="index.html">← Portfolio</a>
-      <button class="primary" type="button" onclick="window.print()">Download / Print PDF</button>
-    </div>
+    <nav class="toolbar" aria-label="Resume actions">
+      <a href="index.html">Portfolio</a>
+      <button class="primary" type="button" onclick="window.print()">Save as PDF</button>
+    </nav>
 
-    <article class="resume">
-      <header class="top">
+    <main class="resume" id="resume">
+      <!-- ATS: name + contact in plain text at top -->
+      <header class="resume-header">
         <h1>Faiz Aalam</h1>
-        <p class="headline">Senior Mobile Software Engineer</p>
-        <p class="contact">
-          <span>Islamabad, Pakistan</span>
+        <p class="title">Senior Mobile Software Engineer</p>
+        <p class="contact-line">
+          Islamabad, Pakistan
+          <span class="sep"></span>
           <a href="mailto:fi.faizaalam@gmail.com">fi.faizaalam@gmail.com</a>
+          <span class="sep"></span>
           <a href="tel:+923057778957">+92 305 7778957</a>
+          <span class="sep"></span>
           <a href="https://www.linkedin.com/in/faiz3/">linkedin.com/in/faiz3</a>
+          <span class="sep"></span>
           <a href="https://github.com/faizaalam3">github.com/faizaalam3</a>
+          <span class="sep"></span>
           <a href="https://faizaalam.netlify.app">faizaalam.netlify.app</a>
         </p>
       </header>
 
-      <div class="body">
-        <main class="main">
-          <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="summary">
-              Senior mobile engineer with nearly 5 years of experience delivering production
-              applications across Norway, the US, UK, Germany, Australia, and Saudi Arabia.
-              I help companies build scalable mobile products from architecture through App Store
-              release — leading teams of up to 4 developers, owning technical decisions, and
-              partnering directly with founders and product owners.
-            </p>
-          </section>
+      <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Professional Summary</h2>
+        <p>
+          Senior Mobile Software Engineer with nearly 5 years of experience building and
+          shipping production mobile applications for clients in Norway, the United States,
+          United Kingdom, Germany, Australia, and Saudi Arabia. Delivered 12+ production apps
+          with 7+ published on Google Play and the Apple App Store. Currently leading a team
+          of 4 developers on SnapBudd, a Norwegian delivery platform serving 360+ stores.
+          Expertise in mobile architecture, team leadership, Firebase and Supabase backends,
+          CI/CD, and end-to-end product delivery from requirements through App Store release.
+          Open to relocation to Norway and Europe.
+        </p>
+      </section>
 
-          <section class="section">
-            <h2 class="section-title">Career Highlights</h2>
-            <ul class="highlights">
-              <li>Delivered <strong>12+ production mobile applications</strong> across logistics, fitness, fintech, AI, nutrition, and healthcare.</li>
-              <li>Published <strong>7+ apps</strong> on Google Play and the Apple App Store.</li>
-              <li>Currently leading mobile engineering for <strong>SnapBudd</strong>, a Norwegian delivery platform serving <strong>360+ stores</strong>.</li>
-              <li>Led teams of up to <strong>4 developers</strong> — code reviews, sprint planning, technical interviews, and mentoring.</li>
-              <li>Managed full SDLC: requirements, architecture, CI/CD, deployment, and production support.</li>
-            </ul>
-          </section>
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div class="skills-grid">
+          <p><strong>Languages:</strong> Dart, SQL</p>
+          <p><strong>Mobile:</strong> Flutter, Android, iOS, Google Play, Apple App Store, Mobile Architecture</p>
+          <p><strong>Architecture:</strong> Clean Architecture, MVVM, SOLID, Dependency Injection, Modular Design, Repository Pattern</p>
+          <p><strong>State Management:</strong> BLoC, Provider, GetX</p>
+          <p><strong>Backend and APIs:</strong> Firebase, Supabase, Node.js, Cloud Functions, PostgreSQL, MySQL, MongoDB, REST APIs, WebSockets</p>
+          <p><strong>Platform Features:</strong> Push Notifications (FCM), Google Maps, Stripe, RevenueCat, In-App Purchases, Deep Linking, Biometric Authentication, SQLite, Background Services</p>
+          <p><strong>DevOps and Tools:</strong> Git, GitHub Actions, Firebase App Distribution, CI/CD, Agile, Scrum, Android Studio, VS Code</p>
+          <p><strong>Leadership:</strong> Team Leadership, Code Review, Sprint Planning, Technical Interviews, Mentoring, Client Communication</p>
+        </div>
+      </section>
 
-          <section class="section">
-            <h2 class="section-title">Experience</h2>
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Professional Experience</h2>
 
-            <div class="job">
-              <div class="job-head">
-                <div>
-                  <div class="job-title">Flutter Team Lead</div>
-                  <div class="job-company">SnapBudd · Oslo, Norway</div>
-                </div>
-                <div class="job-date">May 2025 — Present</div>
-              </div>
-              <ul>
-                <li>Lead mobile engineering for a Norwegian delivery platform with store-to-door fulfillment within 60 minutes.</li>
-                <li>Own scalable architecture for customer, driver, and merchant flows — ordering, live tracking, Stripe payments, and secure verification.</li>
-                <li>Lead a team of 4 developers; drive architecture decisions, code reviews, and coordinated releases.</li>
-              </ul>
+        <article class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Flutter Team Lead</div>
+              <div class="entry-org">SnapBudd</div>
+              <div class="entry-location">Oslo, Norway (Remote)</div>
             </div>
+            <div class="entry-date">May 2025 - Present</div>
+          </div>
+          <ul>
+            <li>Lead mobile engineering for a Norwegian delivery platform serving 360+ stores with store-to-door fulfillment within 60 minutes.</li>
+            <li>Own scalable architecture for customer, driver, and merchant apps including ordering, live tracking, Stripe payments, and secure verification flows.</li>
+            <li>Lead a team of 4 Flutter developers; conduct code reviews, architecture decisions, sprint planning, and coordinated production releases.</li>
+          </ul>
+        </article>
 
-            <div class="job">
-              <div class="job-head">
-                <div>
-                  <div class="job-title">Team Lead · Freelance</div>
-                  <div class="job-company">Healthcare &amp; Public Service Products</div>
-                </div>
-                <div class="job-date">May 2025 — Present</div>
-              </div>
-              <ul>
-                <li>Lead architecture and delivery for USCIS, TenacityMed, HealthSteps, and MindOra.</li>
-                <li>Define secure data flows, role-based access, module boundaries, and API integrations across cross-functional teams.</li>
-              </ul>
+        <article class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Team Lead, Mobile Engineering</div>
+              <div class="entry-org">Freelance</div>
+              <div class="entry-location">Healthcare and Public Service Products</div>
             </div>
+            <div class="entry-date">May 2025 - Present</div>
+          </div>
+          <ul>
+            <li>Lead architecture and delivery for USCIS Case Tracker, TenacityMed, HealthSteps, and MindOra across healthcare and gov-tech domains.</li>
+            <li>Designed secure data flows, role-based access control, modular boundaries, and REST API integrations with product, backend, and QA teams.</li>
+          </ul>
+        </article>
 
-            <div class="job">
-              <div class="job-head">
-                <div>
-                  <div class="job-title">Flutter Team Lead</div>
-                  <div class="job-company">Aeyron</div>
-                </div>
-                <div class="job-date">Nov 2024 — May 2025</div>
-              </div>
-              <ul>
-                <li>Led delivery of Graid, an AI-powered card marketplace with valuation, secure transactions, and trading workflows.</li>
-                <li>Architected marketplace modules, sprint execution, and maintainable code quality.</li>
-              </ul>
+        <article class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Flutter Team Lead</div>
+              <div class="entry-org">Aeyron</div>
+              <div class="entry-location">Islamabad, Pakistan (Remote)</div>
             </div>
+            <div class="entry-date">Nov 2024 - May 2025</div>
+          </div>
+          <ul>
+            <li>Led delivery of Graid, an AI-powered card marketplace with valuation, listing, secure transactions, and trading workflows.</li>
+            <li>Architected marketplace modules, managed sprint execution, and maintained code quality through technical reviews.</li>
+          </ul>
+        </article>
 
-            <div class="job">
-              <div class="job-head">
-                <div>
-                  <div class="job-title">Freelance Mobile Engineer</div>
-                  <div class="job-company">Startup Clients · United States</div>
-                </div>
-                <div class="job-date">Jun 2023 — Nov 2024</div>
-              </div>
-              <ul>
-                <li>Delivered MOOCH (digital loan agreements, moochloans.com) and Venvoi (location-based social) from roadmap to App Store release.</li>
-                <li>Worked directly with founders on architecture, real-time features, and production deployment.</li>
-              </ul>
+        <article class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Freelance Mobile Software Engineer</div>
+              <div class="entry-org">Startup Clients</div>
+              <div class="entry-location">United States (Remote)</div>
             </div>
+            <div class="entry-date">Jun 2023 - Nov 2024</div>
+          </div>
+          <ul>
+            <li>Delivered MOOCH (moochloans.com), a fintech app for digital loan agreements ($10-$4,000), and Venvoi, a location-based social product with real-time features.</li>
+            <li>Partnered directly with founders from roadmap planning through App Store and Google Play release.</li>
+          </ul>
+        </article>
 
-            <div class="job">
-              <div class="job-head">
-                <div>
-                  <div class="job-title">Flutter Developer</div>
-                  <div class="job-company">SoftwareHub · Karachi, Pakistan</div>
-                </div>
-                <div class="job-date">Aug 2021 — May 2023</div>
-              </div>
-              <ul>
-                <li>Shipped Walking Challenge and Work Life Organizer — challenge systems, leaderboards, and reusable UI patterns.</li>
-              </ul>
+        <article class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Flutter Developer</div>
+              <div class="entry-org">SoftwareHub</div>
+              <div class="entry-location">Karachi, Pakistan</div>
             </div>
-          </section>
+            <div class="entry-date">Aug 2021 - May 2023</div>
+          </div>
+          <ul>
+            <li>Shipped Walking Challenge and Work Life Organizer to production with challenge systems, leaderboards, and reusable UI components.</li>
+            <li>Built backend integrations and fitness engagement features adopted by global lifestyle audiences.</li>
+          </ul>
+        </article>
+      </section>
 
-          <section class="section">
-            <h2 class="section-title">Selected Projects</h2>
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects</h2>
+        <div class="projects-grid">
+          <article class="project-item">
+            <div class="tag">Logistics, Norway</div>
+            <h3>SnapBudd</h3>
+            <p>Norwegian Click and Collect delivery platform. 360+ stores, live tracking, Stripe, multi-app ecosystem. snapbudd.io</p>
+          </article>
+          <article class="project-item">
+            <div class="tag">Fitness, UK</div>
+            <h3>Let's Get Fit</h3>
+            <p>500+ real-time workouts, weekly schedules, RevenueCat subscriptions. Google Play and App Store.</p>
+          </article>
+          <article class="project-item">
+            <div class="tag">AI Fashion</div>
+            <h3>STYRIA</h3>
+            <p>AI personal stylist with weather-aware outfit generation from real wardrobe. Google Play and App Store.</p>
+          </article>
+          <article class="project-item">
+            <div class="tag">Nutrition</div>
+            <h3>ProtnEase</h3>
+            <p>AI protein tracking, camera logging, daily goals, subscription monetization. protnease.com</p>
+          </article>
+          <article class="project-item">
+            <div class="tag">Healthcare Community</div>
+            <h3>DiaHive</h3>
+            <p>Diabetes support community with rich posts, recipes, and Supabase backend. Google Play.</p>
+          </article>
+          <article class="project-item">
+            <div class="tag">Fintech, USA</div>
+            <h3>MOOCH</h3>
+            <p>Digital loan agreements between friends ($10-$4,000). moochloans.com, App Store.</p>
+          </article>
+        </div>
+      </section>
 
-            <article class="project">
-              <div class="project-meta">Logistics · Norway</div>
-              <h3>SnapBudd</h3>
-              <p>Delivery platform for Click &amp; Collect — 360+ stores, live driver tracking, Stripe payments, multi-app ecosystem. snapbudd.io</p>
-            </article>
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="edu-row">
+          <div>
+            <div class="edu-degree">Bachelor of Computer Engineering</div>
+            <div class="edu-school">University of Engineering and Technology, Taxila</div>
+          </div>
+        </div>
+      </section>
 
-            <article class="project">
-              <div class="project-meta">Fitness · UK</div>
-              <h3>Let's Get Fit</h3>
-              <p>500+ real-time workouts, weekly schedules, RevenueCat subscriptions. Published on Google Play and App Store.</p>
-            </article>
-
-            <article class="project">
-              <div class="project-meta">AI Fashion</div>
-              <h3>STYRIA</h3>
-              <p>AI personal stylist — weather-aware daily outfits from your real wardrobe. Published on Google Play and App Store.</p>
-            </article>
-
-            <article class="project">
-              <div class="project-meta">Nutrition</div>
-              <h3>ProtnEase</h3>
-              <p>AI protein tracking with daily goals, camera logging, and subscription monetization. protnease.com</p>
-            </article>
-
-            <article class="project">
-              <div class="project-meta">Social · Diabetes</div>
-              <h3>DiaHive</h3>
-              <p>Diabetes community platform — tips, recipes, rich post formatting, Supabase backend. Google Play.</p>
-            </article>
-
-            <article class="project">
-              <div class="project-meta">Fintech · USA</div>
-              <h3>MOOCH</h3>
-              <p>Digital loan agreements between friends ($10–$4,000). moochloans.com · App Store.</p>
-            </article>
-          </section>
-        </main>
-
-        <aside class="side">
-          <section class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skill-block">
-              <strong>Mobile</strong>
-              <p>Flutter · Dart · Android · iOS · App Store &amp; Play Store releases</p>
-            </div>
-            <div class="skill-block">
-              <strong>Architecture</strong>
-              <p>Clean Architecture · MVVM · SOLID · Dependency Injection · Modular Design</p>
-            </div>
-            <div class="skill-block">
-              <strong>State Management</strong>
-              <p>BLoC · Provider · GetX</p>
-            </div>
-            <div class="skill-block">
-              <strong>Backend &amp; APIs</strong>
-              <p>Firebase · Supabase · Node.js · Cloud Functions · PostgreSQL · MySQL · MongoDB · REST</p>
-            </div>
-            <div class="skill-block">
-              <strong>Platform</strong>
-              <p>FCM · WebSockets · Google Maps · Stripe · RevenueCat · In-App Purchases · Deep Linking · Biometrics · SQLite</p>
-            </div>
-            <div class="skill-block">
-              <strong>DevOps</strong>
-              <p>Git · GitHub Actions · Firebase App Distribution · CI/CD · Agile · Scrum</p>
-            </div>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Leadership</h2>
-            <ul>
-              <li>Team leadership (up to 4 developers)</li>
-              <li>Code reviews &amp; architecture decisions</li>
-              <li>Sprint estimation &amp; release planning</li>
-              <li>Technical interviews &amp; mentoring</li>
-              <li>Direct client &amp; product owner communication</li>
-            </ul>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Education</h2>
-            <p><strong>Bachelor of Computer Engineering</strong></p>
-            <p>University of Engineering and Technology, Taxila</p>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Languages</h2>
-            <p><strong>English</strong> — Professional</p>
-            <p><strong>Urdu</strong> — Native</p>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Availability</h2>
-            <p>Open to relocation (Norway &amp; Europe)</p>
-            <p>Visa sponsorship required</p>
-          </section>
-        </aside>
-      </div>
-    </article>
+      <section aria-labelledby="languages-heading">
+        <h2 id="languages-heading">Languages</h2>
+        <div class="two-col-footer">
+          <p><strong>English</strong> - Professional working proficiency</p>
+          <p><strong>Urdu</strong> - Native</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
