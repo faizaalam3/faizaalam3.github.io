@@ -1,655 +1,627 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Faiz Aalam — Senior Mobile Software Engineer. 12+ production apps, team leadership, and scalable mobile architecture for clients across Norway, UK, Germany, USA, and Australia."
+      content="I am Faiz Aalam, a Software Engineer with 5+ years of experience building complete mobile and cloud products with Flutter, Firebase, Supabase, payments, AI, maps, and production delivery."
     />
-    <meta property="og:title" content="Faiz Aalam | Senior Mobile Software Engineer" />
+    <meta
+      name="keywords"
+      content="Software Engineer, Flutter Developer, Mobile App Developer, Firebase Developer, Supabase Developer, Full Stack Flutter Engineer, AI Software Engineer, Norway Software Engineer, Remote Software Engineer, Flutter Firebase Expert"
+    />
+    <meta name="author" content="Faiz Aalam" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://faizaalam.netlify.app/" />
+
+    <meta property="og:title" content="Faiz Aalam | Software Engineer" />
     <meta
       property="og:description"
-      content="I help companies build scalable, production-ready mobile products from idea to App Store."
+      content="I build complete products across mobile, backend, cloud, payments, AI, and production operations."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://faizaalam.netlify.app" />
-    <title>Faiz Aalam | Senior Mobile Software Engineer</title>
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://faizaalam.netlify.app/" />
+    <meta property="og:site_name" content="Faiz Aalam - Software Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:image"
+      content="https://faizaalam.netlify.app/assets/images/product-engineering-hero.jpg"
+    />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta property="og:image:alt" content="A visual system connecting mobile apps, cloud services, maps, payments, and AI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Faiz Aalam | Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="I design, build, ship, and evolve complete software products."
+    />
+    <meta
+      name="twitter:image"
+      content="https://faizaalam.netlify.app/assets/images/product-engineering-hero.jpg"
+    />
+    <meta name="twitter:image:alt" content="A visual system connecting mobile apps, cloud services, maps, payments, and AI" />
+    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+    <title>Faiz Aalam | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css?v=7" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Faiz Aalam",
+        "url": "https://faizaalam.netlify.app/",
+        "jobTitle": "Software Engineer",
+        "email": "mailto:fi.faizaalam@gmail.com",
+        "sameAs": [
+          "https://github.com/faizaalam3",
+          "https://www.linkedin.com/in/faiz3/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Engineering and Technology, Taxila"
+        },
+        "knowsAbout": [
+          "Flutter",
+          "Dart",
+          "Firebase",
+          "Supabase",
+          "Cloud Functions",
+          "Stripe Connect",
+          "Mobile Architecture",
+          "REST APIs",
+          "WebSockets",
+          "CI/CD"
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" id="top">
       <div class="container nav">
-        <a class="brand" href="#top">
+        <a class="brand" href="#top" aria-label="Faiz Aalam, home">
           <span class="brand-name">Faiz Aalam</span>
-          <span class="brand-role">Mobile Engineer</span>
+          <span class="brand-role">Software Engineer</span>
         </a>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span>
         </button>
         <nav class="nav-links" aria-label="Primary">
-          <a href="#highlights">Highlights</a>
-          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
           <a href="#experience">Experience</a>
-          <a href="#expertise">Expertise</a>
+          <a href="#projects">Projects</a>
+          <a href="#engineering">Engineering</a>
+          <a href="#resume">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="btn btn-primary btn-sm nav-cta" href="Faiz_Aalam_Resume.pdf" download>Resume</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="Faiz_Aalam_Software_Engineer_Resume.pdf" download>
+          Resume <span aria-hidden="true">&#8595;</span>
+        </a>
       </div>
     </header>
 
     <main id="main">
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-bg" aria-hidden="true"></div>
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-art"
+          src="assets/images/product-engineering-hero.jpg"
+          width="1672"
+          height="941"
+          alt="Mobile applications connected to cloud, payments, data, AI, and delivery systems"
+          fetchpriority="high"
+        />
+        <div class="hero-shade" aria-hidden="true"></div>
         <div class="container hero-inner reveal">
-          <div class="hero-content">
-            <p class="eyebrow">Senior Mobile Software Engineer</p>
-            <h1>
-              I build scalable mobile products that ship to production — and
-              <em>stay</em> there.
-            </h1>
+          <div class="hero-copy">
+            <p class="eyebrow">Software Engineer &middot; 5+ years</p>
+            <h1 id="hero-title">Faiz Aalam</h1>
+            <p class="hero-statement">
+              Building scalable software from architecture to production.
+            </p>
             <p class="hero-lead">
-              Nearly 5 years delivering production mobile applications across healthcare,
-              logistics, fitness, fintech, and marketplace domains. I lead teams, own
-              architecture, and partner directly with founders and product owners across
-              Norway, Germany, the UK, Australia, Saudi Arabia, and the US.
+              I build scalable software products from architecture to production, delivering mobile apps, backend services, cloud integrations, secure payment systems, admin portals, and long-term product maintenance.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#projects">View Published Work</a>
-              <a class="btn btn-ghost" href="mailto:fi.faizaalam@gmail.com">Get in Touch</a>
+              <a class="btn btn-primary" href="Faiz_Aalam_Software_Engineer_Resume.pdf" download>
+                Download Resume <span aria-hidden="true">&#8595;</span>
+              </a>
+              <a class="btn btn-secondary" href="#projects">View Projects</a>
             </div>
-            <div class="hero-badges">
-              <span class="badge">Open to Relocation</span>
-              <span class="badge badge-muted">Visa Sponsorship Required</span>
-            </div>
+            <p class="availability">
+              Islamabad, Pakistan <span aria-hidden="true">&middot;</span>
+              Open to international and relocation opportunities
+            </p>
           </div>
-          <div class="hero-stats" aria-label="Career metrics">
-            <div class="stat-card">
-              <span class="stat-value" data-count="12">12+</span>
-              <span class="stat-label">Production apps delivered</span>
+          <div class="hero-metrics" aria-label="Career summary">
+            <div>
+              <strong data-count="5" data-suffix="+">5+</strong>
+              <span>Years building production software</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-value" data-count="7">7+</span>
-              <span class="stat-label">Published on App Store &amp; Play</span>
+            <div>
+              <strong data-count="12" data-suffix="+">12+</strong>
+              <span>Products delivered</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-value">4</span>
-              <span class="stat-label">Developers led (current team)</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-value">6</span>
-              <span class="stat-label">Countries served</span>
+            <div>
+              <strong>iOS + Android</strong>
+              <span>Store releases</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Career Highlights -->
-      <section class="section" id="highlights">
-        <div class="container reveal">
-          <header class="section-header">
-            <p class="eyebrow">Professional Highlights</p>
-            <h2>Impact at a glance</h2>
+      <section class="section" id="about">
+        <div class="container about-layout reveal">
+          <header class="section-heading section-heading-sticky">
+            <p class="eyebrow">About</p>
+            <h2>I work across the whole product.</h2>
           </header>
-          <ul class="highlight-list">
-            <li>
-              <span class="highlight-icon" aria-hidden="true">01</span>
-              <div>
-                <strong>Nearly 5 years</strong> of professional mobile engineering,
-                from architecture through App Store release and production support.
-              </div>
-            </li>
-            <li>
-              <span class="highlight-icon" aria-hidden="true">02</span>
-              <div>
-                <strong>Led teams of up to 4 developers</strong> — code reviews, sprint
-                planning, technical interviews, and mentoring junior engineers.
-              </div>
-            </li>
-            <li>
-              <span class="highlight-icon" aria-hidden="true">03</span>
-              <div>
-                <strong>Currently leading mobile engineering</strong> for SnapBudd, a
-                Norwegian delivery platform serving 360+ stores nationwide.
-              </div>
-            </li>
-            <li>
-              <span class="highlight-icon" aria-hidden="true">04</span>
-              <div>
-                <strong>End-to-end ownership</strong> — requirements, scalable
-                architecture, API integrations, CI/CD, and coordinated releases with
-                product, backend, and QA.
-              </div>
-            </li>
-          </ul>
+          <div class="about-content">
+            <p class="lead-copy">
+              Computer Engineering taught me to think in systems.
+              Flutter is my core expertise, backed by experience in APIs,
+              cloud services, payments, deployments, and production support.
+            </p>
+            <p>
+              I enjoy turning complex product ideas into practical software.
+              I build maintainable solutions, choose the right architecture for the problem,
+              and continuously improve products through real-world feedback.
+            </p>
+          </div>
         </div>
       </section>
 
-      <!-- Flagship Project -->
-      <section class="section section-dark" id="flagship">
+      <section class="section section-soft" id="experience">
         <div class="container reveal">
-          <header class="section-header section-header-light">
-            <p class="eyebrow eyebrow-light">Flagship Project</p>
-            <h2>SnapBudd — Norway</h2>
-            <p class="section-desc">
-              Norwegian-developed delivery platform solving Click &amp; Collect wait times.
-              Store-to-door fulfillment within minutes, serving 360+ stores across Norway.
+          <header class="section-heading">
+            <p class="eyebrow">Experience</p>
+            <h2>Five years of growing responsibility.</h2>
+            <p>
+              My experience spans product companies, software houses, and international clients.
             </p>
           </header>
-          <div class="flagship-grid">
-            <div class="flagship-card">
-              <h3>My Role</h3>
-              <p class="role-title">Flutter Team Lead</p>
-              <ul class="flagship-points">
-                <li>Own scalable mobile architecture for customer, driver, and store flows</li>
-                <li>Lead a team of 4 Flutter developers with architecture and code review ownership</li>
-                <li>Build ordering, checkout, live tracking, and secure verification flows</li>
-                <li>Coordinate releases with product owners and international stakeholders</li>
-              </ul>
-            </div>
-            <div class="flagship-card">
-              <h3>Tech Stack</h3>
-              <div class="tag-row">
-                <span>Flutter</span><span>GetX</span><span>Firebase</span><span>Cloud Functions</span>
-                <span>Google Maps</span><span>Stripe</span><span>FCM</span><span>Deep Linking</span>
+
+          <div class="experience-list">
+            <article class="experience-row">
+              <div class="experience-period">Current</div>
+              <div class="experience-role">
+                <h3>Software Developer</h3>
+                <p>Snapbudd.io</p>
               </div>
-              <h3 class="mt-lg">Product</h3>
-              <p>
-                Customers order delivery from any store after Click &amp; Collect purchase.
-                Drivers accept jobs, pick up paid orders, and deliver with live tracking and
-                secure four-digit verification. Operating across Oslo, Bergen, Trondheim,
-                Stavanger, and Tromsø. Ecosystem includes customer, driver, merchant, and
-                company apps.
-              </p>
-              <div class="project-links project-links-light mt-md">
-                <a href="https://snapbudd.io/" target="_blank" rel="noopener">Website</a>
-                <a href="https://play.google.com/store/apps/details?id=com.snapbudd.app" target="_blank" rel="noopener">Google Play</a>
-                <a href="https://apps.apple.com/us/app/snapbudd/id6753947334" target="_blank" rel="noopener">App Store</a>
+              <div class="experience-detail">
+                <p>
+                  I work across customer and driver apps, three web portals, backend APIs,
+                  and cloud functions. I also handle Stripe Connect, live tracking, security,
+                  releases, and production support.
+                </p>
+                <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Cloud Functions</span><span>Stripe Connect</span><span>Maps</span></div>
               </div>
-            </div>
+            </article>
+
+            <article class="experience-row">
+              <div class="experience-period">Part-time</div>
+              <div class="experience-role">
+                <h3>Software Engineer</h3>
+                <p>Willoww Ltd</p>
+              </div>
+              <div class="experience-detail">
+                <p>
+                  I work part-time across consumer, health, fitness, community, and AI products.
+                  My work includes features, subscriptions, integrations, releases, and maintenance
+                  for STYRIA, Let's Get Fit, FOMO, DiaHive, HealthSteps, MindOra, and ProtnEase.
+                </p>
+                <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Supabase</span><span>RevenueCat</span><span>AI</span></div>
+              </div>
+            </article>
+
+            <article class="experience-row">
+              <div class="experience-period">2024 - 2025</div>
+              <div class="experience-role">
+                <h3>Flutter Software Engineer</h3>
+                <p>Aeyron</p>
+              </div>
+              <div class="experience-detail">
+                <p>
+                  I led Flutter architecture and feature development for Graid, an AI-powered
+                  card marketplace with valuation, listings, transactions, and trading workflows.
+                </p>
+                <div class="tag-row"><span>Flutter</span><span>AI</span><span>Marketplace</span><span>APIs</span></div>
+              </div>
+            </article>
+
+            <article class="experience-row">
+              <div class="experience-period">2023 - 2024</div>
+              <div class="experience-role">
+                <h3>Freelance Software Engineer</h3>
+                <p>International clients</p>
+              </div>
+              <div class="experience-detail">
+                <p>
+                  I worked directly with international clients on MOOCH, MCQsLearn, and VenVoi.
+                  I handled features, integrations, communication, and store delivery.
+                </p>
+                <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>REST APIs</span><span>App Stores</span></div>
+              </div>
+            </article>
+
+            <article class="experience-row">
+              <div class="experience-period">2021 - 2023</div>
+              <div class="experience-role">
+                <h3>Flutter Developer</h3>
+                <p>Softwarehub.pk</p>
+              </div>
+              <div class="experience-detail">
+                <p>
+                  I built production features for Walking Challenge and Work Life Organiser,
+                  including challenges, leaderboards, productivity flows, and backend integrations.
+                </p>
+                <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>State Management</span><span>Reusable UI</span></div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Published Projects -->
       <section class="section" id="projects">
         <div class="container reveal">
-          <header class="section-header">
-            <p class="eyebrow">Published Work</p>
-            <h2>Apps on App Store &amp; Google Play</h2>
-            <p class="section-desc">
-              Seven production applications shipped and available publicly — across
-              logistics, fitness, fintech, AI styling, nutrition, and healthcare communities.
-            </p>
+          <header class="section-heading">
+            <p class="eyebrow">Featured Projects</p>
+            <h2>Selected work.</h2>
+            <p>Three products that show the range of my engineering work.</p>
           </header>
+
+          <article class="case-study" id="snapbudd-case-study">
+            <div class="case-index">01</div>
+            <header class="case-header">
+              <div>
+                <p class="case-kicker">Logistics &middot; Norway</p>
+                <h3>Snapbudd</h3>
+                <p>
+                  A delivery platform for customers, drivers, merchants, and operations teams.
+                </p>
+              </div>
+              <div class="case-links">
+                <a href="https://snapbudd.io/" target="_blank" rel="noopener">Website <span aria-hidden="true">&#8599;</span></a>
+              </div>
+            </header>
+
+            <div class="case-summary-grid">
+              <div><h4>Problem</h4><p>Keep orders, payments, and delivery status in sync across five user roles.</p></div>
+              <div><h4>My work</h4><p>I work on the apps, portals, APIs, cloud functions, payments, security, and releases.</p></div>
+              <div><h4>Result</h4><p>The platform supports delivery operations across more than 360 stores.</p></div>
+            </div>
+            <div class="tag-row tag-row-large"><span>Flutter</span><span>Firebase</span><span>Cloud Functions</span><span>REST APIs</span><span>Stripe Connect</span><span>Google Maps</span><span>Live Tracking</span><span>FCM</span></div>
+            <details class="case-details">
+              <summary>Architecture and engineering notes</summary>
+              <div class="system-diagram" aria-label="Snapbudd product architecture overview">
+                <div class="system-surface"><span>Customer</span><small>Order and track</small></div>
+                <div class="system-surface"><span>Driver</span><small>Accept and deliver</small></div>
+                <div class="system-surface"><span>Merchant</span><small>Store operations</small></div>
+                <div class="system-core"><span>Backend APIs + Cloud Functions</span><small>Orders, identity, security, business rules</small></div>
+                <div class="system-service"><span>Stripe Connect</span><small>Payments and payouts</small></div>
+                <div class="system-service"><span>Maps + FCM</span><small>Tracking and notifications</small></div>
+              </div>
+              <div class="case-detail-grid">
+                <div><h4>System</h4><p>I connect Flutter apps and operational portals through backend APIs, Cloud Functions, Stripe Connect, maps, and notifications.</p></div>
+                <div><h4>Hard part</h4><p>I keep order, payment, and delivery state consistent across roles using explicit transitions and server-side payment rules.</p></div>
+                <div><h4>What I learned</h4><p>I learned to keep shared business rules behind stable contracts instead of repeating them in every client.</p></div>
+              </div>
+            </details>
+          </article>
+
+          <article class="case-study" id="styria-case-study">
+            <div class="case-index">02</div>
+            <header class="case-header">
+              <div>
+                <p class="case-kicker">AI Fashion &middot; Willoww Ltd</p>
+                <h3>STYRIA</h3>
+                <p>
+                  An AI stylist that creates outfits from a user's wardrobe, weather, and location.
+                </p>
+              </div>
+              <div class="case-links">
+                <a href="https://play.google.com/store/apps/details?id=com.styria.app&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/styria/id6756938574" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
+              </div>
+            </header>
+
+            <div class="case-summary-grid">
+              <div><h4>Problem</h4><p>Make daily outfit choices easier using clothes the user already owns.</p></div>
+              <div><h4>My work</h4><p>I worked on wardrobe, recommendation, location, and sharing flows in Flutter.</p></div>
+              <div><h4>Result</h4><p>The app combines wardrobe data and daily context in one simple experience.</p></div>
+            </div>
+            <div class="tag-row tag-row-large"><span>Flutter</span><span>Firebase</span><span>AI Integration</span><span>Geolocation</span><span>Notifications</span></div>
+            <details class="case-details">
+              <summary>Architecture and engineering notes</summary>
+              <div class="system-diagram system-diagram-styria" aria-label="STYRIA product flow overview">
+                <div class="system-surface"><span>Wardrobe</span><small>User-owned clothing data</small></div>
+                <div class="system-surface"><span>Context</span><small>Weather and location</small></div>
+                <div class="system-core"><span>AI Styling Flow</span><small>Structured recommendations</small></div>
+                <div class="system-service"><span>Daily Outfits</span><small>Personalized experience</small></div>
+              </div>
+              <div class="case-detail-grid">
+                <div><h4>System</h4><p>I connected the Flutter client with Firebase, AI capabilities, wardrobe data, and location context.</p></div>
+                <div><h4>Hard part</h4><p>I designed clear loading, result, and recovery states around asynchronous AI workflows.</p></div>
+                <div><h4>What I learned</h4><p>I learned that AI features feel more trustworthy when source data and generated results stay clearly separated.</p></div>
+              </div>
+            </details>
+          </article>
+
+          <article class="case-study" id="lets-get-fit-case-study">
+            <div class="case-index">03</div>
+            <header class="case-header">
+              <div>
+                <p class="case-kicker">Fitness &middot; Willoww Ltd</p>
+                <h3>Let's Get Fit</h3>
+                <p>
+                  A subscription fitness app with more than 500 workouts and structured plans.
+                </p>
+              </div>
+              <div class="case-links">
+                <a href="https://play.google.com/store/apps/details?id=com.proserv.ctf_app&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/lets-get-fit/id6444068128" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
+              </div>
+            </header>
+
+            <div class="case-summary-grid">
+              <div><h4>Problem</h4><p>Make a large workout library easy to follow while keeping access reliable.</p></div>
+              <div><h4>My work</h4><p>I worked on discovery, schedules, subscriptions, engagement, and releases.</p></div>
+              <div><h4>Result</h4><p>The published app gives members access to more than 500 workouts.</p></div>
+            </div>
+            <div class="tag-row tag-row-large"><span>Flutter</span><span>Firebase</span><span>RevenueCat</span><span>FCM</span><span>App Store</span><span>Google Play</span></div>
+            <details class="case-details">
+              <summary>Architecture and engineering notes</summary>
+              <div class="system-diagram system-diagram-fitness" aria-label="Let's Get Fit product flow overview">
+                <div class="system-surface"><span>Workout Library</span><small>500+ sessions</small></div>
+                <div class="system-surface"><span>Schedules</span><small>Weekly structure</small></div>
+                <div class="system-core"><span>Member Experience</span><small>State, progress, access</small></div>
+                <div class="system-service"><span>RevenueCat</span><small>Subscription entitlements</small></div>
+                <div class="system-service"><span>Firebase + FCM</span><small>Content and engagement</small></div>
+              </div>
+              <div class="case-detail-grid">
+                <div><h4>System</h4><p>I connected Flutter with Firebase-backed content, RevenueCat entitlements, push notifications, and store releases.</p></div>
+                <div><h4>Hard part</h4><p>I kept navigation and subscription access predictable as content and member states changed.</p></div>
+                <div><h4>What I learned</h4><p>I learned to treat subscription access as core product logic, not isolated purchase-screen behavior.</p></div>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="other-projects">
+        <div class="container reveal">
+          <header class="section-heading">
+            <p class="eyebrow">Other Projects</p>
+            <h2>More work.</h2>
+            <p>A selection of products across fitness, health, education, finance, and AI.</p>
+          </header>
+
           <div class="project-grid">
-            <article class="project-card project-card-featured">
-              <div class="project-meta">
-                <span class="project-domain">Logistics · Norway</span>
-                <span class="project-status">Live</span>
-              </div>
-              <h3>SnapBudd</h3>
-              <p>
-                60-minute store-to-door delivery platform. Scalable ordering, live driver
-                tracking, and secure fulfillment for Norway's Click &amp; Collect market.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Firebase</span><span>Stripe</span><span>Cloud Functions</span>
-              </div>
-              <div class="project-links">
-                <a href="https://snapbudd.io/" target="_blank" rel="noopener">Website</a>
-                <a href="https://play.google.com/store/apps/details?id=com.snapbudd.app" target="_blank" rel="noopener">Google Play</a>
-                <a href="https://apps.apple.com/us/app/snapbudd/id6753947334" target="_blank" rel="noopener">App Store</a>
-              </div>
-            </article>
-
             <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">Fitness · UK</span>
-                <span class="project-status">Published</span>
-              </div>
-              <h3>Let's Get Fit</h3>
-              <p>
-                Fitness platform with 500+ real-time workouts, weekly schedules, and
-                subscription monetization via RevenueCat. One of my proudest products —
-                built and shipped end-to-end.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Firebase</span><span>RevenueCat</span><span>FCM</span>
-              </div>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.proserv.ctf_app" target="_blank" rel="noopener">Google Play</a>
-                <a href="https://apps.apple.com/us/app/lets-get-fit/id6444068128" target="_blank" rel="noopener">App Store</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">AI Fashion · Global</span>
-                <span class="project-status">Published</span>
-              </div>
-              <h3>STYRIA</h3>
-              <p>
-                AI personal stylist that generates daily outfits from your real wardrobe —
-                weather-aware recommendations, closet organization, and outfit sharing.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Firebase</span><span>AI</span><span>Geolocation</span>
-              </div>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.styria.app" target="_blank" rel="noopener">Google Play</a>
-                <a href="https://apps.apple.com/us/app/styria/id6756938574" target="_blank" rel="noopener">App Store</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">Nutrition · Health</span>
-                <span class="project-status">Published</span>
-              </div>
-              <h3>ProtnEase</h3>
-              <p>
-                AI-assisted protein tracking with daily goals, meal logging, camera-based
-                nutrition entry, push reminders, and subscription monetization.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Firebase</span><span>RevenueCat</span><span>AI</span>
-              </div>
-              <div class="project-links">
-                <a href="https://protnease.com/" target="_blank" rel="noopener">Website</a>
-                <a href="https://play.google.com/store/apps/details?id=com.polypep.app" target="_blank" rel="noopener">Google Play</a>
-                <a href="https://apps.apple.com/us/app/protnease/id6759875908" target="_blank" rel="noopener">App Store</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">Social · Diabetes</span>
-                <span class="project-status">Published</span>
-              </div>
-              <h3>DiaHive</h3>
-              <p>
-                Supportive diabetes community — share tips, recipes, and experiences with
-                rich post formatting, profiles by diabetes type, and real-time engagement.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Supabase</span><span>Social</span><span>Notifications</span>
-              </div>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.diahive.app" target="_blank" rel="noopener">Google Play</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">Fintech · USA</span>
-                <span class="project-status">Published</span>
-              </div>
-              <h3>MOOCH</h3>
-              <p>
-                Lend-to-a-friend platform for generating digital loan agreements between
-                users — borrow or lend $10–$4,000 with downloadable, shareable contracts.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Document Flows</span><span>REST APIs</span><span>Analytics</span>
-              </div>
-              <div class="project-links">
-                <a href="https://moochloans.com/" target="_blank" rel="noopener">Website</a>
-                <a href="https://apps.apple.com/us/app/mooch-lend-to-a-friend/id6502505242" target="_blank" rel="noopener">App Store</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span class="project-domain">Fitness · Saudi Arabia</span>
-                <span class="project-status">Published</span>
-              </div>
+              <div class="project-top"><span>Fitness</span><small>Softwarehub.pk</small></div>
               <h3>Walking Challenge</h3>
-              <p>
-                Community fitness app with step challenges, leaderboards, and engagement
-                systems for global lifestyle audiences.
-              </p>
-              <div class="tag-row">
-                <span>Flutter</span><span>Firebase</span><span>Leaderboards</span>
-              </div>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.walking.android" target="_blank" rel="noopener">Google Play</a>
+              <p>I built challenge, leaderboard, and engagement features for a community fitness app.</p>
+              <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Leaderboards</span></div>
+              <div class="project-card-links">
+                <a href="https://play.google.com/store/apps/details?id=com.walking.android&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/walking-challenge-%D8%AA%D8%AD%D8%AF%D9%8A-%D8%A7%D9%84%D9%85%D8%B4%D9%8A/id1621159631" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
               </div>
             </article>
-          </div>
 
-          <div class="more-projects">
-            <p class="eyebrow">Additional Work</p>
-            <div class="more-grid">
-              <div class="more-item">
-                <strong>HealthSteps</strong>
-                <span>Health &amp; fitness ecosystem — step tracking, Stripe payments, in-app purchases, and engagement loops</span>
+            <article class="project-card">
+              <div class="project-top"><span>Productivity</span><small>Softwarehub.pk</small></div>
+              <h3>Work Life Organiser</h3>
+              <p>I built productivity flows that bring work and personal routines into one mobile app.</p>
+              <div class="tag-row"><span>Flutter</span><span>State Management</span><span>APIs</span></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Fintech</span><small>Freelance</small></div>
+              <h3>MOOCH</h3>
+              <p>I delivered mobile workflows for creating and sharing loan agreements between people.</p>
+              <div class="tag-row"><span>Flutter</span><span>REST APIs</span><span>Documents</span></div>
+              <div class="project-card-links">
+                <a href="https://moochloans.com/" target="_blank" rel="noopener">Website <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.mooch.lendtoafriend&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/mooch-lend-to-a-friend/id6502505242" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
               </div>
-              <div class="more-item">
-                <strong>USCIS Case Tracker</strong>
-                <span>Immigration case status tracking with secure document flows and USCIS API integrations</span>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Education</span><small>Freelance</small></div>
+              <h3>MCQsLearn</h3>
+              <p>I built structured multiple-choice practice and learning flows for a mobile education product.</p>
+              <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Education</span></div>
+              <div class="project-card-links">
+                <a href="https://play.google.com/store/apps/details?id=quiz.mcqslearn.allinone&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/mcqslearn/id1596594442" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
               </div>
-              <div class="more-item">
-                <strong>Graid</strong>
-                <span>AI-powered card marketplace — valuation, listing, secure transactions, and trading workflows</span>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Social</span><small>Freelance</small></div>
+              <h3>VenVoi</h3>
+              <p>I worked on location-based discovery and real-time social interactions.</p>
+              <div class="tag-row"><span>Flutter</span><span>Location</span><span>Real-time</span></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>AI Marketplace</span><small>Aeyron</small></div>
+              <h3>Graid</h3>
+              <p>I led architecture and Flutter feature development for an AI-powered card marketplace.</p>
+              <div class="tag-row"><span>Flutter</span><span>AI</span><span>Marketplace</span></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Consumer</span><small>Willoww Ltd</small></div>
+              <h3>FOMO</h3>
+              <p>I delivered Flutter features, integrations, and release-focused improvements.</p>
+              <div class="tag-row"><span>Flutter</span><span>Mobile Product</span><span>APIs</span></div>
+              <a class="project-link" href="https://apps.apple.com/us/app/fomo/id6758044479" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Health Community</span><small>Willoww Ltd</small></div>
+              <h3>DiaHive</h3>
+              <p>I built social feeds, profiles, rich posts, notifications, and Supabase integrations for a diabetes community.</p>
+              <div class="tag-row"><span>Flutter</span><span>Supabase</span><span>Notifications</span></div>
+              <a class="project-link" href="https://play.google.com/store/apps/details?id=com.diahive.app&amp;referrer=utm_source%3Dappbrain%26utm_medium%3Dappbrain_web%26utm_campaign%3Dappbrain_web" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Health &amp; Fitness</span><small>Willoww Ltd</small></div>
+              <h3>HealthSteps</h3>
+              <p>I worked on activity, Stripe payment, in-app purchase, and engagement workflows.</p>
+              <div class="tag-row"><span>Flutter</span><span>Stripe</span><span>IAP</span></div>
+              <div class="project-card-links">
+                <a href="https://play.google.com/store/apps/details?id=com.healthdiaries.healthsteps&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/healthsteps-tm/id6446171359" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
               </div>
-              <div class="more-item">
-                <strong>SnapBudd Ecosystem</strong>
-                <span>Merchant, company, and admin apps supporting Norway's delivery operations at scale</span>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>Consumer</span><small>Willoww Ltd</small></div>
+              <h3>MindOra</h3>
+              <p>I delivered product features, integrations, release support, and maintenance.</p>
+              <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Mobile Product</span></div>
+              <div class="project-card-links">
+                <a href="https://play.google.com/store/apps/details?id=us.healthdiaries.binauralbeats&amp;hl=en" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/mindora-tm/id1638995172" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
               </div>
-            </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top"><span>AI Nutrition</span><small>Willoww Ltd</small></div>
+              <h3>ProtnEase</h3>
+              <p>I built AI-assisted nutrition logging, reminders, notifications, and subscription flows.</p>
+              <div class="tag-row"><span>Flutter</span><span>AI</span><span>RevenueCat</span></div>
+              <div class="project-card-links">
+                <a href="https://protnease.com/" target="_blank" rel="noopener">Website <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.polypep.app" target="_blank" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://apps.apple.com/us/app/protnease/id6759875908" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Leadership -->
-      <section class="section section-soft" id="leadership">
+      <section class="section" id="skills">
         <div class="container reveal">
-          <header class="section-header">
-            <p class="eyebrow">Leadership</p>
-            <h2>More than implementation</h2>
-            <p class="section-desc">
-              I operate at the intersection of engineering, product, and delivery — the
-              profile European companies look for in senior and lead hires.
-            </p>
+          <header class="section-heading">
+            <p class="eyebrow">Technical Skills</p>
+            <h2>My technical toolkit.</h2>
+            <p>The tools I use most often in production.</p>
           </header>
-          <div class="leadership-grid">
-            <div class="lead-card">
-              <h3>Team Leadership</h3>
-              <p>
-                Currently leading 4 Flutter developers at SnapBudd. Previously led teams of
-                2 and mentored individual contributors across freelance and agency work.
-              </p>
-            </div>
-            <div class="lead-card">
-              <h3>Technical Ownership</h3>
-              <p>
-                Architecture decisions, pull request reviews, reusable component strategy,
-                and maintainable module boundaries across every engagement.
-              </p>
-            </div>
-            <div class="lead-card">
-              <h3>Delivery &amp; Planning</h3>
-              <p>
-                Sprint estimation, release coordination, and predictable delivery cycles
-                with product, backend, and QA stakeholders.
-              </p>
-            </div>
-            <div class="lead-card">
-              <h3>Hiring &amp; Mentoring</h3>
-              <p>
-                Conduct technical interviews, mentor junior developers, and raise team
-                quality through structured code review practices.
-              </p>
-            </div>
-            <div class="lead-card">
-              <h3>Client Communication</h3>
-              <p>
-                Direct collaboration with founders, product owners, and international
-                clients — translating roadmaps into stable mobile products.
-              </p>
-            </div>
-            <div class="lead-card">
-              <h3>Full SDLC</h3>
-              <p>
-                Requirements gathering through architecture, implementation, CI/CD,
-                App Store deployment, and production support.
-              </p>
-            </div>
+
+          <div class="skills-grid">
+            <div class="skill-block"><h3>Core</h3><p>Dart &middot; Flutter &middot; Clean Architecture &middot; MVVM &middot; SOLID</p></div>
+            <div class="skill-block"><h3>State</h3><p>BLoC &middot; Cubit &middot; Provider &middot; GetX</p></div>
+            <div class="skill-block"><h3>Backend &amp; Data</h3><p>Firebase &middot; Supabase &middot; Firestore &middot; Cloud Functions &middot; Express.js</p></div>
+            <div class="skill-block"><h3>Cloud &amp; APIs</h3><p>Google Cloud &middot; REST &middot; WebSockets &middot; OAuth</p></div>
+            <div class="skill-block"><h3>Payments</h3><p>Stripe &middot; Stripe Connect &middot; Apple Pay &middot; Google Pay &middot; subscriptions</p></div>
+            <div class="skill-block"><h3>Maps &amp; Real-time</h3><p>Google Maps &middot; Mapbox &middot; geofencing &middot; live tracking &middot; FCM</p></div>
+            <div class="skill-block"><h3>AI</h3><p>OpenAI &middot; ML Kit &middot; OCR</p></div>
+            <div class="skill-block"><h3>Quality &amp; Delivery</h3><p>Unit, widget, and integration tests &middot; GitHub Actions &middot; App Store &middot; Google Play</p></div>
           </div>
         </div>
       </section>
 
-      <!-- Experience -->
-      <section class="section" id="experience">
+      <section class="section section-dark" id="engineering">
         <div class="container reveal">
-          <header class="section-header">
-            <p class="eyebrow">Experience</p>
-            <h2>Where I've delivered</h2>
+          <header class="section-heading section-heading-light">
+            <p class="eyebrow">Engineering Approach</p>
+            <h2>How I approach the work.</h2>
+            <p>I keep decisions practical, clear, and tied to the product.</p>
           </header>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <div>
-                    <h3>Flutter Team Lead</h3>
-                    <p class="company">SnapBudd · Oslo, Norway</p>
-                  </div>
-                  <time>May 2025 — Present</time>
-                </div>
-                <ul>
-                  <li>
-                    Lead mobile engineering for a Norwegian delivery platform serving 360+
-                    stores with store-to-door fulfillment within 60 minutes.
-                  </li>
-                  <li>
-                    Own scalable architecture, ordering flows, live tracking, and production
-                    performance for customer and driver experiences.
-                  </li>
-                  <li>
-                    Lead a team of 4 developers; drive architecture, code reviews, and
-                    coordinated releases with product stakeholders.
-                  </li>
-                </ul>
-              </div>
-            </article>
 
-            <article class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <div>
-                    <h3>Team Lead · Freelance</h3>
-                    <p class="company">Healthcare &amp; Public Service Products</p>
-                  </div>
-                  <time>May 2025 — Present</time>
-                </div>
-                <ul>
-                  <li>
-                    Lead architecture and delivery for USCIS, TenacityMed, HealthSteps, and
-                    MindOra — secure data flows and role-based access patterns.
-                  </li>
-                  <li>
-                    Define module boundaries, API integrations, and reliability improvements
-                    across cross-functional teams.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <div>
-                    <h3>Flutter Team Lead</h3>
-                    <p class="company">Aeyron</p>
-                  </div>
-                  <time>Nov 2024 — May 2025</time>
-                </div>
-                <ul>
-                  <li>
-                    Led delivery of Graid, an AI-powered card marketplace with valuation,
-                    listing, secure transactions, and trading workflows.
-                  </li>
-                  <li>
-                    Architected marketplace modules, sprint execution, and maintainable code
-                    quality across the team.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <div>
-                    <h3>Freelance Mobile Engineer</h3>
-                    <p class="company">Startup Clients · United States</p>
-                  </div>
-                  <time>Jun 2023 — Nov 2024</time>
-                </div>
-                <ul>
-                  <li>
-                    Delivered MOOCH and Venvoi — peer-to-peer lending agreements and
-                    location-based social products with real-time features.
-                  </li>
-                  <li>
-                    Worked directly with founders from roadmap planning through App Store
-                    release.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <div>
-                    <h3>Flutter Developer</h3>
-                    <p class="company">SoftwareHub · Karachi, Pakistan</p>
-                  </div>
-                  <time>Aug 2021 — May 2023</time>
-                </div>
-                <ul>
-                  <li>
-                    Shipped Walking Challenge and Work Life Organizer — challenge systems,
-                    leaderboards, and reusable UI patterns for fitness and productivity.
-                  </li>
-                </ul>
-              </div>
-            </article>
+          <div class="engineering-grid">
+            <article><span>01</span><h3>Understand the need</h3><p>I start with the user, business rule, and main risks.</p></article>
+            <article><span>02</span><h3>Keep boundaries clear</h3><p>I separate product rules, integrations, and interface code.</p></article>
+            <article><span>03</span><h3>Plan for failure</h3><p>I design recovery paths for payments, auth, tracking, and AI.</p></article>
+            <article><span>04</span><h3>Make change easier</h3><p>I use readable code, tests, and CI/CD to support steady improvement.</p></article>
           </div>
         </div>
       </section>
 
-      <!-- Expertise -->
-      <section class="section section-soft" id="expertise">
-        <div class="container reveal">
-          <header class="section-header">
-            <p class="eyebrow">Technical Expertise</p>
-            <h2>Capabilities, not checklists</h2>
+      <section class="section" id="achievements">
+        <div class="container achievements-layout reveal">
+          <header class="section-heading section-heading-sticky">
+            <p class="eyebrow">Achievements</p>
+            <h2>Work I am proud of.</h2>
+            <p>A few areas where I have taken direct responsibility.</p>
           </header>
-          <div class="skills-matrix">
-            <div class="skill-group">
-              <h3>Mobile Engineering</h3>
-              <p>Flutter · Dart · Android · iOS · App Store &amp; Play Store releases</p>
-            </div>
-            <div class="skill-group">
-              <h3>Software Architecture</h3>
-              <p>Clean Architecture · MVVM · SOLID · Dependency Injection · Modular Design</p>
-            </div>
-            <div class="skill-group">
-              <h3>State Management</h3>
-              <p>BLoC · Provider · GetX · Riverpod-ready patterns</p>
-            </div>
-            <div class="skill-group">
-              <h3>Backend &amp; APIs</h3>
-              <p>Firebase · Supabase · Node.js · Cloud Functions · PostgreSQL · MySQL · MongoDB · REST</p>
-            </div>
-            <div class="skill-group">
-              <h3>Monetization &amp; Growth</h3>
-              <p>Stripe · RevenueCat · In-App Purchases · Google Mobile Ads · Push Notifications · Deep Linking</p>
-            </div>
-            <div class="skill-group">
-              <h3>Platform Features</h3>
-              <p>FCM · WebSockets · Background Services · Google Maps · Biometrics · SQLite · Camera · Geolocation</p>
-            </div>
-            <div class="skill-group">
-              <h3>DevOps &amp; Tools</h3>
-              <p>Git · GitHub Actions · Firebase App Distribution · CI/CD · Agile · Scrum</p>
-            </div>
-          </div>
+          <ol class="achievement-list">
+            <li><span>01</span><div><strong>Product delivery</strong><p>I have delivered mobile apps, backend services, portals, cloud functions, and releases.</p></div></li>
+            <li><span>02</span><div><strong>Payments and subscriptions</strong><p>I have built Stripe Connect, automated payouts, subscriptions, and in-app purchases.</p></div></li>
+            <li><span>03</span><div><strong>Real-time and AI features</strong><p>I have shipped live tracking, geofencing, notifications, OpenAI, ML Kit, and OCR.</p></div></li>
+            <li><span>04</span><div><strong>Technical ownership</strong><p>I lead architecture and features, review decisions, mentor developers, and support releases.</p></div></li>
+          </ol>
         </div>
       </section>
 
-      <!-- Education -->
-      <section class="section section-compact" id="education">
+      <section class="section resume-section" id="resume">
         <div class="container reveal">
-          <div class="education-row">
-            <div>
-              <p class="eyebrow">Education</p>
-              <h2>Bachelor of Computer Engineering</h2>
-              <p class="section-desc">University of Engineering and Technology, Taxila</p>
-            </div>
-            <div class="lang-row">
-              <p class="eyebrow">Languages</p>
-              <p><strong>English</strong> — Professional working proficiency</p>
-              <p><strong>Urdu</strong> — Native</p>
-            </div>
+          <header class="section-heading">
+            <p class="eyebrow">Resume</p>
+            <h2>Choose the right resume.</h2>
+            <p>Each version uses the same experience with a different focus.</p>
+          </header>
+          <div class="resume-grid">
+            <a class="resume-option resume-option-primary" href="Faiz_Aalam_Software_Engineer_Resume.pdf" download><span>Recommended</span><strong>Software Engineer</strong><small>Architecture, cloud, mobile, and product delivery</small><b aria-hidden="true">&#8595;</b></a>
+            <a class="resume-option" href="Faiz_Aalam_Mobile_Software_Engineer_Resume.pdf" download><span>Mobile</span><strong>Mobile Software Engineer</strong><small>Cross-platform apps, integrations, releases, and reliability</small><b aria-hidden="true">&#8595;</b></a>
+            <a class="resume-option" href="Faiz_Aalam_Flutter_Engineer_Resume.pdf" download><span>Flutter</span><strong>Flutter Engineer</strong><small>Flutter architecture, state management, and delivery</small><b aria-hidden="true">&#8595;</b></a>
+            <a class="resume-option" href="Faiz_Aalam_Product_Engineer_Resume.pdf" download><span>Product</span><strong>Product Engineer</strong><small>From product requirements to release and improvement</small><b aria-hidden="true">&#8595;</b></a>
+            <a class="resume-option" href="Faiz_Aalam_Full_Stack_Flutter_Engineer_Resume.pdf" download><span>Full stack</span><strong>Full-Stack Flutter Engineer</strong><small>Flutter, backend services, cloud functions, and portals</small><b aria-hidden="true">&#8595;</b></a>
           </div>
+          <a class="inline-link" href="resume.html">View the interactive resume selector <span aria-hidden="true">&#8594;</span></a>
         </div>
       </section>
 
-      <!-- Contact -->
       <section class="section contact-section" id="contact">
-        <div class="container reveal">
-          <div class="contact-panel">
-            <div class="contact-copy">
-              <p class="eyebrow eyebrow-light">Let's Connect</p>
-              <h2>Ready to build something that ships?</h2>
-              <p>
-                I'm open to senior mobile engineering and lead roles across Norway and
-                Europe. Available for relocation with visa sponsorship.
-              </p>
-            </div>
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:fi.faizaalam@gmail.com">
-                <span class="contact-label">Email</span>
-                <span>fi.faizaalam@gmail.com</span>
-              </a>
-              <a class="contact-link" href="tel:+923057778957">
-                <span class="contact-label">Phone</span>
-                <span>+92 305 7778957</span>
-              </a>
-              <a
-                class="contact-link"
-                href="https://www.linkedin.com/in/faiz3/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="contact-label">LinkedIn</span>
-                <span>linkedin.com/in/faiz3</span>
-              </a>
-              <a
-                class="contact-link"
-                href="https://github.com/faizaalam3"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="contact-label">GitHub</span>
-                <span>github.com/faizaalam3</span>
-              </a>
-            </div>
-            <div class="contact-actions">
-              <a class="btn btn-light" href="mailto:fi.faizaalam@gmail.com">Send an Email</a>
-              <a class="btn btn-ghost-light" href="Faiz_Aalam_Resume.pdf" download>Download Resume</a>
-              <a class="btn btn-ghost-light" href="resume.html">View Resume Online</a>
-            </div>
+        <div class="container contact-layout reveal">
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2>Let&apos;s talk about the role.</h2>
+            <p>
+              I am open to international Software Engineer, Product Engineer, Mobile Engineer,
+              and Full-Stack Flutter opportunities, including relocation.
+            </p>
+            <a class="btn btn-light" href="mailto:fi.faizaalam@gmail.com">Email Faiz</a>
           </div>
+          <address class="contact-list">
+            <a href="mailto:fi.faizaalam@gmail.com"><span>Email</span><strong>fi.faizaalam@gmail.com</strong></a>
+            <a href="tel:+923057778957"><span>Phone</span><strong>+92 305 7778957</strong></a>
+            <a href="https://www.linkedin.com/in/faiz3/" target="_blank" rel="noopener"><span>LinkedIn</span><strong>linkedin.com/in/faiz3</strong></a>
+            <a href="https://github.com/faizaalam3" target="_blank" rel="noopener"><span>GitHub</span><strong>github.com/faizaalam3</strong></a>
+            <a href="https://faizaalam.netlify.app"><span>Portfolio</span><strong>faizaalam.netlify.app</strong></a>
+            <div><span>Location</span><strong>Islamabad, Pakistan</strong></div>
+          </address>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 Faiz Aalam · Senior Mobile Software Engineer</p>
-        <a href="#top">Back to top ↑</a>
+        <p>&copy; 2026 Faiz Aalam. Software Engineer.</p>
+        <p>I design, build, release, and improve software.</p>
+        <a href="#top" data-back-to-top>Back to top <span aria-hidden="true">&#8593;</span></a>
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=6"></script>
   </body>
 </html>

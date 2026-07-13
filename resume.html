@@ -3,386 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faiz Aalam | Senior Mobile Software Engineer — Resume</title>
-    <style>
-      /* ── Print (A4) ── */
-      @page {
-        size: A4;
-        margin: 0.45in 0.5in 0.5in;
-      }
-
-      :root {
-        --ink: #111827;
-        --muted: #4b5563;
-        --line: #d1d5db;
-        --accent: #1e3a8a;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
-        font-size: 10.5pt;
-        line-height: 1.4;
-        color: var(--ink);
-        background: #e5e7eb;
-      }
-
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      /* Screen toolbar only */
-      .toolbar {
-        max-width: 8.27in;
-        margin: 16px auto 12px;
-        padding: 0 12px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .toolbar a,
-      .toolbar button {
-        font: inherit;
-        font-size: 9pt;
-        font-weight: 600;
-        padding: 7px 14px;
-        border-radius: 6px;
-        border: 1px solid var(--line);
-        background: #fff;
-        cursor: pointer;
-      }
-
-      .toolbar .primary {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-
-      /* ── Resume shell ── */
-      .resume {
-        width: min(100%, 8.27in);
-        margin: 0 auto 32px;
-        padding: 0.5in 0.55in;
-        background: #fff;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      /* ── Header ── */
-      .resume-header {
-        text-align: center;
-        padding-bottom: 10px;
-        border-bottom: 1.5pt solid var(--ink);
-        margin-bottom: 12px;
-      }
-
-      .resume-header h1 {
-        font-size: 22pt;
-        font-weight: 700;
-        letter-spacing: 0.5pt;
-        line-height: 1.15;
-        text-transform: uppercase;
-      }
-
-      .resume-header .title {
-        margin-top: 3px;
-        font-size: 11pt;
-        font-weight: 600;
-        color: var(--accent);
-      }
-
-      .contact-line {
-        margin-top: 6px;
-        font-size: 9pt;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .contact-line span.sep::before {
-        content: " | ";
-        color: #9ca3af;
-      }
-
-      /* ── Sections (ATS: standard h2 headings) ── */
-      section {
-        margin-bottom: 11px;
-      }
-
-      section:last-child {
-        margin-bottom: 0;
-      }
-
-      h2 {
-        font-size: 10pt;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.8pt;
-        color: var(--accent);
-        border-bottom: 0.75pt solid var(--line);
-        padding-bottom: 2px;
-        margin-bottom: 6px;
-      }
-
-      p {
-        font-size: 10pt;
-        color: #1f2937;
-      }
-
-      ul {
-        margin-left: 16px;
-        padding: 0;
-      }
-
-      li {
-        font-size: 10pt;
-        color: #1f2937;
-        margin-bottom: 2px;
-        line-height: 1.38;
-      }
-
-      li:last-child {
-        margin-bottom: 0;
-      }
-
-      /* ── Skills (ATS keyword block) ── */
-      .skills-grid p {
-        font-size: 9.5pt;
-        margin-bottom: 3px;
-        line-height: 1.35;
-      }
-
-      .skills-grid strong {
-        color: var(--ink);
-      }
-
-      /* ── Experience entries ── */
-      .entry {
-        margin-bottom: 9px;
-        page-break-inside: avoid;
-      }
-
-      .entry:last-child {
-        margin-bottom: 0;
-      }
-
-      .entry-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 2px;
-      }
-
-      .entry-title {
-        font-size: 10.5pt;
-        font-weight: 700;
-        color: var(--ink);
-      }
-
-      .entry-org {
-        font-size: 10pt;
-        font-weight: 600;
-        color: #374151;
-      }
-
-      .entry-date {
-        font-size: 9.5pt;
-        font-weight: 600;
-        color: var(--muted);
-        white-space: nowrap;
-        flex-shrink: 0;
-        text-align: right;
-      }
-
-      .entry-location {
-        font-size: 9.5pt;
-        color: var(--muted);
-      }
-
-      .entry ul {
-        margin-top: 3px;
-      }
-
-      /* ── Projects (compact 2-col on screen/print) ── */
-      .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6px 14px;
-      }
-
-      .project-item {
-        page-break-inside: avoid;
-      }
-
-      .project-item h3 {
-        font-size: 10pt;
-        font-weight: 700;
-        color: var(--ink);
-      }
-
-      .project-item .tag {
-        font-size: 8.5pt;
-        font-weight: 600;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.3pt;
-      }
-
-      .project-item p {
-        font-size: 9pt;
-        line-height: 1.32;
-        margin-top: 1px;
-        color: #374151;
-      }
-
-      /* ── Education row ── */
-      .edu-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .edu-degree {
-        font-weight: 700;
-        font-size: 10pt;
-      }
-
-      .edu-school {
-        font-size: 10pt;
-        color: #374151;
-      }
-
-      .two-col-footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-
-      @media (max-width: 640px) {
-        .projects-grid,
-        .two-col-footer {
-          grid-template-columns: 1fr;
-        }
-
-        .entry-header {
-          flex-direction: column;
-          gap: 2px;
-        }
-
-        .entry-date {
-          text-align: left;
-        }
-      }
-
-      @media print {
-        * {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        body {
-          background: #fff;
-          font-size: 10pt;
-        }
-
-        .toolbar {
-          display: none !important;
-        }
-
-        .resume {
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          box-shadow: none;
-        }
-
-        .resume-header {
-          padding-bottom: 8px;
-          margin-bottom: 10px;
-        }
-
-        section {
-          margin-bottom: 9px;
-        }
-
-        h2 {
-          page-break-after: avoid;
-        }
-
-        .entry {
-          margin-bottom: 8px;
-        }
-
-        a {
-          color: var(--ink);
-        }
-
-        /* Keep projects on one row when space allows */
-        .projects-grid {
-          gap: 4px 12px;
-        }
-      }
-    </style>
+    <meta name="theme-color" content="#111827" />
+    <meta name="robots" content="noindex, follow" />
+    <meta
+      name="description"
+      content="ATS-friendly resume for Faiz Aalam, Software Engineer with 5+ years of product, Flutter, backend, and cloud experience."
+    />
+    <title>Faiz Aalam | Software Engineer - Resume</title>
+    <link rel="canonical" href="https://faizaalam.netlify.app/resume.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/resume.css?v=1" />
   </head>
   <body>
-    <nav class="toolbar" aria-label="Resume actions">
-      <a href="index.html">Portfolio</a>
-      <button class="primary" type="button" onclick="window.print()">Save as PDF</button>
+    <nav class="toolbar" aria-label="Resume controls">
+      <div class="toolbar-top">
+        <p class="toolbar-label">One-page ATS resume - choose the target role</p>
+        <div class="toolbar-actions">
+          <a href="index.html">Portfolio</a>
+          <a class="primary" id="download-resume" href="Faiz_Aalam_Software_Engineer_Resume.pdf" download>Download PDF</a>
+          <button type="button" onclick="window.print()">Print</button>
+        </div>
+      </div>
+      <div class="role-switcher" aria-label="Resume version">
+        <a data-track-link="software" href="resume.html?track=software">Software Engineer</a>
+        <a data-track-link="mobile" href="resume.html?track=mobile">Mobile Software Engineer</a>
+        <a data-track-link="flutter" href="resume.html?track=flutter">Flutter Engineer</a>
+        <a data-track-link="product" href="resume.html?track=product">Product Engineer</a>
+        <a data-track-link="fullstack" href="resume.html?track=fullstack">Full-Stack Flutter Engineer</a>
+      </div>
     </nav>
 
     <main class="resume" id="resume">
-      <!-- ATS: name + contact in plain text at top -->
       <header class="resume-header">
-        <h1>Faiz Aalam</h1>
-        <p class="title">Senior Mobile Software Engineer</p>
-        <p class="contact-line">
-          Islamabad, Pakistan
-          <span class="sep"></span>
+        <div class="identity">
+          <h1>Faiz Aalam</h1>
+          <p class="title" id="resume-title">Software Engineer</p>
+          <p class="location">Islamabad, Pakistan - Open to international and relocation opportunities</p>
+        </div>
+        <div class="contact-list">
           <a href="mailto:fi.faizaalam@gmail.com">fi.faizaalam@gmail.com</a>
-          <span class="sep"></span>
           <a href="tel:+923057778957">+92 305 7778957</a>
-          <span class="sep"></span>
           <a href="https://www.linkedin.com/in/faiz3/">linkedin.com/in/faiz3</a>
-          <span class="sep"></span>
           <a href="https://github.com/faizaalam3">github.com/faizaalam3</a>
-          <span class="sep"></span>
           <a href="https://faizaalam.netlify.app">faizaalam.netlify.app</a>
-        </p>
+          <span>English - Professional</span>
+        </div>
       </header>
 
-      <section aria-labelledby="summary-heading">
-        <h2 id="summary-heading">Professional Summary</h2>
-        <p>
-          Senior Mobile Software Engineer with nearly 5 years of experience building and
-          shipping production mobile applications for clients in Norway, the United States,
-          United Kingdom, Germany, Australia, and Saudi Arabia. Delivered 12+ production apps
-          with 7+ published on Google Play and the Apple App Store. Currently leading a team
-          of 4 developers on SnapBudd, a Norwegian delivery platform serving 360+ stores.
-          Expertise in mobile architecture, team leadership, Firebase and Supabase backends,
-          CI/CD, and end-to-end product delivery from requirements through App Store release.
-          Open to relocation to Norway and Europe.
-        </p>
-      </section>
+      <p class="summary">
+        <strong id="summary-lead">Software Engineer with 5+ years of experience</strong>
+        <span id="summary-text"> building complete products across mobile applications, backend integrations, cloud services, payments, admin portals, deployment, and production maintenance.</span>
+      </p>
 
       <section aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Technical Skills</h2>
-        <div class="skills-grid">
-          <p><strong>Languages:</strong> Dart, SQL</p>
-          <p><strong>Mobile:</strong> Flutter, Android, iOS, Google Play, Apple App Store, Mobile Architecture</p>
-          <p><strong>Architecture:</strong> Clean Architecture, MVVM, SOLID, Dependency Injection, Modular Design, Repository Pattern</p>
-          <p><strong>State Management:</strong> BLoC, Provider, GetX</p>
-          <p><strong>Backend and APIs:</strong> Firebase, Supabase, Node.js, Cloud Functions, PostgreSQL, MySQL, MongoDB, REST APIs, WebSockets</p>
-          <p><strong>Platform Features:</strong> Push Notifications (FCM), Google Maps, Stripe, RevenueCat, In-App Purchases, Deep Linking, Biometric Authentication, SQLite, Background Services</p>
-          <p><strong>DevOps and Tools:</strong> Git, GitHub Actions, Firebase App Distribution, CI/CD, Agile, Scrum, Android Studio, VS Code</p>
-          <p><strong>Leadership:</strong> Team Leadership, Code Review, Sprint Planning, Technical Interviews, Mentoring, Client Communication</p>
+        <h2 id="skills-heading">Core Skills</h2>
+        <div class="skills-list">
+          <p data-skill-row><strong>Architecture &amp; Product:</strong> <span>Clean Architecture, MVVM, SOLID, modular systems, feature ownership</span></p>
+          <p data-skill-row><strong>Mobile:</strong> <span>Flutter, Dart, BLoC, Cubit, Provider, GetX, Android, iOS</span></p>
+          <p data-skill-row><strong>Backend &amp; Cloud:</strong> <span>Firebase, Supabase, Cloud Functions, Express.js, REST, WebSockets</span></p>
+          <p data-skill-row><strong>Delivery:</strong> <span>Testing, CI/CD, GitHub Actions, App Store, Play Store, production maintenance</span></p>
         </div>
       </section>
 
@@ -390,135 +74,93 @@
         <h2 id="experience-heading">Professional Experience</h2>
 
         <article class="entry">
-          <div class="entry-header">
-            <div>
-              <div class="entry-title">Flutter Team Lead</div>
-              <div class="entry-org">SnapBudd</div>
-              <div class="entry-location">Oslo, Norway (Remote)</div>
-            </div>
-            <div class="entry-date">May 2025 - Present</div>
+          <div class="entry-head">
+            <h3 class="entry-title">Software Developer</h3>
+            <span class="entry-date">Current</span>
           </div>
+          <p class="entry-org">Snapbudd.io</p>
           <ul>
-            <li>Lead mobile engineering for a Norwegian delivery platform serving 360+ stores with store-to-door fulfillment within 60 minutes.</li>
-            <li>Own scalable architecture for customer, driver, and merchant apps including ordering, live tracking, Stripe payments, and secure verification flows.</li>
-            <li>Lead a team of 4 Flutter developers; conduct code reviews, architecture decisions, sprint planning, and coordinated production releases.</li>
+            <li>Own customer and driver apps, merchant, company and admin portals, backend APIs, Cloud Functions, deployment, releases, security, and maintenance.</li>
+            <li>Built Stripe Connect payments and automated payouts plus live tracking, maps, notifications, and multi-role delivery workflows.</li>
+          </ul>
+          <p class="entry-tech"><strong>Technologies:</strong> Flutter, Firebase, Cloud Functions, Stripe Connect, Google Maps, FCM, REST APIs</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Software Engineer</h3>
+            <span class="entry-date">Part-time</span>
+          </div>
+          <p class="entry-org">Willoww Ltd</p>
+          <ul>
+            <li>Deliver Flutter features and production support across STYRIA, Let's Get Fit, FOMO, DiaHive, HealthSteps, MindOra, and ProtnEase.</li>
+            <li>Work across AI integrations, subscriptions, social and health features, payments, notifications, and app-store delivery.</li>
+          </ul>
+          <p class="entry-tech"><strong>Technologies:</strong> Flutter, Firebase, Supabase, RevenueCat, AI integrations, FCM</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Flutter Software Engineer</h3>
+            <span class="entry-date">2024 - 2025</span>
+          </div>
+          <p class="entry-org">Aeyron</p>
+          <ul>
+            <li>Built Graid, an AI card marketplace for valuation, listings, secure transactions, and trading; led architecture and feature development.</li>
           </ul>
         </article>
 
         <article class="entry">
-          <div class="entry-header">
-            <div>
-              <div class="entry-title">Team Lead, Mobile Engineering</div>
-              <div class="entry-org">Freelance</div>
-              <div class="entry-location">Healthcare and Public Service Products</div>
-            </div>
-            <div class="entry-date">May 2025 - Present</div>
+          <div class="entry-head">
+            <h3 class="entry-title">Freelance Software Engineer</h3>
+            <span class="entry-date">2023 - 2024</span>
           </div>
+          <p class="entry-org">International Clients</p>
           <ul>
-            <li>Lead architecture and delivery for USCIS Case Tracker, TenacityMed, HealthSteps, and MindOra across healthcare and gov-tech domains.</li>
-            <li>Designed secure data flows, role-based access control, modular boundaries, and REST API integrations with product, backend, and QA teams.</li>
+            <li>Delivered MOOCH, MCQsLearn, and VenVoi; owned Flutter implementation, backend integrations, client communication, and store releases.</li>
           </ul>
         </article>
 
         <article class="entry">
-          <div class="entry-header">
-            <div>
-              <div class="entry-title">Flutter Team Lead</div>
-              <div class="entry-org">Aeyron</div>
-              <div class="entry-location">Islamabad, Pakistan (Remote)</div>
-            </div>
-            <div class="entry-date">Nov 2024 - May 2025</div>
+          <div class="entry-head">
+            <h3 class="entry-title">Flutter Developer</h3>
+            <span class="entry-date">2021 - 2023</span>
           </div>
+          <p class="entry-org">Softwarehub.pk</p>
           <ul>
-            <li>Led delivery of Graid, an AI-powered card marketplace with valuation, listing, secure transactions, and trading workflows.</li>
-            <li>Architected marketplace modules, managed sprint execution, and maintained code quality through technical reviews.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <div class="entry-title">Freelance Mobile Software Engineer</div>
-              <div class="entry-org">Startup Clients</div>
-              <div class="entry-location">United States (Remote)</div>
-            </div>
-            <div class="entry-date">Jun 2023 - Nov 2024</div>
-          </div>
-          <ul>
-            <li>Delivered MOOCH (moochloans.com), a fintech app for digital loan agreements ($10-$4,000), and Venvoi, a location-based social product with real-time features.</li>
-            <li>Partnered directly with founders from roadmap planning through App Store and Google Play release.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <div class="entry-title">Flutter Developer</div>
-              <div class="entry-org">SoftwareHub</div>
-              <div class="entry-location">Karachi, Pakistan</div>
-            </div>
-            <div class="entry-date">Aug 2021 - May 2023</div>
-          </div>
-          <ul>
-            <li>Shipped Walking Challenge and Work Life Organizer to production with challenge systems, leaderboards, and reusable UI components.</li>
-            <li>Built backend integrations and fitness engagement features adopted by global lifestyle audiences.</li>
+            <li>Built Walking Challenge and Work Life Organiser with challenge, leaderboard, productivity, reusable UI, and backend-integrated workflows.</li>
           </ul>
         </article>
       </section>
 
-      <section aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Selected Projects</h2>
-        <div class="projects-grid">
-          <article class="project-item">
-            <div class="tag">Logistics, Norway</div>
-            <h3>SnapBudd</h3>
-            <p>Norwegian Click and Collect delivery platform. 360+ stores, live tracking, Stripe, multi-app ecosystem. snapbudd.io</p>
-          </article>
-          <article class="project-item">
-            <div class="tag">Fitness, UK</div>
-            <h3>Let's Get Fit</h3>
-            <p>500+ real-time workouts, weekly schedules, RevenueCat subscriptions. Google Play and App Store.</p>
-          </article>
-          <article class="project-item">
-            <div class="tag">AI Fashion</div>
-            <h3>STYRIA</h3>
-            <p>AI personal stylist with weather-aware outfit generation from real wardrobe. Google Play and App Store.</p>
-          </article>
-          <article class="project-item">
-            <div class="tag">Nutrition</div>
-            <h3>ProtnEase</h3>
-            <p>AI protein tracking, camera logging, daily goals, subscription monetization. protnease.com</p>
-          </article>
-          <article class="project-item">
-            <div class="tag">Healthcare Community</div>
-            <h3>DiaHive</h3>
-            <p>Diabetes support community with rich posts, recipes, and Supabase backend. Google Play.</p>
-          </article>
-          <article class="project-item">
-            <div class="tag">Fintech, USA</div>
-            <h3>MOOCH</h3>
-            <p>Digital loan agreements between friends ($10-$4,000). moochloans.com, App Store.</p>
-          </article>
-        </div>
+      <section aria-labelledby="focus-heading">
+        <h2 id="focus-heading">Role Focus</h2>
+        <ul class="focus-list" id="focus-list">
+          <li>Translate business requirements into maintainable product architecture and production-ready delivery plans.</li>
+          <li>Own software from mobile interfaces through backend integrations, cloud workflows, releases, and maintenance.</li>
+          <li>Improve engineering quality through clear boundaries, technical review, and mentoring junior developers.</li>
+        </ul>
       </section>
 
-      <section aria-labelledby="education-heading">
-        <h2 id="education-heading">Education</h2>
-        <div class="edu-row">
-          <div>
-            <div class="edu-degree">Bachelor of Computer Engineering</div>
-            <div class="edu-school">University of Engineering and Technology, Taxila</div>
+      <div class="bottom-grid">
+        <section aria-labelledby="projects-heading">
+          <h2 id="projects-heading">Selected Products</h2>
+          <div class="project-grid">
+            <div class="project-item"><strong>Snapbudd</strong><span>Multi-role delivery ecosystem with Flutter, Cloud Functions, Stripe Connect, maps, and portals.</span></div>
+            <div class="project-item"><strong>STYRIA</strong><span>AI personal stylist using real wardrobe data, contextual recommendations, and geolocation.</span></div>
+            <div class="project-item"><strong>Let's Get Fit</strong><span>Subscription fitness product with 500+ workouts, Firebase, RevenueCat, and FCM.</span></div>
+            <div class="project-item"><strong>Graid</strong><span>AI card marketplace with valuation, listings, transactions, and trading workflows.</span></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section aria-labelledby="languages-heading">
-        <h2 id="languages-heading">Languages</h2>
-        <div class="two-col-footer">
-          <p><strong>English</strong> - Professional working proficiency</p>
-          <p><strong>Urdu</strong> - Native</p>
-        </div>
-      </section>
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <p class="education-copy"><strong>Bachelor of Computer Engineering</strong><br />University of Engineering and Technology, Taxila<br />Graduated 2021</p>
+          <p class="language-copy"><strong>Languages:</strong> English - Professional; Urdu - Native</p>
+        </section>
+      </div>
     </main>
+
+    <script src="assets/js/resume.js?v=1"></script>
   </body>
 </html>
